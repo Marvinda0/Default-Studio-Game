@@ -402,8 +402,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f66f6486988dc74686e0b1639f4325e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lootSpawnPosition: {fileID: 0}
-  lootBag: {fileID: 1516059991}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
