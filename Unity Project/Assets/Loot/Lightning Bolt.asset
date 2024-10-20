@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 568f28b466e26004788ec50bdb0cf9fd, type: 3}
   m_Name: Lightning Bolt
   m_EditorClassIdentifier: 
-  lootSprite: {fileID: 0}
-  lootName: 
-  dropChance: 0
+  lootSprite: {fileID: 21300000, guid: 28b8d0193909e8747b35bf0d1a25e3b8, type: 3}
+  lootName: Zeus Thunderbolt
+  dropChance: 100
