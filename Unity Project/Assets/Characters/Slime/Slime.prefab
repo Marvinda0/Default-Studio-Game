@@ -14,10 +14,11 @@ GameObject:
   - component: {fileID: 8192278122166672854}
   - component: {fileID: 1810868354739797415}
   - component: {fileID: 6325617443061213487}
-  - component: {fileID: 2454690389487803021}
+  - component: {fileID: 4742117387800841371}
   - component: {fileID: 4229802418481570286}
   - component: {fileID: 8058370345373112990}
   - component: {fileID: 589695117089210687}
+  - component: {fileID: 8927415916149652589}
   m_Layer: 0
   m_Name: Slime
   m_TagString: Untagged
@@ -197,7 +198,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   damageCooldown: 1
---- !u!114 &2454690389487803021
+--- !u!114 &4742117387800841371
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -206,10 +207,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6083513873441513986}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 645f4e7b377ae2d4593617e04720c9ae, type: 3}
+  m_Script: {fileID: 11500000, guid: a969bab51eff4584b86e59abb8eba29d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  expReward: 2
 --- !u!114 &4229802418481570286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -294,3 +296,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   target: {fileID: 0}
+--- !u!114 &8927415916149652589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6083513873441513986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4602407f7ba938449d1fc35c7d4bd83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  droppedItemPrefab: {fileID: 2830374740305323753, guid: 7d4017f1aa6541a4e87628ab7fcd0883, type: 3}
+  lootList:
+  - {fileID: 11400000, guid: 3e01a0964a2f8e147ab21cd77eb37820, type: 2}
+  - {fileID: 11400000, guid: cc669be249a1e1e438fed91ee22e8c10, type: 2}
+  - {fileID: 11400000, guid: a23e79b66c0b19f45bdbd220225945b5, type: 2}
