@@ -22,7 +22,7 @@ public class LootBag : MonoBehaviour
             return possibleItems[Random.Range(0, possibleItems.Count)];
         }
 
-        //Debug.Log("No loot");
+        Debug.Log("No loot");
         return null;
     }
 
@@ -31,6 +31,10 @@ public class LootBag : MonoBehaviour
         if(droppedItem != null){
             GameObject lootGameObject = Instantiate(droppedItemPrefab, spawnPosition, Quaternion.identity);
             lootGameObject.GetComponent <SpriteRenderer>().sprite = droppedItem.lootSprite;
+
+            float dropForce = 35f;
+            Vector2 dropDirection = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
+            lootGameObject.GetComponent<Rigidbody2D>().AddForce(dropDirection * dropForce, ForceMode2D.Impulse);
         }
     }
 }
