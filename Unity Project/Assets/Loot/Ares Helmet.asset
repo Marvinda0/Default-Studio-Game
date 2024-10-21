@@ -14,8 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lootSprite: {fileID: 21300000, guid: 796ac5975108a014583919dd3de935c8, type: 3}
   lootName: Ares Helmet
-<<<<<<< HEAD
-  dropChance: 90
-=======
-  dropChance: 0
->>>>>>> cbf2c7683122157333a0fcff33220f1a3b6d97de
+  dropChance: 100

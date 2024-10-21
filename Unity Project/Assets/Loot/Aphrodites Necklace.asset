@@ -14,8 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lootSprite: {fileID: 21300000, guid: 3a52ead08fade6645ab54d545d834bcc, type: 3}
   lootName: Aphrodites Pendant
-<<<<<<< HEAD
-  dropChance: 90
-=======
-  dropChance: 0
->>>>>>> cbf2c7683122157333a0fcff33220f1a3b6d97de
+  dropChance: 100
