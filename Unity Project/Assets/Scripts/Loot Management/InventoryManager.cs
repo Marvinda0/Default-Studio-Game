@@ -8,12 +8,18 @@ public class InventoryManager : MonoBehaviour
     public GameObject InventoryMenu;
     private bool menuActivated;
 
+    //public Loot loot;
+
+
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        if(InventoryMenu == null){
+            Debug.LogError("InventoryMenu is not assigned");
+        }
+
     }
 
     // Update is called once per frame
@@ -35,5 +41,10 @@ public class InventoryManager : MonoBehaviour
             menuActivated = true;
         }
 
+    }
+
+    public void AddItem(Loot loot){
+    
+        Debug.Log(loot + "loot has been added to inventory");
     }
 }

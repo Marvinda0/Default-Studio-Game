@@ -7,10 +7,17 @@ public class LootPickup : MonoBehaviour //Attach the LootPickup Script to the lo
     private bool isPlayerInRange = false;
     public Loot loot;
 
+    public InventoryManager inventoryManager;
 
+    void Start(){
+
+        
+        inventoryManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>();//jch6
+    }
+    
     void PickUpLoot(){
 
-        //jch6 Add to give loot item here(add to Inventory)
+        inventoryManager.AddItem(loot);
         
         Destroy(gameObject); //jch6 Destroys loot after pick up
 
@@ -19,6 +26,7 @@ public class LootPickup : MonoBehaviour //Attach the LootPickup Script to the lo
     private void OnTriggerEnter2D(Collider2D other){
         if(other.CompareTag("Player")){
             isPlayerInRange = true;
+
             //Add UI prompt to press "F"
 
             //
