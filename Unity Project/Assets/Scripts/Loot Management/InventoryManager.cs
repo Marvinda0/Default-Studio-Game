@@ -8,6 +8,8 @@ public class InventoryManager : MonoBehaviour
     public GameObject InventoryMenu;
     private bool menuActivated;
 
+    public LootSlot[] lootSlot;
+
     //public Loot loot;
 
 
@@ -45,6 +47,12 @@ public class InventoryManager : MonoBehaviour
 
     public void AddItem(Loot loot){
     
+        for(int i = 0; i < lootSlot.Length; i++){
+            if(lootSlot[i].isFull == false){
+                lootSlot[i].AddItem(loot);
+                return;
+            }
+        }
         Debug.Log(loot + "loot has been added to inventory");
     }
 }
