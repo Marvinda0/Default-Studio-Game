@@ -21,7 +21,7 @@ public class LootSlot : MonoBehaviour
 
 
     public void AddItem(Loot loot){
-    
+        lootImage = GetComponent<Image>();
         this.lootName = lootName;
         this.lootSprite = lootSprite;
         isFull = true;
@@ -32,11 +32,11 @@ public class LootSlot : MonoBehaviour
     
     public void ClearSlot()
     {
-        lootName = string.Empty; // Clear the loot name
-        lootSprite = null; // Clear the loot sprite
-        isFull = false; // Mark the slot as empty
-        lootImage.sprite = null; // Clear the image
-        lootImage.enabled = false; // Hide the image
+        //lootName = string.Empty; // Clear the loot name
+       // lootSprite = null; // Clear the loot sprite
+       // isFull = false; // Mark the slot as empty
+       // lootImage.sprite = null; // Clear the image
+        //lootImage.enabled = false; // Hide the image
     }
     
     // Start is called before the first frame update
