@@ -21,12 +21,13 @@ public class StatsUI : MonoBehaviour
         if(menuActivated && Input.GetKeyDown(KeyCode.U)){
             
             Time.timeScale = 1; //jch6 unpauses game when Inventory is selected
-            UpdateAllStats();
+            //UpdateAllStats();
             StatsPanel.SetActive(false);
             menuActivated = false;
         }
 
-        else if(!menuActivated && Input.GetKeyDown(KeyCode.U)){
+        else if(!menuActivated && Input.GetKeyDown(KeyCode.U))
+        {
             
             Time.timeScale = 0; //jch6 stops game when Inventory is opened
             UpdateAllStats();
@@ -41,11 +42,40 @@ public class StatsUI : MonoBehaviour
     }
 
     public void UpdateSpeed(){
-        statsSlots[0].GetComponentInChildren<TMP_Text>().text = "Speed: " + StatsManager.Instance.speed;
+        statsSlots[1].GetComponentInChildren<TMP_Text>().text = "Speed: " + StatsManager.Instance.speed;
+    }
+
+    public void UpdateHealth(){
+        statsSlots[2].GetComponentInChildren<TMP_Text>().text = "Health: " + StatsManager.Instance.maxHealth;
     }
 
     public void UpdateAllStats(){
         UpdateDamage();
         UpdateSpeed();
+        UpdateHealth();
+    }
+
+    public void IncreaseDamage(){
+        if (ExpManager.Instance.statPoint > 0){
+            StatsManager.Instance.damage += 1;
+            ExpManager.Instance.statPoint--;
+            UpdateDamage();
+        }
+    }
+
+    public void IncreaseSpeed(){
+        if (ExpManager.Instance.statPoint > 0){
+            StatsManager.Instance.speed += 1;
+            ExpManager.Instance.statPoint--;
+            UpdateSpeed();
+        }
+    }
+
+    public void IncreaseHealth(){
+        if (ExpManager.Instance.statPoint > 0){
+            StatsManager.Instance.maxHealth += 1;
+            ExpManager.Instance.statPoint--;
+            UpdateHealth();
+        }
     }
 }

@@ -6,6 +6,8 @@ using TMPro;
 
 public class ExpManager : MonoBehaviour
 {
+    public static ExpManager Instance;
+
     public int level;
     public int statPoint;
     public int currentExp;
@@ -13,17 +15,25 @@ public class ExpManager : MonoBehaviour
     public float expGrowthMultiplier = 1.2f;//jch6 increase amount of experience needed to level up after experience meets the full amount.
     public Slider expSlider; //jch6 UI slider for exp gain. 
     public TMP_Text currentLevelText;
-    //public TMP_Text statPointText; this is for stat point ui update
+    public TMP_Text statPointText;
 
+    private void Awake(){
+        if(Instance == null){
+            Instance = this;
+
+        } else {
+            Destroy(gameObject);
+        }
+    }
 
    private void Start(){
     UpdateUI();
    }
-   // private void Update(){
-        //if(Input.GetKeyDown(KeyCode.Return)){ //jch6 This is just to test if exp gain is working
-          //  GainExperience(2);//jch6 Change for enemy xp
-       // }
-   // }
+    private void Update(){
+        if(Input.GetKeyDown(KeyCode.Return)){ //jch6 This is just to test if exp gain is working
+           GainExperience(2);//jch6 Change for enemy xp
+        }
+    }
     public void GainExperience(int amount){ //jch6 player gain x amount experience becomes a level up
         currentExp += amount;
         if(currentExp >= expToLevelUp){ 
@@ -51,5 +61,6 @@ public class ExpManager : MonoBehaviour
         expSlider.maxValue = expToLevelUp;
         expSlider.value = currentExp;
         currentLevelText.text = "Level: " + level;
+        statPointText.text = "Stat Points: " + statPoint;
     }
 }
