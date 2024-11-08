@@ -2,40 +2,47 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class swordAttack : MonoBehaviour
+public class SwordAttack : MonoBehaviour
 {
-    public enum AttackDirection
-    {
-        down, up
-    }
-    public AttackDirection attackDirection;
-    Vector2 downAttackOffset;
-    Collider2D swordCollider;
+    public Collider2D swordCollider;
+    public float damage = 3;
+    Vector2 rightAttackOffset;
 
     private void Start()
     {
-        swordCollider = GetComponent<Collider2D>();
-        downAttackOffset = transform.position;
+        rightAttackOffset = transform.position;
     }
 
-    public void Attack()
+    public void AttackRight()
     {
-        switch(attackDirection)
-        {
-            case AttackDirection.down:
-                attackDown(); break; 
-        }
+        swordCollider.enabled = true;
+        transform.localPosition = rightAttackOffset;
     }
 
-    public void attackDown() {
+    public void AttackLeft()
+    {
         swordCollider.enabled = true;
-        transform.position = downAttackOffset;
+        transform.localPosition = new Vector3(rightAttackOffset.x * -1, rightAttackOffset.y);
     }
-   
-    //public void attackUp;
-    //public void attackRight;
-    //public void attackLeft;
-    public void StopAttack() {
+
+    public void StopAttack()
+    {
         swordCollider.enabled = false;
     }
+    /*
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Enemy")
+        {
+            // Deal damage to the enemy
+            Enemy enemy = other.GetComponent<Enemy>();
+
+            if (enemy != null)
+            {
+                enemy.Health -= damage;
+            }
+        }
+    }
+    */
 }
+
