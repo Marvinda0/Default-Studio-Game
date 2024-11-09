@@ -21,7 +21,18 @@ public class RoomTransition : MonoBehaviour
         // Check if the collider belongs to the player
         if (other.CompareTag("Player"))
         {
-            StartCoroutine(TransitionToRoom());
+            // Get the WaveSpawnnerScript instance to check if the room is complete
+            WaveSpawnnerScript waveSpawner = FindObjectOfType<WaveSpawnnerScript>();
+
+            if (waveSpawner != null && waveSpawner.isRoomComplete)
+            {
+                // If room is complete, start the transition
+                StartCoroutine(TransitionToRoom());
+            }
+            else
+            {
+                Debug.Log("Room not complete. Defeat all enemies first.");
+            }
         }
     }
 

@@ -4,16 +4,16 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
-[System.Serializable]
 
+[System.Serializable]
 public class Wave
 {
     public string waveName;
     public int NumberOfEnemies;
     public GameObject[] typesOfEnemies;
     public float spawnInterval;
-
 }
+
 public class WaveSpawnnerScript : MonoBehaviour
 {
     public Wave[] Waves;
@@ -23,23 +23,26 @@ public class WaveSpawnnerScript : MonoBehaviour
     public Animator animator;
     public Text waveName;
 
-    private Wave currentWave;
-    private int currentWaveNumber;
-    private float nextSpawnTime;
+    public bool isRoomComplete = false; // Track if room is complete
 
+    private Wave currentWave;
+    private int currentWaveNumber = 0;
+    private float nextSpawnTime;
+    private int remainingEnemiesInWave; // Counter for enemies in the current wave
     private int activeEnemies; // Counter for active enemies
+
     bool canSpawnEnemies = true;
 
     void Start()
     {
-        currentWave = Waves[currentWaveNumber];
+        InitializeWave();
     }
 
     private void Update()
     {
         SpawnWave();
 
-        // Check if all enemies are defeated and it's time to spawn the next wave
+        // Check if all enemies are defeated to spawn the next wave
         if (activeEnemies == 0 && !canSpawnEnemies && currentWaveNumber + 1 < Waves.Length)
         {
             spawnNextWave();
@@ -47,19 +50,26 @@ public class WaveSpawnnerScript : MonoBehaviour
         else if (activeEnemies == 0 && currentWaveNumber + 1 == Waves.Length)
         {
             // Room is done, final wave has been completed
+            OpenDoors();
         }
+    }
+
+    void InitializeWave()
+    {
+        currentWave = Waves[currentWaveNumber];
+        remainingEnemiesInWave = currentWave.NumberOfEnemies; // Set remaining enemies based on wave data
+        canSpawnEnemies = true;
     }
 
     void spawnNextWave()
     {
         currentWaveNumber++;
-        currentWave = Waves[currentWaveNumber];
-        canSpawnEnemies = true;
+        InitializeWave();
     }
 
     void SpawnWave()
     {
-        if (canSpawnEnemies && nextSpawnTime < Time.time)
+        if (canSpawnEnemies && nextSpawnTime < Time.time && remainingEnemiesInWave > 0)
         {
             GameObject randomEnemy = Instantiate(
                 currentWave.typesOfEnemies[Random.Range(0, currentWave.typesOfEnemies.Length)],
@@ -75,12 +85,12 @@ public class WaveSpawnnerScript : MonoBehaviour
             }
 
             activeEnemies++;
-            currentWave.NumberOfEnemies--;
+            remainingEnemiesInWave--; // Reduce remaining enemies in the current wave
             nextSpawnTime = Time.time + currentWave.spawnInterval;
 
-            if (currentWave.NumberOfEnemies == 0)
+            if (remainingEnemiesInWave == 0)
             {
-                canSpawnEnemies = false;
+                canSpawnEnemies = false; // Stop spawning when wave is complete
             }
         }
     }
@@ -89,6 +99,17 @@ public class WaveSpawnnerScript : MonoBehaviour
     public void OnEnemyDefeated()
     {
         activeEnemies--;
+
+        // Ensure we check if the room or wave is done each time an enemy dies
+        if (activeEnemies == 0 && currentWaveNumber + 1 == Waves.Length)
+        {
+            OpenDoors();
+        }
+    }
+
+    private void OpenDoors()
+    {
+        isRoomComplete = true; // Set the room as complete
+        Debug.Log("Room is complete. Doors are open!");
     }
 }
-
