@@ -5,18 +5,32 @@ using Pathfinding;
 
 public class RangedEnemyController : MonoBehaviour
 {
-    public GameObject player;               // Reference to the player
     public GameObject projectilePrefab;     // Reference to the projectile prefab
     public float attackRange = 5f;          // Distance within which the enemy will stop and shoot
     public float followRange = 10f;         // Distance for following the player
     public float fireRate = 1f;             // Delay between shots
 
     private AIPath aiPath;                  // AIPath component for movement
+    private Transform playerTransform;      // Reference to the player's transform
     private float nextFireTime;             // Time for the next shot
+    private AIDestinationSetter destinationSetter; // Reference to the destination setter
 
     void Start()
     {
         aiPath = GetComponent<AIPath>();
+        destinationSetter = GetComponent<AIDestinationSetter>();
+
+        // Find the player by tag and set as target
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            playerTransform = player.transform;
+            destinationSetter.target = playerTransform; // Set the player as the target
+        }
+        else
+        {
+            Debug.LogWarning("Player not found. Make sure the player has the 'Player' tag.");
+        }
     }
 
     void Update()
@@ -26,7 +40,9 @@ public class RangedEnemyController : MonoBehaviour
 
     void FollowOrAttack()
     {
-        float distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
+        if (playerTransform == null) return;
+
+        float distanceToPlayer = Vector2.Distance(transform.position, playerTransform.position);
 
         if (distanceToPlayer <= attackRange)
         {
@@ -39,7 +55,7 @@ public class RangedEnemyController : MonoBehaviour
         }
         else if (distanceToPlayer <= followRange)
         {
-            aiPath.canMove = true; // Follow player
+            aiPath.canMove = true; // Follow player within follow range
         }
         else
         {
@@ -53,7 +69,7 @@ public class RangedEnemyController : MonoBehaviour
         GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
 
         // Calculate direction to the player
-        Vector2 directionToPlayer = (player.transform.position - transform.position).normalized;
+        Vector2 directionToPlayer = (playerTransform.position - transform.position).normalized;
 
         // Set projectile direction
         projectile.GetComponent<Projectile>().SetDirection(directionToPlayer);

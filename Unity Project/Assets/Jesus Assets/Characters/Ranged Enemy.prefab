@@ -292,8 +292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc73b295970de8849a7bd5e3d0b10fd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  projectilePrefab: {fileID: 0}
+  projectilePrefab: {fileID: 3232248416625360096, guid: cd3aa4ef6721dbd4181024ba1a689a44, type: 3}
   attackRange: 0.6
   followRange: 10
   fireRate: 1
