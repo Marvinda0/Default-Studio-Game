@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 [System.Serializable]
 
 public class Wave
@@ -17,22 +18,38 @@ public class WaveSpawnnerScript : MonoBehaviour
     public Wave[] Waves;
     public Transform[] spawnPoints;
 
+    public Animator animator;
+    public Text waveName;
+
     private Wave currentWave;
     private int curretnWaveNumber;
     private float nextSpawnTime;
 
     bool canSpawnEnemies = true;
+
     void Start()
     {
         
     }
-
-    // Update is called once per frame
     private void Update()
     {
         currentWave = Waves[curretnWaveNumber];
         SpawnWave();
+        GameObject[] totalEnemies = GameObject.FindGameObjectsWithTag("Enemy");
+        if (totalEnemies.Length == 0 && !canSpawnEnemies && curretnWaveNumber+1 != Waves.Length)
+        {
+            waveName.text = Waves[curretnWaveNumber + 1].waveName;
+            animator.SetTrigger("WaveComplete");
+            spawnNextWave();
+        }
     }
+
+    void spawnNextWave()
+    {
+        curretnWaveNumber++;
+        canSpawnEnemies = true;
+    }
+
     void SpawnWave()
     {
         if (canSpawnEnemies && nextSpawnTime < Time.time)
