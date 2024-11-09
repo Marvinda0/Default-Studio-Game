@@ -1,3 +1,4 @@
+using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -17,36 +18,42 @@ public class WaveSpawnnerScript : MonoBehaviour
 {
     public Wave[] Waves;
     public Transform[] spawnPoints;
+    public Transform playerTransform;
 
     public Animator animator;
     public Text waveName;
 
     private Wave currentWave;
-    private int curretnWaveNumber;
+    private int currentWaveNumber;
     private float nextSpawnTime;
 
+    private int activeEnemies; // Counter for active enemies
     bool canSpawnEnemies = true;
 
     void Start()
     {
-        
+        currentWave = Waves[currentWaveNumber];
     }
+
     private void Update()
     {
-        currentWave = Waves[curretnWaveNumber];
         SpawnWave();
-        GameObject[] totalEnemies = GameObject.FindGameObjectsWithTag("Enemy");
-        if (totalEnemies.Length == 0 && !canSpawnEnemies && curretnWaveNumber+1 != Waves.Length)
+
+        // Check if all enemies are defeated and it's time to spawn the next wave
+        if (activeEnemies == 0 && !canSpawnEnemies && currentWaveNumber + 1 < Waves.Length)
         {
-            waveName.text = Waves[curretnWaveNumber + 1].waveName;
-            animator.SetTrigger("WaveComplete");
             spawnNextWave();
+        }
+        else if (activeEnemies == 0 && currentWaveNumber + 1 == Waves.Length)
+        {
+            // Room is done, final wave has been completed
         }
     }
 
     void spawnNextWave()
     {
-        curretnWaveNumber++;
+        currentWaveNumber++;
+        currentWave = Waves[currentWaveNumber];
         canSpawnEnemies = true;
     }
 
@@ -54,16 +61,34 @@ public class WaveSpawnnerScript : MonoBehaviour
     {
         if (canSpawnEnemies && nextSpawnTime < Time.time)
         {
-            GameObject RandomEnemy = currentWave.typesOfEnemies[Random.Range(0, currentWave.typesOfEnemies.Length)];
-            Transform randomSpawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
-            Instantiate(RandomEnemy, randomSpawnPoint.position, Quaternion.identity);
+            GameObject randomEnemy = Instantiate(
+                currentWave.typesOfEnemies[Random.Range(0, currentWave.typesOfEnemies.Length)],
+                spawnPoints[Random.Range(0, spawnPoints.Length)].position,
+                Quaternion.identity
+            );
+
+            // Set the player's transform as the target
+            AIDestinationSetter destinationSetter = randomEnemy.GetComponent<AIDestinationSetter>();
+            if (destinationSetter != null)
+            {
+                destinationSetter.target = playerTransform; // Set the player as the target
+            }
+
+            activeEnemies++;
             currentWave.NumberOfEnemies--;
             nextSpawnTime = Time.time + currentWave.spawnInterval;
+
             if (currentWave.NumberOfEnemies == 0)
             {
-                canSpawnEnemies=false;
+                canSpawnEnemies = false;
             }
         }
-        
+    }
+
+    // Method to decrease active enemies when an enemy is defeated or destroyed
+    public void OnEnemyDefeated()
+    {
+        activeEnemies--;
     }
 }
+

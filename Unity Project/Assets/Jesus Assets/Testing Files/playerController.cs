@@ -46,17 +46,32 @@ public class playerController : MonoBehaviour
             animator.SetBool("is-moving", false);
         }
     }
-        private bool TryMove(Vector2 direction)
-        {
-            int count = rb.Cast(direction, movementFilter, castCollisions, moveSpeed * Time.fixedDeltaTime + collissionOffset);
+    private bool TryMove(Vector2 direction)
+    {
+        // Cast to detect any obstacles in the direction of movement
+        int count = rb.Cast(direction, movementFilter, castCollisions, moveSpeed * Time.fixedDeltaTime + collissionOffset);
 
-            if (count == 0)
+        // Filter out collisions with enemies
+        for (int i = castCollisions.Count - 1; i >= 0; i--)
+        {
+            if (castCollisions[i].collider.CompareTag("Enemy"))
             {
-                rb.MovePosition(rb.position + direction * moveSpeed * Time.fixedDeltaTime);
-                return true;
-            } else { return false; }
+                castCollisions.RemoveAt(i);
+            }
         }
-    
+
+        // If there are no remaining obstacles, move
+        if (castCollisions.Count == 0)
+        {
+            rb.MovePosition(rb.position + direction * moveSpeed * Time.fixedDeltaTime);
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     void OnMove(InputValue movementValue) {
         movementInput = movementValue.Get<Vector2>();
     }

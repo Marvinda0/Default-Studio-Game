@@ -63,7 +63,7 @@ AnimatorController:
   m_Name: WaveSpawnner
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: Room Complete
+  - m_Name: WaveComplete
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -162,7 +162,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: Room Complete
+    m_ConditionEvent: WaveComplete
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -587351021304833839}
