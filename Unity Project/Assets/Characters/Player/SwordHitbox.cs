@@ -21,21 +21,21 @@ public class SwordHitbox : MonoBehaviour
         IDamageable damagableObject = collider.GetComponent<IDamageable>();
 
         if(damagableObject != null) {
-            // Calculate Direction between character and slime
+            
             Vector3 parentPosition = transform.parent.position;
 
-            // Offset for collision detection changes the direction where the force comes from (close to the player)
+            
             Vector2 direction = (collider.transform.position - parentPosition).normalized;
 
-            // Knockback is in direction of swordCollider towards collider
+            
             Vector2 knockback = direction * knockbackForce;
 
-            // After making sure the collider has a script that implements IDamagable, we can run the OnHit implementation and pass our Vector2 force
+            
             damagableObject.OnHit(swordDamage, knockback);
         }
     }
 
-    // Keep collider offset to 0 so that a flip to the left and a flip to the right have the same distance from the transform
+    
     void IsFacingRight(bool isFacingRight) {
         if(isFacingRight) {
             gameObject.transform.localPosition = faceRight;

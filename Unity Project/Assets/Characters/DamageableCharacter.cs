@@ -20,11 +20,11 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
     
     public float Health {
         set {
-            // When health is dropped (new value less than old value), play hit animation and show damage taken as text
+            
             if(value < _health) {
                 animator.SetTrigger("hit");
 
-                // Spawn damage text right above the character
+                
                 HealthText healthTextInstance = Instantiate(healthText).GetComponent<HealthText>();
                 RectTransform textTransform = healthTextInstance.GetComponent<RectTransform>();
                 textTransform.transform.position = Camera.main.WorldToScreenPoint(gameObject.transform.position);
@@ -76,7 +76,7 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
     public void Start(){
         animator = GetComponent<Animator>();
 
-        // Make sure the slime is alive at the start of it's script
+        
         animator.SetBool("isAlive", isAlive);
 
         rb = GetComponent<Rigidbody2D>();
@@ -99,12 +99,11 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
         if(!Invincible) {
             Health -= damage;
 
-            // Apply force to the slime
-            // Impulse for instantaneous forces
+            
             rb.AddForce(knockback, ForceMode2D.Impulse);
 
             if(canTurnInvincible) {
-                // Activate invincibility and timer 
+                
                 Invincible = true;
             }
         }
@@ -117,7 +116,7 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
             Health -= damage;
 
             if(canTurnInvincible) {
-                // Activate invincibility and timer 
+                 
                 Invincible = true;
             }
         }

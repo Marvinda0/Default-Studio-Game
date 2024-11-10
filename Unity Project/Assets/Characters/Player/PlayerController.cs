@@ -20,10 +20,10 @@ public class PlayerController : MonoBehaviour
 
     public float moveSpeed = 1250f;
 
-    // Drag when player is moving around the level
+    
     public float moveDrag = 15f;
     
-    // Drag when player is not able or trying to move
+    
     public float stopDrag = 25f;
 
     public bool canAttack = true;
@@ -51,11 +51,11 @@ public class PlayerController : MonoBehaviour
         
         if(canMove == true && moveInput != Vector2.zero) {
 
-            // Move animation and add velocity
-            // Accelerate the player while run direction is pressed (limited by rigidbody linear drag)
+            
+            
             rb.AddForce(moveInput * moveSpeed * Time.fixedDeltaTime, ForceMode2D.Force);
 
-            // Control whether looking left or right
+            
             if(moveInput.x > 0) {
                 spriteRenderer.flipX = false;
                 gameObject.BroadcastMessage("IsFacingRight", true);
@@ -72,12 +72,12 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    // Get input values for player movement
+    
     void OnMove(InputValue value) {
         moveInput = value.Get<Vector2>();
     }
 
-    // Play Attack animation and try to do damage
+    
     void OnFire() {
         if(canAttack) {
             animator.SetTrigger(attackAnimName);
