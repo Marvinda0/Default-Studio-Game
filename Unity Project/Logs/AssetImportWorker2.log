@@ -1,0 +1,354 @@
+Using pre-set license
+Built from '2022.3/staging' branch; Version is '2022.3.46f1 (8e9b8558c41a) revision 9345925'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 11  (10.0.22631) 64bit Professional' Language: 'en' Physical Memory: 15770 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2022.3.46f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker2
+-projectPath
+C:/Users/jesus/OneDrive/Documents/GitHub/Default-Studio-Game/Unity Project
+-logFile
+Logs/AssetImportWorker2.log
+-srvPort
+58464
+Successfully changed project path to: C:/Users/jesus/OneDrive/Documents/GitHub/Default-Studio-Game/Unity Project
+C:/Users/jesus/OneDrive/Documents/GitHub/Default-Studio-Game/Unity Project
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [54768]  Target information:
+
+Player connection [54768]  * "[IP] 172.30.64.1 [Port] 0 [Flags] 2 [Guid] 71506047 [EditorId] 71506047 [Version] 1048832 [Id] WindowsEditor(7,WhiteMarvineta) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [54768]  * "[IP] 192.168.56.1 [Port] 0 [Flags] 2 [Guid] 71506047 [EditorId] 71506047 [Version] 1048832 [Id] WindowsEditor(7,WhiteMarvineta) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [54768]  * "[IP] 10.202.27.251 [Port] 0 [Flags] 2 [Guid] 71506047 [EditorId] 71506047 [Version] 1048832 [Id] WindowsEditor(7,WhiteMarvineta) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [54768] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [54768] Host joined alternative multi-casting on [225.0.0.222:34997]...
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+Refreshing native plugins compatible for Editor in 44.79 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2022.3.46f1 (8e9b8558c41a)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.46f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/jesus/OneDrive/Documents/GitHub/Default-Studio-Game/Unity Project/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: AMD Radeon(TM) Graphics (ID=0x1638)
+    Vendor:   ATI
+    VRAM:     7885 MB
+    Driver:   31.0.14057.2005
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.46f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.46f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.46f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56752
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.46f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.015255 seconds.
+- Loaded All Assemblies, in  0.582 seconds
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.431 seconds
+Domain Reload Profiling: 1008ms
+	BeginReloadAssembly (183ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (67ms)
+	RebuildNativeTypeToScriptingClass (17ms)
+	initialDomainReloadingComplete (109ms)
+	LoadAllAssembliesAndSetupDomain (200ms)
+		LoadAssemblies (177ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (197ms)
+			TypeCache.Refresh (195ms)
+				TypeCache.ScanAssembly (176ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (431ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (361ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (16ms)
+			SetLoadedEditorAssemblies (12ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (3ms)
+			ProcessInitializeOnLoadAttributes (244ms)
+			ProcessInitializeOnLoadMethodAttributes (86ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+========================================================================
+Worker process is ready to serve import requests
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  1.255 seconds
+Native extension for WindowsStandalone target not found
+Package Manager log level set to [2]
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.297 seconds
+Domain Reload Profiling: 2543ms
+	BeginReloadAssembly (265ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (9ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (40ms)
+	RebuildCommonClasses (45ms)
+	RebuildNativeTypeToScriptingClass (13ms)
+	initialDomainReloadingComplete (74ms)
+	LoadAllAssembliesAndSetupDomain (849ms)
+		LoadAssemblies (659ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (338ms)
+			TypeCache.Refresh (282ms)
+				TypeCache.ScanAssembly (251ms)
+			ScanForSourceGeneratedMonoScriptInfo (40ms)
+			ResolveRequiredComponents (13ms)
+	FinalizeReload (1298ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (1038ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (13ms)
+			SetLoadedEditorAssemblies (6ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (143ms)
+			ProcessInitializeOnLoadAttributes (795ms)
+			ProcessInitializeOnLoadMethodAttributes (62ms)
+			AfterProcessingInitializeOnLoad (19ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (12ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.20 seconds
+Refreshing native plugins compatible for Editor in 17.86 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4727 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 48 unused Assets / (131.0 KB). Loaded Objects now: 5199.
+Memory consumption went from 160.2 MB to 160.1 MB.
+Total: 5.716800 ms (FindLiveObjects: 0.470800 ms CreateObjectMapping: 0.292300 ms MarkObjects: 4.713600 ms  DeleteObjects: 0.238600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:scripting/monoscript/fileName/WaveSpawnnerScript.cs: 292241c8ce448e9046c13da7e324a9cb -> 99b4b92bc58c4b65933256c99ffecbb0
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 370232.370536 seconds.
+  path: Assets/Jesus Assets/Testing Files/Art/sprites/tilesets/TIles
+  artifactKey: Guid(58d17711cc7d66d4c9cbf41bd3b48421) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Jesus Assets/Testing Files/Art/sprites/tilesets/TIles using Guid(58d17711cc7d66d4c9cbf41bd3b48421) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '8f8efbb91dacd0f22f9130f9e395b6d6') in 0.002976 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.080748 seconds.
+  path: Assets/Jesus Assets/Testing Files/Art/sprites/tilesets/TIles/decor_16x16_0.asset
+  artifactKey: Guid(0fe105ea23b9fb54f9abaec46e5d5ddf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Jesus Assets/Testing Files/Art/sprites/tilesets/TIles/decor_16x16_0.asset using Guid(0fe105ea23b9fb54f9abaec46e5d5ddf) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '00eb622da5ec46acea8fb735b6beb89b') in 0.111362 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Jesus Assets/Testing Files/Art/sprites/tilesets/TIles/fences_2.asset
+  artifactKey: Guid(b5e38fca07f29514e80cc988b3e11cc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Jesus Assets/Testing Files/Art/sprites/tilesets/TIles/fences_2.asset using Guid(b5e38fca07f29514e80cc988b3e11cc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '37124d2a8f67c2efa2b18ed3c2fb316d') in 0.009577 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Jesus Assets/Testing Files/Art/sprites/tilesets/TIles/decor_16x16_5.asset
+  artifactKey: Guid(8b94f135f708b5e479240878ca2ed181) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Jesus Assets/Testing Files/Art/sprites/tilesets/TIles/decor_16x16_5.asset using Guid(8b94f135f708b5e479240878ca2ed181) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '82a0c4a8a58fe350369ff524ac8f636f') in 0.012340 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000052 seconds.
+  path: Assets/Jesus Assets/Testing Files/Art/sprites/tilesets/TIles/decor_16x16_10.asset
+  artifactKey: Guid(4463c6144086bdf41a05ef8421e0150f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Jesus Assets/Testing Files/Art/sprites/tilesets/TIles/decor_16x16_10.asset using Guid(4463c6144086bdf41a05ef8421e0150f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '0f8d7189bb47a791b7fe447905bb51b6') in 0.016119 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.483498 seconds.
+  path: Assets/Jesus Assets/Testing Files/Art/sprites/tilesets/TIles/fences_8.asset
+  artifactKey: Guid(523f37e91a27c3748a7f3075af4e51e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Jesus Assets/Testing Files/Art/sprites/tilesets/TIles/fences_8.asset using Guid(523f37e91a27c3748a7f3075af4e51e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '194771316c2fc2b8bb7c830cf185f64c') in 0.011673 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Jesus Assets/Testing Files/Art/sprites/tilesets/TIles/grass.asset
+  artifactKey: Guid(9a51be373bb76944abcae37160ea8e42) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Jesus Assets/Testing Files/Art/sprites/tilesets/TIles/grass.asset using Guid(9a51be373bb76944abcae37160ea8e42) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '22bc23baf030dea37f2e32ab8d7a8a0d') in 0.010729 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.313566 seconds.
+  path: Assets/Jesus Assets/Testing Files/Art/sprites/tilesets/TIles/plains_0.asset
+  artifactKey: Guid(0e97a9ca39f5ffc449ccf8c90909e78e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Jesus Assets/Testing Files/Art/sprites/tilesets/TIles/plains_0.asset using Guid(0e97a9ca39f5ffc449ccf8c90909e78e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '610caa4c7624f93704127a2c720665b8') in 0.017245 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Jesus Assets/Testing Files/Art/sprites/tilesets/TIles/plains_7.asset
+  artifactKey: Guid(768d5b1ab5059094a8525471f77a60ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Jesus Assets/Testing Files/Art/sprites/tilesets/TIles/plains_7.asset using Guid(768d5b1ab5059094a8525471f77a60ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'fcdfa814d7dc24eb387a7b0fdcd2a88e') in 0.008211 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.013564 seconds.
+  path: Assets/Jesus Assets/Testing Files/Art/sprites/tilesets/TIles/plains_9.asset
+  artifactKey: Guid(42dba9b422d96934eb6cf7217f9c74a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Jesus Assets/Testing Files/Art/sprites/tilesets/TIles/plains_9.asset using Guid(42dba9b422d96934eb6cf7217f9c74a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '6dccbdfb5c51323d8fedf7c2209dcbad') in 0.008764 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Jesus Assets/Testing Files/Art/sprites/tilesets/TIles/plains_17.asset
+  artifactKey: Guid(e72eca7afb3f74b47984c945885b9a03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Jesus Assets/Testing Files/Art/sprites/tilesets/TIles/plains_17.asset using Guid(e72eca7afb3f74b47984c945885b9a03) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '7f0e12e99c1fa1bdd47be7bcaf044a26') in 0.008497 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000051 seconds.
+  path: Assets/Jesus Assets/Testing Files/Art/sprites/tilesets/TIles/plains_13.asset
+  artifactKey: Guid(ecc3054f7e1525146b2404b85d028237) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Jesus Assets/Testing Files/Art/sprites/tilesets/TIles/plains_13.asset using Guid(ecc3054f7e1525146b2404b85d028237) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '3ca5eedc4b3651de5e86e00c3fd562c7') in 0.012729 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.235164 seconds.
+  path: Assets/Jesus Assets/Testing Files/Art/sprites/tilesets/TIles/plains_18.asset
+  artifactKey: Guid(8d25754360edf0d43b83e7dbbb4cd8f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Jesus Assets/Testing Files/Art/sprites/tilesets/TIles/plains_18.asset using Guid(8d25754360edf0d43b83e7dbbb4cd8f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'd34cfddf81df910a17f2ad0a274facc6') in 0.016014 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Jesus Assets/Testing Files/Art/sprites/tilesets/TIles/plains_25.asset
+  artifactKey: Guid(316eb44772788a544b65aaba727ac88c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Jesus Assets/Testing Files/Art/sprites/tilesets/TIles/plains_25.asset using Guid(316eb44772788a544b65aaba727ac88c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'd1c86790a30380ad27bd052295fc66b5') in 0.007467 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.304863 seconds.
+  path: Assets/Jesus Assets/Testing Files/Art/sprites/tilesets/TIles/plains_27.asset
+  artifactKey: Guid(30b5dde0c56bb184c91c8b71ff480d68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Jesus Assets/Testing Files/Art/sprites/tilesets/TIles/plains_27.asset using Guid(30b5dde0c56bb184c91c8b71ff480d68) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '4d0f6a17dd490f1aa143e3dbb422a3d0') in 0.015446 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Jesus Assets/Testing Files/Art/sprites/tilesets/TIles/plains_31.asset
+  artifactKey: Guid(5f2e8922342aac54a9b2aa56bd8ca41f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Jesus Assets/Testing Files/Art/sprites/tilesets/TIles/plains_31.asset using Guid(5f2e8922342aac54a9b2aa56bd8ca41f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'dd4ed6c43b516c6be57f919997225186') in 0.008442 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.029702 seconds.
+  path: Assets/Jesus Assets/Testing Files/Art/sprites/tilesets/TIles/plains_36.asset
+  artifactKey: Guid(89d81b3ed32ff954ebfc6ce81cb0820a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Jesus Assets/Testing Files/Art/sprites/tilesets/TIles/plains_36.asset using Guid(89d81b3ed32ff954ebfc6ce81cb0820a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'f67081a6f95ed3f5feaecece0fce7c70') in 0.013307 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Jesus Assets/Testing Files/Art/sprites/tilesets/TIles/plains_41.asset
+  artifactKey: Guid(ed84af1f7503c3c418039bdc7b6ccaad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Jesus Assets/Testing Files/Art/sprites/tilesets/TIles/plains_41.asset using Guid(ed84af1f7503c3c418039bdc7b6ccaad) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '6ad192a56e4f6f1fcab92bd5914750b8') in 0.007759 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: The I/O operation has been aborted because of either a thread exit or an application request.
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

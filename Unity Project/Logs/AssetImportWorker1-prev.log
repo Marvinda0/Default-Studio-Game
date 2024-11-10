@@ -1,0 +1,259 @@
+Using pre-set license
+Built from '2022.3/staging' branch; Version is '2022.3.46f1 (8e9b8558c41a) revision 9345925'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 11  (10.0.22631) 64bit Professional' Language: 'en' Physical Memory: 15770 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2022.3.46f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker1
+-projectPath
+C:/Users/jesus/OneDrive/Documents/GitHub/Default-Studio-Game/Unity Project
+-logFile
+Logs/AssetImportWorker1.log
+-srvPort
+63365
+Successfully changed project path to: C:/Users/jesus/OneDrive/Documents/GitHub/Default-Studio-Game/Unity Project
+C:/Users/jesus/OneDrive/Documents/GitHub/Default-Studio-Game/Unity Project
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [25084]  Target information:
+
+Player connection [25084]  * "[IP] 172.30.64.1 [Port] 0 [Flags] 2 [Guid] 2106730344 [EditorId] 2106730344 [Version] 1048832 [Id] WindowsEditor(7,WhiteMarvineta) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [25084]  * "[IP] 192.168.56.1 [Port] 0 [Flags] 2 [Guid] 2106730344 [EditorId] 2106730344 [Version] 1048832 [Id] WindowsEditor(7,WhiteMarvineta) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [25084]  * "[IP] 10.202.27.251 [Port] 0 [Flags] 2 [Guid] 2106730344 [EditorId] 2106730344 [Version] 1048832 [Id] WindowsEditor(7,WhiteMarvineta) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [25084] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [25084] Host joined alternative multi-casting on [225.0.0.222:34997]...
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+Refreshing native plugins compatible for Editor in 22.86 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2022.3.46f1 (8e9b8558c41a)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.46f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/jesus/OneDrive/Documents/GitHub/Default-Studio-Game/Unity Project/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: AMD Radeon(TM) Graphics (ID=0x1638)
+    Vendor:   ATI
+    VRAM:     7885 MB
+    Driver:   31.0.14057.2005
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.46f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.46f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.46f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56440
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.46f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.010920 seconds.
+- Loaded All Assemblies, in  0.499 seconds
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.361 seconds
+Domain Reload Profiling: 857ms
+	BeginReloadAssembly (172ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (44ms)
+	RebuildNativeTypeToScriptingClass (14ms)
+	initialDomainReloadingComplete (80ms)
+	LoadAllAssembliesAndSetupDomain (186ms)
+		LoadAssemblies (167ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (183ms)
+			TypeCache.Refresh (181ms)
+				TypeCache.ScanAssembly (165ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (361ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (300ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (13ms)
+			SetLoadedEditorAssemblies (9ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (3ms)
+			ProcessInitializeOnLoadAttributes (203ms)
+			ProcessInitializeOnLoadMethodAttributes (72ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+========================================================================
+Worker process is ready to serve import requests
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  1.169 seconds
+Native extension for WindowsStandalone target not found
+Package Manager log level set to [2]
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.069 seconds
+Domain Reload Profiling: 2228ms
+	BeginReloadAssembly (211ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (8ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (35ms)
+	RebuildCommonClasses (47ms)
+	RebuildNativeTypeToScriptingClass (14ms)
+	initialDomainReloadingComplete (64ms)
+	LoadAllAssembliesAndSetupDomain (822ms)
+		LoadAssemblies (671ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (270ms)
+			TypeCache.Refresh (224ms)
+				TypeCache.ScanAssembly (201ms)
+			ScanForSourceGeneratedMonoScriptInfo (34ms)
+			ResolveRequiredComponents (10ms)
+	FinalizeReload (1070ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (853ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (10ms)
+			SetLoadedEditorAssemblies (6ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (116ms)
+			ProcessInitializeOnLoadAttributes (651ms)
+			ProcessInitializeOnLoadMethodAttributes (56ms)
+			AfterProcessingInitializeOnLoad (14ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (10ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.13 seconds
+Refreshing native plugins compatible for Editor in 11.84 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4713 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 48 unused Assets / (131.3 KB). Loaded Objects now: 5185.
+Memory consumption went from 156.1 MB to 156.0 MB.
+Total: 6.078100 ms (FindLiveObjects: 0.589600 ms CreateObjectMapping: 0.231400 ms MarkObjects: 4.986000 ms  DeleteObjects: 0.268800 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:scripting/monoscript/fileName/ProjectileScript.cs: 544a57cf265c3b2e5e8c144813c5e1ad -> 5516e8a450d0b07e85069518e074fad4
+  custom:scripting/monoscript/fileName/RangedMovement.cs: 5a9a8d07d614faaf9577d88672074147 -> de4908785005dadabd438c68a1c3459a
+  custom:scripting/monoscript/fileName/RoomTransitionScript.cs: e8183a3dc6e905726f604f4c74a98aa7 -> 12d5d9efb8f71552c287dfb04a771db4
+  custom:scripting/monoscript/fileName/AIHealthSystem.cs: d00610685a91342f9151eed838e1c82d -> e2a1cdb74e30e4c495dd7fd5a382349e
+  custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:scripting/monoscript/fileName/playerController.cs: 40d00bf6d4bbd5908a7f66f01b21710e -> 8a36541facae464d3638fd14fa5b7208
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:scripting/monoscript/fileName/AIChase.cs: c78f539290bee4c4bdc5998455989dcd -> ee39173e4d2675aeb306be93851c5491
+  custom:scripting/monoscript/fileName/AIMeleeDamage.cs: e9c7511033c476f1df122088c89a51d2 -> 393e606599c6e6a5dc8f4e77d3506dae
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:scripting/monoscript/fileName/swordAttack.cs: a99674a0deb38a98e41bcb7ab88ceb11 -> bba7041651ec86c5ddafdd0da0aafcad
+========================================================================
+Received Import Request.
+  Time since last request: 266353.978609 seconds.
+  path: Assets/Jesus Assets/Characters/Player/Player.prefab
+  artifactKey: Guid(3a6bba4bdf0f3984fa6ea3917ca3a2d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Jesus Assets/Characters/Player/Player.prefab using Guid(3a6bba4bdf0f3984fa6ea3917ca3a2d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '1b09a9062c6bbad71e592e3daec707de') in 0.142406 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 47
+========================================================================
+Received Import Request.
+  Time since last request: 11.170777 seconds.
+  path: Assets/Jesus Assets/Testing Files/Art/sprites/objects/chest_02.png
+  artifactKey: Guid(fd9f44b4111f1b044b42f314e0c138fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Jesus Assets/Testing Files/Art/sprites/objects/chest_02.png using Guid(fd9f44b4111f1b044b42f314e0c138fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'c53b3faf795f596b82c25c901c3ffc68') in 0.032421 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Jesus Assets/Testing Files/Art/sprites/objects/objects.png
+  artifactKey: Guid(efd3742005c24e0439c835da7004254c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Jesus Assets/Testing Files/Art/sprites/objects/objects.png using Guid(efd3742005c24e0439c835da7004254c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'ecbacf27b241ffa1dc6b2d0685d89fff') in 0.012065 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Jesus Assets/Testing Files/Art/sprites/objects/rock_in_water_01-sheet.png
+  artifactKey: Guid(b2225f1c07dc84f48bb7826b5f68cbfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Jesus Assets/Testing Files/Art/sprites/objects/rock_in_water_01-sheet.png using Guid(b2225f1c07dc84f48bb7826b5f68cbfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'e44989a87292af6e26f7743dcc179072') in 0.009032 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.034174 seconds.
+  path: Assets/Jesus Assets/Testing Files/Art/sprites/objects/rock_in_water_03.png
+  artifactKey: Guid(f41d6ed4b1c46de41adbe2e788223296) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Jesus Assets/Testing Files/Art/sprites/objects/rock_in_water_03.png using Guid(f41d6ed4b1c46de41adbe2e788223296) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'f6ff3a9bd0a595008267bce5ac36da37') in 0.019516 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Jesus Assets/Testing Files/Art/sprites/objects/rock_in_water_06.png
+  artifactKey: Guid(3de20d837b2e6594fb64b8bd37220b62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Jesus Assets/Testing Files/Art/sprites/objects/rock_in_water_06.png using Guid(3de20d837b2e6594fb64b8bd37220b62) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '53e5eee6ce06035e7290797a7964e2f0') in 0.017996 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 3
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: The I/O operation has been aborted because of either a thread exit or an application request.
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
