@@ -75,3 +75,4 @@ public class RangedEnemyController : MonoBehaviour
         projectile.GetComponent<Projectile>().SetDirection(directionToPlayer);
     }
 }
+    
