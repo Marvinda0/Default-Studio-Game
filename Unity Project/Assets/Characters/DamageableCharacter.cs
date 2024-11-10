@@ -12,83 +12,117 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
     Animator animator;
     Rigidbody2D rb;
     Collider2D physicsCollider;
-    
+
     bool isAlive = true;
     private float invincibleTimeElapsed = 0f;
     private Canvas sceneCanvas;
 
-    
-    public float Health {
-        set {
-            
-            if(value < _health) {
-                animator.SetTrigger("hit");
+    public float Health
+    {
+        set
+        {
+            if (value < _health)
+            {
+                // Check if the animator is available before setting the trigger
+                if (animator != null)
+                {
+                    animator.SetTrigger("hit");
+                }
+                else
+                {
+                    Debug.LogWarning("Animator component is missing on " + gameObject.name);
+                }
 
-                
                 HealthText healthTextInstance = Instantiate(healthText).GetComponent<HealthText>();
                 RectTransform textTransform = healthTextInstance.GetComponent<RectTransform>();
                 textTransform.transform.position = Camera.main.WorldToScreenPoint(gameObject.transform.position);
 
                 textTransform.SetParent(sceneCanvas.transform);
                 healthTextInstance.textMesh.text = (_health - value).ToString();
-                
             }
 
             _health = value;
 
-            if(_health <= 0) {
-                animator.SetBool("isAlive", false);
+            if (_health <= 0)
+            {
+                // Check if the animator is available before setting the "isAlive" boolean
+                if (animator != null)
+                {
+                    animator.SetBool("isAlive", false);
+                }
+                else
+                {
+                    Debug.LogWarning("Animator component is missing on " + gameObject.name);
+                }
+
                 Targetable = false;
             }
         }
-        get {
+        get
+        {
             return _health;
         }
     }
 
-    public bool Targetable { get { return _targetable; }
-    set {
-        _targetable = value;
+    public bool Targetable
+    {
+        get { return _targetable; }
+        set
+        {
+            _targetable = value;
 
-        if(disableSimulation) {
-            rb.simulated = false;
+            if (disableSimulation)
+            {
+                rb.simulated = false;
+            }
+
+            physicsCollider.enabled = value;
         }
+    }
 
-        physicsCollider.enabled = value;
-    } }
+    public bool Invincible
+    {
+        get { return _invincible; }
+        set
+        {
+            _invincible = value;
 
-    public bool Invincible { get {
-        return _invincible;
-     }
-     set {
-        _invincible = value;
-
-        if(_invincible == true) {
-            invincibleTimeElapsed = 0f;
+            if (_invincible == true)
+            {
+                invincibleTimeElapsed = 0f;
+            }
         }
-     } }
+    }
 
     public float _health = 3;
     public bool _targetable = true;
-
     public bool _invincible = false;
 
-    public void Start(){
+    public void Start()
+    {
         animator = GetComponent<Animator>();
 
-        
-        animator.SetBool("isAlive", isAlive);
+        if (animator != null)
+        {
+            animator.SetBool("isAlive", isAlive);
+        }
+        else
+        {
+            Debug.LogWarning("Animator component is missing on " + gameObject.name);
+        }
 
         rb = GetComponent<Rigidbody2D>();
         physicsCollider = GetComponent<Collider2D>();
 
-        if(healthText == null) {
+        if (healthText == null)
+        {
             Debug.LogWarning("Health text prefab is not set on " + gameObject.name);
         }
-        
+
         sceneCanvas = GameObject.FindObjectOfType<Canvas>();
 
-        if(sceneCanvas == null) {
+        if (sceneCanvas == null)
+        {
             Debug.LogWarning("No canvas object found in scene by " + gameObject.name);
         }
     }
@@ -96,27 +130,27 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
     /// Take damage with knockback
     public void OnHit(float damage, Vector2 knockback)
     {
-        if(!Invincible) {
+        if (!Invincible)
+        {
             Health -= damage;
-
-            
             rb.AddForce(knockback, ForceMode2D.Impulse);
 
-            if(canTurnInvincible) {
-                
+            if (canTurnInvincible)
+            {
                 Invincible = true;
             }
         }
     }
 
-    /// Take damage without knocback
+    /// Take damage without knockback
     public void OnHit(float damage)
     {
-        if(!Invincible) {
+        if (!Invincible)
+        {
             Health -= damage;
 
-            if(canTurnInvincible) {
-                 
+            if (canTurnInvincible)
+            {
                 Invincible = true;
             }
         }
@@ -127,11 +161,14 @@ public class DamageableCharacter : MonoBehaviour, IDamageable
         Destroy(gameObject);
     }
 
-    public void FixedUpdate() {
-        if(Invincible) {
+    public void FixedUpdate()
+    {
+        if (Invincible)
+        {
             invincibleTimeElapsed += Time.deltaTime;
 
-            if(invincibleTimeElapsed > invincibilityTime) {
+            if (invincibleTimeElapsed > invincibilityTime)
+            {
                 Invincible = false;
             }
         }
