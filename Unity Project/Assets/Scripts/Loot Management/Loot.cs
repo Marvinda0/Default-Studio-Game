@@ -7,6 +7,8 @@ public class Loot : ScriptableObject
 {
     
     public Sprite lootSprite;
+
+    public Sprite lootIcon;
     public string lootName;
     public int dropChance;
 
