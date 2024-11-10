@@ -12,15 +12,12 @@ GameObject:
   - component: {fileID: 2149417218295174744}
   - component: {fileID: 2381651709365152298}
   - component: {fileID: 8192278122166672854}
-  - component: {fileID: 1810868354739797415}
-  - component: {fileID: -8387906336255756160}
   - component: {fileID: 4229802418481570286}
   - component: {fileID: 8058370345373112990}
   - component: {fileID: 589695117089210687}
-  - component: {fileID: 8593467837728429494}
   - component: {fileID: -4104862405784954980}
-  - component: {fileID: -1240441152787096281}
-  - component: {fileID: 7691794268411512160}
+  - component: {fileID: 3233076866189492818}
+  - component: {fileID: -6900193940645402718}
   m_Layer: 0
   m_Name: Slime
   m_TagString: Enemy
@@ -103,7 +100,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6083513873441513986}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -120,8 +117,8 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
+  m_CollisionDetection: 1
+  m_Constraints: 0
 --- !u!70 &8192278122166672854
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -157,54 +154,6 @@ CapsuleCollider2D:
   m_Offset: {x: -0.0017412603, y: -0.02960223}
   m_Size: {x: 0.16328198, y: 0.16328198}
   m_Direction: 0
---- !u!114 &1810868354739797415
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6083513873441513986}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f0f016f420689847846f82d6467ad85, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  speed: 0
-  collissionOffset: 0.01
-  movementFilter:
-    useTriggers: 0
-    useLayerMask: 0
-    useDepth: 0
-    useOutsideDepth: 0
-    useNormalAngle: 0
-    useOutsideNormalAngle: 0
-    layerMask:
-      serializedVersion: 2
-      m_Bits: 0
-    minDepth: 0
-    maxDepth: 0
-    minNormalAngle: 0
-    maxNormalAngle: 0
---- !u!114 &-8387906336255756160
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6083513873441513986}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81b12143489704147887c475f751948b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthText: {fileID: 4446440190103696447, guid: e61196338ebbccc43a9ab2bd4211308d, type: 3}
-  disableSimulation: 0
-  canTurnInvincible: 0
-  invincibilityTime: 0.25
-  _health: 3
-  _targetable: 1
-  _invincible: 0
 --- !u!114 &4229802418481570286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,9 +196,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 5
   radius: 0.09
-  height: 0.01
+  height: 2
   canMove: 1
-  maxSpeed: 0.8
+  maxSpeed: 0.5
   gravity: {x: 0, y: 0, z: 0}
   groundMask:
     serializedVersion: 2
@@ -270,7 +219,7 @@ MonoBehaviour:
   rotationSpeed: 360
   slowdownDistance: 0.6
   pickNextWaypointDist: 0.18
-  endReachedDistance: 0
+  endReachedDistance: 0.2
   alwaysDrawGizmos: 0
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0
@@ -289,22 +238,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   target: {fileID: 0}
---- !u!114 &8593467837728429494
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6083513873441513986}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60885e2862262e6479c3d72f3daad75c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 1
-  knockbackForce: 20
-  moveSpeed: 100
-  detectionZone: {fileID: 0}
 --- !u!95 &-4104862405784954980
 Animator:
   serializedVersion: 5
@@ -326,7 +259,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &-1240441152787096281
+--- !u!114 &3233076866189492818
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -335,11 +268,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 6083513873441513986}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 645f4e7b377ae2d4593617e04720c9ae, type: 3}
+  m_Script: {fileID: 11500000, guid: 4efd85964de9ea14f9a3f88af29a7d7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
---- !u!114 &7691794268411512160
+  maxHealth: 10
+  isEnemy: 1
+--- !u!114 &-6900193940645402718
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -348,8 +282,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6083513873441513986}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfe9c067c0085f64a9f13133c96691ea, type: 3}
+  m_Script: {fileID: 11500000, guid: 2d1e9b5f68ffcc84aa2690e92f59657f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
-  damageCooldown: 1
+  damageToPlayer: 10

@@ -9,6 +9,7 @@ public class RangedEnemyController : MonoBehaviour
     public float attackRange = 5f;          // Distance within which the enemy will stop and shoot
     public float followRange = 10f;         // Distance for following the player
     public float fireRate = 1f;             // Delay between shots
+    public int projectileDamage = 10;       // Damage dealt by the projectile
 
     private AIPath aiPath;                  // AIPath component for movement
     private Transform playerTransform;      // Reference to the player's transform
@@ -65,14 +66,20 @@ public class RangedEnemyController : MonoBehaviour
 
     void FireProjectile()
     {
+        if (projectilePrefab == null) return;
+
         // Instantiate the projectile at the enemy's position
         GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
 
         // Calculate direction to the player
         Vector2 directionToPlayer = (playerTransform.position - transform.position).normalized;
 
-        // Set projectile direction
-        projectile.GetComponent<Projectile>().SetDirection(directionToPlayer);
+        // Set projectile direction and damage
+        Projectile projectileScript = projectile.GetComponent<Projectile>();
+        if (projectileScript != null)
+        {
+            projectileScript.SetDirection(directionToPlayer);
+            projectileScript.SetDamage(projectileDamage);  // Set the desired damage amount for the projectile
+        }
     }
 }
-    

@@ -6,17 +6,15 @@ public class Projectile : MonoBehaviour
 {
     public float speed = 10f;             // Speed of the projectile
     public float lifespan = 3f;           // Time in seconds before the projectile is destroyed
-    public int damage = 10;               // Damage inflicted on the player
+    private int damage = 10;              // Damage inflicted on the player, can be set by enemy
 
     private Vector2 direction;            // Direction to travel
 
-    // Start is called before the first frame update
     void Start()
     {
         Destroy(gameObject, lifespan); // Destroy the projectile after its lifespan
     }
 
-    // Update is called once per frame
     void Update()
     {
         transform.Translate(direction * speed * Time.deltaTime);
@@ -28,13 +26,23 @@ public class Projectile : MonoBehaviour
         direction = newDirection.normalized;
     }
 
+    // Sets the damage of the projectile, used by the enemy script
+    public void SetDamage(int newDamage)
+    {
+        damage = newDamage;
+    }
+
     // Handle collision with player
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            // Access player’s health script and apply damage if implemented
-            // other.GetComponent<PlayerHealth>().TakeDamage(damage);
+            // Access player’s health system and apply damage
+            HealthSystem playerHealth = other.GetComponent<HealthSystem>();
+            if (playerHealth != null)
+            {
+                playerHealth.TakeDamage(damage);
+            }
 
             Destroy(gameObject); // Destroy projectile on hit
         }
