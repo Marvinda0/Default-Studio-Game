@@ -2678,3 +2678,8 @@ Start importing Assets/Triggers/LevelTransition.cs using Guid(4c7dff703a5392f46b
  -> (artifact id: 'a84f39e18df20b465d437f5017b66eae') in 0.001082 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
+========================================================================
+Received Prepare
+Caller must complete domain reload
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  1.865 seconds
