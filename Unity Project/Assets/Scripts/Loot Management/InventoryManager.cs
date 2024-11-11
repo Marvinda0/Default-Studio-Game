@@ -8,7 +8,7 @@ public class InventoryManager : MonoBehaviour
     public GameObject InventoryMenu;
     private bool menuActivated;
 
-    public LootSlot[] lootSlot;
+    public LootSlot[] lootSlots;
 
     //public Loot loot;
 
@@ -47,12 +47,13 @@ public class InventoryManager : MonoBehaviour
 
     public void AddItem(Loot loot){
     
-        for(int i = 0; i < lootSlot.Length; i++){
-            if(lootSlot[i].isFull == false){
-                lootSlot[i].AddItem(loot);
+        for(int i = 0; i < lootSlots.Length; i++){
+            if(lootSlots[i].isFull == false){
+                lootSlots[i].AddItem(loot);
+                Debug.Log(loot + "loot has been added to inventory");
                 return;
             }
         }
-        Debug.Log(loot + "loot has been added to inventory");
+        Debug.LogWarning("Inventory is full. Can't add ");
     }
 }

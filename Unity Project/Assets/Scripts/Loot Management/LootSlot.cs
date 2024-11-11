@@ -9,8 +9,9 @@ public class LootSlot : MonoBehaviour
     
     //Loot Data
     public string lootName;
-    public Sprite lootSprite;
-    public GameObject droppedItemPrefab;
+    //public Sprite lootSprite;
+    //public GameObject droppedItemPrefab;
+    public Sprite lootIcon;
 
     //public int quantity; 
     public bool isFull;
@@ -21,22 +22,31 @@ public class LootSlot : MonoBehaviour
 
 
     public void AddItem(Loot loot){
-        lootImage = GetComponent<Image>();
-        this.lootName = lootName;
-        this.lootSprite = lootSprite;
+        //lootImage = GetComponent<Image>();
+        if (loot == null)
+        {
+            Debug.LogWarning("Attempted to add a null loot item to the slot.");
+            return;
+        }
+
+        lootName = loot.lootName;
+        lootIcon = loot.lootSprite;
         isFull = true;
 
-        lootImage.sprite = lootSprite;
+        lootImage.sprite = lootIcon;
         lootImage.enabled = true;
     }
     
     public void ClearSlot()
     {
         //lootName = string.Empty; // Clear the loot name
-       // lootSprite = null; // Clear the loot sprite
-       // isFull = false; // Mark the slot as empty
-       // lootImage.sprite = null; // Clear the image
+        //lootIcon = null; // Clear the loot sprite
+        //isFull = false; // Mark the slot as empty
+        
+        //lootImage.sprite = null; // Clear the image
+       
         //lootImage.enabled = false; // Hide the image
+
     }
     
     // Start is called before the first frame update
