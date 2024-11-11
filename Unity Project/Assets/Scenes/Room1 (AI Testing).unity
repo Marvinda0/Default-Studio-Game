@@ -10033,6 +10033,10 @@ PrefabInstance:
       propertyPath: _invincible
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9069424925547041880, guid: bb3ba6d498df1b94488f1d415a8936d4, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
