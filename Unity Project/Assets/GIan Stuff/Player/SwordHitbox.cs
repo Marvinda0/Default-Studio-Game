@@ -22,27 +22,25 @@ public class SwordHitbox : MonoBehaviour
         }
     }
 
-    // This method should be called from the animation events to enable/disable collider
     public void EnableSwordCollider()
     {
         swordCollider.enabled = true;
+        Debug.Log("Sword Collider enabled");
     }
 
     public void DisableSwordCollider()
     {
         swordCollider.enabled = false;
+        Debug.Log("Sword Collider disabled");
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        // Check if the sword hitbox collided with an enemy
-        IDamageable enemyHealth = collision.GetComponent<IDamageable>();
-        if (enemyHealth != null && collision.CompareTag("Enemy"))
+        HealthSystem enemyHealth = collision.GetComponent<HealthSystem>();
+        if (enemyHealth != null && enemyHealth.isEnemy)
         {
-            // Apply damage to the enemy
-            enemyHealth.OnHit(swordDamage);
+            enemyHealth.TakeDamage(swordDamage);
 
-            // Apply knockback if the enemy has a Rigidbody2D
             Rigidbody2D enemyRb = collision.GetComponent<Rigidbody2D>();
             if (enemyRb != null)
             {
@@ -53,7 +51,6 @@ public class SwordHitbox : MonoBehaviour
         }
     }
 
-    // Method to adjust sword hitbox position based on facing direction
     void IsFacingRight(bool isFacingRight)
     {
         if (isFacingRight)
@@ -66,3 +63,4 @@ public class SwordHitbox : MonoBehaviour
         }
     }
 }
+
