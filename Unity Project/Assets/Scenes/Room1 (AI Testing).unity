@@ -12565,19 +12565,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Waves:
   - waveName: Wave 1
-    NumberOfEnemies: 1
+    NumberOfEnemies: 5
     typesOfEnemies:
     - {fileID: 6083513873441513986, guid: f29029b55e0e05b46933b85faf174826, type: 3}
     spawnInterval: 2
   - waveName: Wave 2
-    NumberOfEnemies: 10
+    NumberOfEnemies: 5
     typesOfEnemies:
     - {fileID: 4982733723981510052, guid: b85a629ed4ab07343857575db34b112e, type: 3}
     spawnInterval: 2
   - waveName: Wave 3
-    NumberOfEnemies: 20
+    NumberOfEnemies: 10
     typesOfEnemies:
-    - {fileID: 8006936052979228904, guid: aab4b72266aa5a340a347e23b765daff, type: 3}
+    - {fileID: 4982733723981510052, guid: b85a629ed4ab07343857575db34b112e, type: 3}
     - {fileID: 6083513873441513986, guid: f29029b55e0e05b46933b85faf174826, type: 3}
     spawnInterval: 2
   spawnPoints:
