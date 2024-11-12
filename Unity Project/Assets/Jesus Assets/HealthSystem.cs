@@ -4,7 +4,8 @@ public class HealthSystem : MonoBehaviour
 {
     public float maxHealth = 100f;
     private float currentHealth;
-    public bool isEnemy = false;  // Set this to true for enemies, false for player
+    public bool isEnemy = false;
+
 
     void Start()
     {
@@ -23,7 +24,15 @@ public class HealthSystem : MonoBehaviour
     // Call this function to reduce health
     public void TakeDamage(float amount)
     {
+        float previousHealth = currentHealth;
         currentHealth -= amount;
+
+        if (CompareTag("Player"))
+        {
+
+            float damageTaken = previousHealth - currentHealth;
+            Debug.Log($"Player took {damageTaken} damage, remaining HP: {currentHealth}");
+        }
 
         if (currentHealth <= 0)
         {

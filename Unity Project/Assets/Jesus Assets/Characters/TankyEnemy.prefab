@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 7706541315156476136}
   - component: {fileID: 8947426787390886538}
   - component: {fileID: 553026454965530620}
+  - component: {fileID: 6301459447159355702}
   - component: {fileID: 6214279070673206892}
-  - component: {fileID: 4333881935808503839}
-  - component: {fileID: 1743441861100770262}
   - component: {fileID: 2670985438367558271}
+  - component: {fileID: 8782369604426806183}
   - component: {fileID: 6457309171840625468}
   - component: {fileID: 7830552231589481084}
   m_Layer: 0
@@ -154,6 +154,19 @@ CapsuleCollider2D:
   m_Offset: {x: -0.0017412603, y: -0.02960223}
   m_Size: {x: 0.16328198, y: 0.16328198}
   m_Direction: 0
+--- !u!114 &6301459447159355702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8006936052979228904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d1e9b5f68ffcc84aa2690e92f59657f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageToPlayer: 10
 --- !u!114 &6214279070673206892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,33 +196,6 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
---- !u!114 &4333881935808503839
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8006936052979228904}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfe9c067c0085f64a9f13133c96691ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 10
-  damageCooldown: 1
---- !u!114 &1743441861100770262
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8006936052979228904}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 645f4e7b377ae2d4593617e04720c9ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 250
 --- !u!114 &2670985438367558271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,6 +224,20 @@ MonoBehaviour:
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: -1
+--- !u!114 &8782369604426806183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8006936052979228904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4efd85964de9ea14f9a3f88af29a7d7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 20
+  isEnemy: 0
 --- !u!114 &6457309171840625468
 MonoBehaviour:
   m_ObjectHideFlags: 0

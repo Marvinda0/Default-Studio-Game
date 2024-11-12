@@ -12,39 +12,42 @@ public class Projectile : MonoBehaviour
 
     void Start()
     {
-        Destroy(gameObject, lifespan); // Destroy the projectile after its lifespan
+        // Destroy the projectile after a set lifespan to prevent it from persisting indefinitely
+        Destroy(gameObject, lifespan);
     }
 
     void Update()
     {
+        // Move the projectile in the specified direction at the given speed
         transform.Translate(direction * speed * Time.deltaTime);
     }
 
-    // Sets the direction of the projectile
+    // Method to set the direction for the projectile
     public void SetDirection(Vector2 newDirection)
     {
         direction = newDirection.normalized;
     }
 
-    // Sets the damage of the projectile, used by the enemy script
+    // Method to set the damage of the projectile, which can be called by the enemy script
     public void SetDamage(int newDamage)
     {
         damage = newDamage;
     }
 
-    // Handle collision with player
+    // Detect when the projectile enters a trigger collider
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            // Access player’s health system and apply damage
+            // Check if the collided object has a HealthSystem and apply damage
             HealthSystem playerHealth = other.GetComponent<HealthSystem>();
             if (playerHealth != null)
             {
                 playerHealth.TakeDamage(damage);
             }
 
-            Destroy(gameObject); // Destroy projectile on hit
+            // Destroy the projectile upon hitting the player
+            Destroy(gameObject);
         }
     }
 }

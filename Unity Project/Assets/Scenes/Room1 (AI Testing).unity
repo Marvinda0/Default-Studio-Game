@@ -9931,35 +9931,39 @@ PrefabInstance:
       objectReference: {fileID: 1747159820}
     - target: {fileID: 2569382571533886435, guid: bb3ba6d498df1b94488f1d415a8936d4, type: 3}
       propertyPath: m_Radius
-      value: 0.38796863
+      value: 0.45567054
+      objectReference: {fileID: 0}
+    - target: {fileID: 2569382571533886435, guid: bb3ba6d498df1b94488f1d415a8936d4, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2569382571533886435, guid: bb3ba6d498df1b94488f1d415a8936d4, type: 3}
       propertyPath: m_Offset.x
-      value: 0.05681048
+      value: -0.018633986
       objectReference: {fileID: 0}
     - target: {fileID: 2569382571533886435, guid: bb3ba6d498df1b94488f1d415a8936d4, type: 3}
       propertyPath: m_Offset.y
-      value: 0.08115628
+      value: 0.19849946
       objectReference: {fileID: 0}
     - target: {fileID: 2569382571533886435, guid: bb3ba6d498df1b94488f1d415a8936d4, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5619933852320195437, guid: bb3ba6d498df1b94488f1d415a8936d4, type: 3}
       propertyPath: m_Size.x
-      value: 1.1387334
+      value: 1.4497727
       objectReference: {fileID: 0}
     - target: {fileID: 5619933852320195437, guid: bb3ba6d498df1b94488f1d415a8936d4, type: 3}
       propertyPath: m_Size.y
-      value: 1.9129959
+      value: 2.3415608
       objectReference: {fileID: 0}
     - target: {fileID: 5619933852320195437, guid: bb3ba6d498df1b94488f1d415a8936d4, type: 3}
       propertyPath: m_Offset.x
-      value: -0.35950366
+      value: -0.73213863
       objectReference: {fileID: 0}
     - target: {fileID: 5619933852320195437, guid: bb3ba6d498df1b94488f1d415a8936d4, type: 3}
       propertyPath: m_Offset.y
-      value: -0.077976614
+      value: 0.13630587
       objectReference: {fileID: 0}
     - target: {fileID: 7072028290044035201, guid: bb3ba6d498df1b94488f1d415a8936d4, type: 3}
       propertyPath: m_Camera
@@ -12561,7 +12565,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Waves:
   - waveName: Wave 1
-    NumberOfEnemies: 5
+    NumberOfEnemies: 1
     typesOfEnemies:
     - {fileID: 6083513873441513986, guid: f29029b55e0e05b46933b85faf174826, type: 3}
     spawnInterval: 2
