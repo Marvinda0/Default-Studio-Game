@@ -1,11 +1,11 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HealthSystem : MonoBehaviour
 {
     public float maxHealth = 100f;
     private float currentHealth;
     public bool isEnemy = false;
-
 
     void Start()
     {
@@ -29,7 +29,6 @@ public class HealthSystem : MonoBehaviour
 
         if (CompareTag("Player"))
         {
-
             float damageTaken = previousHealth - currentHealth;
             Debug.Log($"Player took {damageTaken} damage, remaining HP: {currentHealth}");
         }
@@ -50,8 +49,19 @@ public class HealthSystem : MonoBehaviour
             {
                 waveSpawner.OnEnemyDefeated();
             }
-        }
 
-        Destroy(gameObject); // Destroy this object (either player or enemy)
+            Destroy(gameObject); // Destroy the enemy object
+        }
+        else if (CompareTag("Player"))
+        {
+            // Restart the game if the player dies
+            RestartGame();
+        }
+    }
+
+    private void RestartGame()
+    {
+        // Reload the current scene to restart the game
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
