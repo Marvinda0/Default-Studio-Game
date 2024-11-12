@@ -45,12 +45,12 @@ public class InventoryManager : MonoBehaviour
 
     }
 
-    public void AddItem(Loot loot){
+    public void AddItem(string lootName, Sprite lootSprite){
     
         for(int i = 0; i < lootSlots.Length; i++){
             if(lootSlots[i].isFull == false){
-                lootSlots[i].AddItem(loot);
-                Debug.Log(loot + "loot has been added to inventory");
+                lootSlots[i].AddItem(lootName, lootSprite);
+                Debug.Log(lootName + "loot has been added to inventory");
                 return;
             }
         }

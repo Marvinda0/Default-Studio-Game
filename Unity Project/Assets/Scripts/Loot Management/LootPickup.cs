@@ -5,6 +5,9 @@ using UnityEngine;
 public class LootPickup : MonoBehaviour //Attach the LootPickup Script to the loot prefab jch6
 {
     private bool isPlayerInRange = false;
+    public Sprite lootSprite;
+    public string lootName;
+
     public Loot loot;
 
     public InventoryManager inventoryManager;
@@ -14,10 +17,16 @@ public class LootPickup : MonoBehaviour //Attach the LootPickup Script to the lo
         
         inventoryManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>();//jch6
     }
+
+    public void SetLoot(Loot newLoot){//jch6 set the loot item dynamically
+
+        loot = newLoot;
+
+    }
     
     void PickUpLoot(){
 
-        inventoryManager.AddItem(loot);
+        inventoryManager.AddItem(loot.lootName, loot.lootSprite);
         
         Destroy(gameObject); //jch6 Destroys loot after pick up
 

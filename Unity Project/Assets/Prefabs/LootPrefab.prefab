@@ -126,7 +126,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdc57954313dd8a48896caf036a726f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loot: {fileID: 11400000, guid: a23e79b66c0b19f45bdbd220225945b5, type: 2}
+  lootSprite: {fileID: 0}
+  lootName: 
+  loot: {fileID: 0}
   inventoryManager: {fileID: 0}
 --- !u!61 &9112136515725791899
 BoxCollider2D:
