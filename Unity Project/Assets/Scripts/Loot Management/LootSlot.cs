@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class LootSlot : MonoBehaviour
+public class LootSlot : MonoBehaviour, IPointerClickHandler
 {
     
     //Loot Data
@@ -19,6 +20,11 @@ public class LootSlot : MonoBehaviour
     //Loot Slot
     [SerializeField]
     private Image lootImage;
+    
+    public GameObject selectedShader;
+    public bool thisItemSelected;
+
+    private InventoryManager inventoryManager;
 
 
     public void AddItem(string lootName, Sprite lootSprite){
@@ -50,11 +56,31 @@ public class LootSlot : MonoBehaviour
         lootImage.enabled = false; // Hide the image
 
     }
+
+    public void OnPointerClick(PointerEventData eventData){
+        if(eventData.button == PointerEventData.InputButton.Left){
+            OnLeftClick();
+        }
+        if(eventData.button == PointerEventData.InputButton.Right){
+            OnRightClick();
+        }
+    }
+
+    public void OnLeftClick(){
+        inventoryManager.DeselectAllSlots();
+        selectedShader.SetActive(true);
+        thisItemSelected = true;
+    }
+
+    public void OnRightClick(){
+
+    }
     
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        ClearSlot();
+        inventoryManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>();
+        //ClearSlot();
     }
 
     // Update is called once per frame

@@ -56,4 +56,11 @@ public class InventoryManager : MonoBehaviour
         }
         Debug.LogWarning("Inventory is full. Can't add ");
     }
+
+    public void DeselectAllSlots(){
+        for(int i = 0; i < lootSlots.Length; i++){
+            lootSlots[i].selectedShader.SetActive(false);
+            lootSlots[i].thisItemSelected = false;
+        }   
+    }
 }
