@@ -7,7 +7,8 @@ public class LootPickup : MonoBehaviour //Attach the LootPickup Script to the lo
     private bool isPlayerInRange = false;
     public Sprite lootSprite;
     public string lootName;
-
+    
+    public string lootDescription;
     public Loot loot;
 
     public InventoryManager inventoryManager;
@@ -26,7 +27,7 @@ public class LootPickup : MonoBehaviour //Attach the LootPickup Script to the lo
     
     void PickUpLoot(){
 
-        inventoryManager.AddItem(loot.lootName, loot.lootSprite);
+        inventoryManager.AddItem(loot.lootName, loot.lootSprite, loot.lootDescription);
         
         Destroy(gameObject); //jch6 Destroys loot after pick up
 

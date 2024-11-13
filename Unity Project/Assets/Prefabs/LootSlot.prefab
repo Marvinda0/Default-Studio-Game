@@ -242,9 +242,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isFull: 0
+  emptySprite: {fileID: 21300000, guid: 84e429c83a9ef714eb960b3d0ae7259d, type: 3}
   lootImage: {fileID: 3029407888873590719}
   selectedShader: {fileID: 4644999599829233598}
   thisItemSelected: 0
+  lootDescriptionImage: {fileID: 0}
+  LootDescriptionNameText: {fileID: 0}
+  LootDescriptionText: {fileID: 0}
 --- !u!1 &8835936322876865276
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,15 +7,19 @@ using UnityEngine.EventSystems;
 
 public class LootSlot : MonoBehaviour, IPointerClickHandler
 {
-    
+    //public Loot loot;
     //Loot Data
-    //public string lootName;
-   // public Sprite lootSprite;
+    private string lootName;
+    private Sprite lootSprite;
+
+    private string lootDescription;
     //public GameObject droppedItemPrefab;
     
 
     //public int quantity; 
     public bool isFull;
+
+    public Sprite emptySprite;
 
     //Loot Slot
     [SerializeField]
@@ -26,8 +30,13 @@ public class LootSlot : MonoBehaviour, IPointerClickHandler
 
     private InventoryManager inventoryManager;
 
+    //Loot Descrip
+    [SerializeField]private Image lootDescriptionImage;
+    [SerializeField]private TMP_Text LootDescriptionNameText;
+    [SerializeField]private TMP_Text LootDescriptionText;
 
-    public void AddItem(string lootName, Sprite lootSprite){
+
+    public void AddItem(string name, Sprite sprite, string description){
         //lootImage = GetComponent<Image>();
         //if (loot == null)
        // {
@@ -35,9 +44,11 @@ public class LootSlot : MonoBehaviour, IPointerClickHandler
            // return;
        // }
 
-        //lootName = loot.lootName;
+        lootName = name;
+        //loot.lootName = lootName;
+        lootDescription = description;
         //this.lootName = lootName;
-        //lootSprite = loot.lootSprite;
+        lootSprite = sprite;
         //this.lootSprite = lootSprite;
         isFull = true;
 
@@ -70,6 +81,13 @@ public class LootSlot : MonoBehaviour, IPointerClickHandler
         inventoryManager.DeselectAllSlots();
         selectedShader.SetActive(true);
         thisItemSelected = true;
+        LootDescriptionNameText.text = lootName;
+        LootDescriptionText.text = lootDescription;
+        lootDescriptionImage.sprite = lootSprite;
+
+        if(lootDescriptionImage.sprite == null){
+            lootDescriptionImage.sprite = emptySprite;
+        }
     }
 
     public void OnRightClick(){
