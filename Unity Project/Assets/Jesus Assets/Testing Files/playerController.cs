@@ -8,7 +8,7 @@ public class playerController : MonoBehaviour
     public float moveSpeed = 1f;
     public float collissionOffset = 0.05f;
     public ContactFilter2D movementFilter;
-    public swordAttack swordAttack;
+    
 
     Vector2 movementInput;
 

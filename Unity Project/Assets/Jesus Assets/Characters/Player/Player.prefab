@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 9193065590018803135}
   - component: {fileID: 4913823078768143350}
   - component: {fileID: 7337989196904655489}
+  - component: {fileID: 4572435325065539379}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -219,7 +220,6 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  swordAttack: {fileID: 0}
 --- !u!95 &7337989196904655489
 Animator:
   serializedVersion: 5
@@ -241,3 +241,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4572435325065539379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6988197919058107272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d3356c55f38320419a7a13b891d371f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 0
+  statPoint: 0
+  currentExp: 0
+  expToLevelUp: 10
+  expGrowthMultiplier: 1.2
+  expSlider: {fileID: 0}
+  currentLevelText: {fileID: 0}
