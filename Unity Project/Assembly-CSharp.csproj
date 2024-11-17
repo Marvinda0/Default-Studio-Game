@@ -66,18 +66,37 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Loot Management\LootPickup.cs" />
     <Compile Include="Assets\Scripts\Exp Management\StatsUI.cs" />
-    <Compile Include="Assets\Scripts\AI\AIMeleeDamage.cs" />
+    <Compile Include="Assets\Jesus Assets\AI and Room Transition ScriptsScripts\AIMeleeDamage.cs" />
+    <Compile Include="Assets\Jesus Assets\AI and Room Transition ScriptsScripts\RangedEnemyScripts\RangedMovement.cs" />
+    <Compile Include="Assets\Jesus Assets\MobContact.cs" />
+    <Compile Include="Assets\Jesus Assets\AI and Room Transition ScriptsScripts\RangedEnemyScripts\ProjectileScript.cs" />
     <Compile Include="Assets\Scripts\Loot Management\InventoryManager.cs" />
+    <Compile Include="Assets\GIan Stuff\DamageableCharacter.cs" />
+    <Compile Include="Assets\Jesus Assets\AI and Room Transition ScriptsScripts\AIChase.cs" />
+    <Compile Include="Assets\Jesus Assets\AI and Room Transition ScriptsScripts\AIHealthSystem.cs" />
     <Compile Include="Assets\Scripts\Loot Management\LootSlot.cs" />
-    <Compile Include="Assets\Scripts\AI\RoomTransitionScript.cs" />
-    <Compile Include="Assets\Scripts\AI\AIHealthSystem.cs" />
+    <Compile Include="Assets\Jesus Assets\HealthSystem.cs" />
+    <Compile Include="Assets\Text\HealthText.cs" />
+    <Compile Include="Assets\Jesus Assets\Testing Files\playerController.cs" />
+    <Compile Include="Assets\Triggers\TriggerDoor.cs" />
+    <Compile Include="Assets\GIan Stuff\Interfaces\IDamageable.cs" />
+    <Compile Include="Assets\GIan Stuff\Player\SwordHitbox.cs" />
+    <Compile Include="Assets\GIan Stuff\Projectiles\ProjectileLauncher.cs" />
     <Compile Include="Assets\Scripts\Exp Management\StatsManager.cs" />
+    <Compile Include="Assets\Jesus Assets\Testing Files\swordAttack.cs" />
     <Compile Include="Assets\Scripts\Exp Management\ExpManager.cs" />
     <Compile Include="Assets\Scripts\Loot Management\Chest.cs" />
-    <Compile Include="Assets\Scripts\AI\AIChase.cs" />
-    <Compile Include="Assets\Testing Files\playerController.cs" />
+    <Compile Include="Assets\Jesus Assets\WaveSpawnnerScript.cs" />
+    <Compile Include="Assets\GIan Stuff\Player\PlayerController.cs" />
+    <Compile Include="Assets\GIan Stuff\Projectiles\Projectile.cs" />
+    <Compile Include="Assets\Triggers\DetectionZone.cs" />
+    <Compile Include="Assets\GIan Stuff\Slime\Slime.cs" />
+    <Compile Include="Assets\Jesus Assets\AI and Room Transition ScriptsScripts\RoomTransitionScript.cs" />
+    <Compile Include="Assets\GIan Stuff\Enemy.cs" />
     <Compile Include="Assets\Scripts\Loot Management\LootBag.cs" />
+    <Compile Include="Assets\Triggers\LevelTransition.cs" />
     <Compile Include="Assets\Scripts\Loot Management\Loot.cs" />
+    <Compile Include="Assets\Jesus Assets\Characters\SlimeAI.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -86,7 +105,7 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
-    <None Include="Assets\Testing Files\Art\sprites\characters\README.txt" />
+    <None Include="Assets\Jesus Assets\Testing Files\Art\sprites\characters\README.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
