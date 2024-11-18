@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: -3380254910389490950}
   - component: {fileID: -2325563074004958571}
   - component: {fileID: 8388043026047606253}
+  - component: {fileID: 3848357645080464525}
   m_Layer: 0
   m_Name: Ranged Enemy
   m_TagString: Enemy
@@ -252,6 +253,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   isEnemy: 1
+  expReward: 4
 --- !u!114 &-2325563074004958571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -283,3 +285,20 @@ MonoBehaviour:
   followRange: 100
   fireRate: 2
   projectileDamage: 10
+--- !u!114 &3848357645080464525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4982733723981510052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4602407f7ba938449d1fc35c7d4bd83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  droppedItemPrefab: {fileID: 2830374740305323753, guid: 7d4017f1aa6541a4e87628ab7fcd0883, type: 3}
+  lootList:
+  - {fileID: 11400000, guid: 3e01a0964a2f8e147ab21cd77eb37820, type: 2}
+  - {fileID: 11400000, guid: cc669be249a1e1e438fed91ee22e8c10, type: 2}
+  - {fileID: 11400000, guid: a23e79b66c0b19f45bdbd220225945b5, type: 2}

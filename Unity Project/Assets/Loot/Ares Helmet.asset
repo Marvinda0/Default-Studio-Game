@@ -15,4 +15,4 @@ MonoBehaviour:
   lootSprite: {fileID: 21300000, guid: 796ac5975108a014583919dd3de935c8, type: 3}
   lootName: Ares Helmet
   lootDescription: The helmet of the god of war Ares.
-  dropChance: 100
+  dropChance: 70

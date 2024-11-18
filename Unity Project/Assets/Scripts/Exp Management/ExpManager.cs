@@ -50,11 +50,11 @@ public class ExpManager : MonoBehaviour
     }
 
     private void OnEnable (){
-        AIHealthSystem.OnMonsterDeath += GainExperience;
+        HealthSystem.OnMonsterDeath += GainExperience;
     }
 
     private void OnDisable (){
-        AIHealthSystem.OnMonsterDeath -= GainExperience;
+        HealthSystem.OnMonsterDeath -= GainExperience;
     }
 
     public void UpdateUI(){//jch6 updates the UI for experience gain and when leveling up

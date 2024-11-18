@@ -58,24 +58,27 @@ public class StatsUI : MonoBehaviour
     public void IncreaseDamage(){
         if (ExpManager.Instance.statPoint > 0){
             StatsManager.Instance.damage += 1;
-            ExpManager.Instance.statPoint--;
+            ExpManager.Instance.statPoint -= 1;
             UpdateDamage();
+            ExpManager.Instance.UpdateUI();
         }
     }
 
     public void IncreaseSpeed(){
         if (ExpManager.Instance.statPoint > 0){
             StatsManager.Instance.speed += 1;
-            ExpManager.Instance.statPoint--;
+            ExpManager.Instance.statPoint-=1;
             UpdateSpeed();
+            ExpManager.Instance.UpdateUI();
         }
     }
 
     public void IncreaseHealth(){
         if (ExpManager.Instance.statPoint > 0){
             StatsManager.Instance.maxHealth += 1;
-            ExpManager.Instance.statPoint--;
+            ExpManager.Instance.statPoint-=1;
             UpdateHealth();
+            ExpManager.Instance.UpdateUI();
         }
     }
 }

@@ -15,4 +15,4 @@ MonoBehaviour:
   lootSprite: {fileID: 21300000, guid: 3a52ead08fade6645ab54d545d834bcc, type: 3}
   lootName: Aphrodites Pendant
   lootDescription: The necklace of Aphrodite.
-  dropChance: 100
+  dropChance: 70
