@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class SwordHitbox : MonoBehaviour
 {
-    public float swordDamage = 1f;
-    public float knockbackForce = 15f;
+    //public float swordDamage = 1f;
+    //public float knockbackForce = 15f;
     public Collider2D swordCollider;
     public Vector3 faceRight = new Vector3(1, -0.9f, 0);
     public Vector3 faceLeft = new Vector3(-1, -0.9f, 0);
@@ -39,13 +39,15 @@ public class SwordHitbox : MonoBehaviour
         HealthSystem enemyHealth = collision.GetComponent<HealthSystem>();
         if (enemyHealth != null && enemyHealth.isEnemy)
         {
-            enemyHealth.TakeDamage(swordDamage);
+            //enemyHealth.TakeDamage(swordDamage);
+            enemyHealth.TakeDamage(StatsManager.Instance.damage);//jch6 for stats upgrade
 
             Rigidbody2D enemyRb = collision.GetComponent<Rigidbody2D>();
             if (enemyRb != null)
             {
                 Vector2 knockbackDirection = (collision.transform.position - transform.position).normalized;
-                enemyRb.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
+                //enemyRb.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
+                enemyRb.AddForce(knockbackDirection * StatsManager.Instance.knockbackForce, ForceMode2D.Impulse);//jch6 for stats upgrade
             }
             Debug.Log("SwordHitbox triggered on " + collision.name);
         }

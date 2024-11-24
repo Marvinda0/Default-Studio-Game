@@ -42,11 +42,20 @@ public class ExpManager : MonoBehaviour
         UpdateUI();
     }
     
-    private void LevelUp(){ //jch6 For when a player levels up. Can add a graphic or soundeffect for levelup
+    public void LevelUp(){ //jch6 For when a player levels up. Can add a graphic or soundeffect for levelup
         statPoint += 2; //jch6 gain 2 statpoints after every level up
         level++;
         currentExp -= expToLevelUp;
         expToLevelUp = Mathf.RoundToInt(expToLevelUp * expGrowthMultiplier);
+        //StatsManager.Instance.currentHealth = StatsManager.Instance.maxHealth;//jch6 after level up the player regains full health
+        
+        //var healthSystem = FindObjectOfType<HealthSystem>();
+            //if (healthSystem != null)
+            //{
+                //healthSystem.SyncWithStatsManager();
+            //}
+        //FindObjectOfType<HealthSystem>().SyncWithStatsManager;
+        UpdateUI();
     }
 
     private void OnEnable (){

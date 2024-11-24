@@ -13134,6 +13134,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4272118961072729868, guid: bb3ba6d498df1b94488f1d415a8936d4, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7072028290044035201, guid: bb3ba6d498df1b94488f1d415a8936d4, type: 3}
       propertyPath: m_Camera
       value: 
@@ -16349,9 +16353,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75f06645a2e0ff54b94321d03ac282e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
-  speed: 1
-  maxHealth: 1
+  damage: 10
+  knockbackForce: 15
+  speed: 1000
+  maxHealth: 100
   currentHealth: 100
 --- !u!4 &1215341167
 Transform:

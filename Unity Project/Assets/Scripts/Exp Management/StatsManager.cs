@@ -10,15 +10,15 @@ public class StatsManager : MonoBehaviour
     
     // Singleton pattern jch6
     [Header("Combat Stats")]
-    public int damage;
-    //public float weaponRange;
+    public float damage;
+    public float knockbackForce;
 
     [Header("Movement Stats")]
-    public int speed;
+    public float speed;
 
     [Header("Health Stats")]
-    public int maxHealth;
-    public int currentHealth;
+    public float maxHealth;
+    public float currentHealth;
 
 
     private void Awake(){

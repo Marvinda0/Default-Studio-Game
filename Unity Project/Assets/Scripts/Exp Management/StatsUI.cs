@@ -7,6 +7,10 @@ public class StatsUI : MonoBehaviour
 {
 
     public GameObject[] statsSlots;
+
+    private int allocatedDamagePoints = 0;
+    private int allocatedSpeedPoints = 0;
+    private int allocatedHealthPoints = 0;
     private void Start(){
         UpdateAllStats();
     }
@@ -38,15 +42,18 @@ public class StatsUI : MonoBehaviour
     }
 
     public void UpdateDamage(){
-        statsSlots[0].GetComponentInChildren<TMP_Text>().text = "Damage: " + StatsManager.Instance.damage;
+        //statsSlots[0].GetComponentInChildren<TMP_Text>().text = "Damage: " + StatsManager.Instance.damage;
+        statsSlots[0].GetComponentInChildren<TMP_Text>().text = "Damage: " + allocatedDamagePoints;
     }
 
     public void UpdateSpeed(){
-        statsSlots[1].GetComponentInChildren<TMP_Text>().text = "Speed: " + StatsManager.Instance.speed;
+        //statsSlots[1].GetComponentInChildren<TMP_Text>().text = "Speed: " + StatsManager.Instance.speed;
+        statsSlots[1].GetComponentInChildren<TMP_Text>().text = "Speed: " + allocatedSpeedPoints;
     }
 
     public void UpdateHealth(){
-        statsSlots[2].GetComponentInChildren<TMP_Text>().text = "Health: " + StatsManager.Instance.maxHealth;
+        //statsSlots[2].GetComponentInChildren<TMP_Text>().text = "Health: " + StatsManager.Instance.maxHealth;
+        statsSlots[2].GetComponentInChildren<TMP_Text>().text = "Health: " + allocatedHealthPoints;
     }
 
     public void UpdateAllStats(){
@@ -57,7 +64,8 @@ public class StatsUI : MonoBehaviour
 
     public void IncreaseDamage(){
         if (ExpManager.Instance.statPoint > 0){
-            StatsManager.Instance.damage += 1;
+            allocatedDamagePoints++;
+            StatsManager.Instance.damage += 10;//Increases the actual damage
             ExpManager.Instance.statPoint -= 1;
             UpdateDamage();
             ExpManager.Instance.UpdateUI();
@@ -66,7 +74,8 @@ public class StatsUI : MonoBehaviour
 
     public void IncreaseSpeed(){
         if (ExpManager.Instance.statPoint > 0){
-            StatsManager.Instance.speed += 1;
+            allocatedSpeedPoints++;
+            StatsManager.Instance.speed += 50;
             ExpManager.Instance.statPoint-=1;
             UpdateSpeed();
             ExpManager.Instance.UpdateUI();
@@ -75,10 +84,22 @@ public class StatsUI : MonoBehaviour
 
     public void IncreaseHealth(){
         if (ExpManager.Instance.statPoint > 0){
-            StatsManager.Instance.maxHealth += 1;
+            allocatedHealthPoints++;
+            StatsManager.Instance.maxHealth += 100;
+            //StatsManager.Instance.currentHealth = StatsManager.Instance.maxHealth;//jch6 when increasing stat health player regains new full health
             ExpManager.Instance.statPoint-=1;
             UpdateHealth();
             ExpManager.Instance.UpdateUI();
+
+            //var healthSystem = FindObjectOfType<HealthSystem>();
+            //if (healthSystem != null)
+            //{
+                //healthSystem.SyncWithStatsManager();
+           // }
+            
+            //FindObjectOfType<HealthSystem>().SyncWithStatsManager;
+            Debug.Log("Max Health: " + StatsManager.Instance.maxHealth);
+            Debug.Log("Current Health: " + StatsManager.Instance.currentHealth);
         }
     }
 }

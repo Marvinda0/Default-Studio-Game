@@ -16,6 +16,13 @@ public class HealthSystem : MonoBehaviour
 
     void Start()
     {
+        //maxHealth = StatsManager.Instance.maxHealth;
+        //currentHealth = StatsManager.Instance.currentHealth;
+        if (CompareTag("Player")){
+            maxHealth = StatsManager.Instance.maxHealth;
+            currentHealth = StatsManager.Instance.currentHealth;
+        }
+
         currentHealth = maxHealth;
         //UpdateUI();
 
@@ -30,19 +37,31 @@ public class HealthSystem : MonoBehaviour
         }
     }
 
+    //public void SyncWithStatsManager(){
+        //maxHealth = StatsManager.Instance.maxHealth;
+        //currentHealth = StatsManager.Instance.currentHealth;
+        //UpdateUI();
+    //}
+
     // Call this function to reduce health
     public void TakeDamage(float amount)
     {
         float previousHealth = currentHealth;
         currentHealth -= amount;
+        
 
         
 
         if (CompareTag("Player"))
         {
             float damageTaken = previousHealth - currentHealth;
+            StatsManager.Instance.currentHealth = currentHealth;
             Debug.Log($"Player took {damageTaken} damage, remaining HP: {currentHealth}");
             UpdateUI();
+
+            //if(ExpManager.Instance.currentExp >= ExpManager.Instance.expToLevelUp){
+                //ExpManager.Instance.LevelUp();
+            //}
         }
 
         if (currentHealth <= 0)
