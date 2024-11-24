@@ -27,7 +27,7 @@ public class LootPickup : MonoBehaviour //Attach the LootPickup Script to the lo
     
     void PickUpLoot(){
 
-        inventoryManager.AddItem(loot.lootName, loot.lootSprite, loot.lootDescription);
+        inventoryManager.AddItem(loot.lootName, loot.lootSprite, loot.lootDescription, loot.lootType);
         
         Destroy(gameObject); //jch6 Destroys loot after pick up
 

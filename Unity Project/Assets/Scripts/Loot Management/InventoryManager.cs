@@ -10,6 +10,9 @@ public class InventoryManager : MonoBehaviour
 
     public LootSlot[] lootSlots;
 
+    public EquippedSlot[] equippedSlot;
+    
+
     //public Loot loot;
 
 
@@ -45,15 +48,18 @@ public class InventoryManager : MonoBehaviour
 
     }
 
-    public void AddItem(string lootName, Sprite lootSprite, string lootDescription){
+    public void AddItem(string lootName, Sprite lootSprite, string lootDescription, LootType lootType){
     
-        for(int i = 0; i < lootSlots.Length; i++){
-            if(lootSlots[i].isFull == false){
-                lootSlots[i].AddItem(lootName, lootSprite, lootDescription);
-                Debug.Log(lootName + "loot has been added to inventory");
-                return;
+        if(lootType == LootType.consumable || lootType == LootType.equippable){
+            for(int i = 0; i < lootSlots.Length; i++){
+                if(lootSlots[i].isFull == false){
+                    lootSlots[i].AddItem(lootName, lootSprite, lootDescription, lootType);
+                    Debug.Log(lootName + "loot has been added to inventory");
+                    return;
+                }
             }
         }
+        
         Debug.LogWarning("Inventory is full. Can't add ");
     }
 
@@ -61,6 +67,16 @@ public class InventoryManager : MonoBehaviour
         for(int i = 0; i < lootSlots.Length; i++){
             lootSlots[i].selectedShader.SetActive(false);
             lootSlots[i].thisItemSelected = false;
+        }
+        for(int i = 0; i < equippedSlot.Length; i++){
+            equippedSlot[i].selectedShader.SetActive(false);
+            equippedSlot[i].thisItemSelected = false;
         }   
     }
 }
+
+public enum LootType{
+    consumable,
+    equippable, 
+    none,
+};
