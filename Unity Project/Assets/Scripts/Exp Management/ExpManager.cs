@@ -55,6 +55,7 @@ public class ExpManager : MonoBehaviour
                 //healthSystem.SyncWithStatsManager();
             //}
         //FindObjectOfType<HealthSystem>().SyncWithStatsManager;
+        StatsManager.Instance.currentHealth = StatsManager.Instance.maxHealth;
         UpdateUI();
     }
 

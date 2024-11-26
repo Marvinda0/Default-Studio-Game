@@ -30,6 +30,8 @@ public class EquippedSlot : MonoBehaviour, IPointerClickHandler
 //
    public bool slotInUse;
 
+   
+
    [SerializeField]public GameObject selectedShader;
 
    [SerializeField] public bool thisItemSelected;
@@ -79,11 +81,26 @@ public class EquippedSlot : MonoBehaviour, IPointerClickHandler
         lootDescription = description;
         slotInUse = true;
 
-        //lootDescription = string.Empty;
+        Loot loot = FindLootByName(name); // Retrieve Loot object by name
+        if (loot != null)
+        {
+            loot.EquipItem(); // Apply loot stats
+        }
+        
         
    }
 
    public void UnEquipGear(){
+        if (!slotInUse) return;
+
+        // Remove Buff
+        Loot loot = FindLootByName(lootName); // Retrieve Loot object by name
+        if (loot != null)
+        {
+            loot.UnEquipItem(); // Revert loot stats
+        }
+        
+        
         inventoryManager.DeselectAllSlots();
 
         inventoryManager.AddItem(lootName, lootSprite, lootDescription, lootType);
@@ -94,10 +111,25 @@ public class EquippedSlot : MonoBehaviour, IPointerClickHandler
         slotName.enabled = true;
         slotInUse = false;
    }
+
+    private Loot FindLootByName(string name)
+    {
+        EquipmentSOLibrary library = FindObjectOfType<EquipmentSOLibrary>();
+        foreach (var loot in library.lootLibrary)
+        {
+            if (loot.lootName == name) return loot;
+        }
+        return null;
+    }
+  
+
+   
    public bool IsSlotInUse(){
     Debug.Log(slotInUse + "is in use");
     return slotInUse;
    }
+
+
 
 
 }
