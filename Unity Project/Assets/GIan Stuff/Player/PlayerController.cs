@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public float moveSpeed = 1250f;
+    //public float moveSpeed = 1250f;
     public float moveDrag = 15f;
     public float stopDrag = 25f;
     public bool canAttack = true;
@@ -69,7 +69,8 @@ public class PlayerController : MonoBehaviour
     {
         if (!isDashing && canMove && moveInput != Vector2.zero)
         {
-            rb.AddForce(moveInput * moveSpeed * Time.fixedDeltaTime, ForceMode2D.Force);
+            //rb.AddForce(moveInput * moveSpeed * Time.fixedDeltaTime, ForceMode2D.Force);
+            rb.AddForce(moveInput * StatsManager.Instance.speed * Time.fixedDeltaTime, ForceMode2D.Force);
 
             if (moveInput.x > 0)
             {
