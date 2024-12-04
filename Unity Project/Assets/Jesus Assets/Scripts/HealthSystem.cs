@@ -32,6 +32,7 @@ public class HealthSystem : MonoBehaviour
     {
         if (CompareTag("Player"))
         {
+            currentHealth = StatsManager.Instance.currentHealth;
             float previousMaxHealth = maxHealth;
             maxHealth = StatsManager.Instance.maxHealth;
 
