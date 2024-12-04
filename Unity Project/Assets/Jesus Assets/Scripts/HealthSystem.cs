@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class HealthSystem : MonoBehaviour
 {
-    public float maxHealth = 100f;
+    public float maxHealth;
     private float currentHealth;
     public bool isEnemy = false;
     public delegate void MonsterDeath(int exp); //jch6 
@@ -30,17 +30,26 @@ public class HealthSystem : MonoBehaviour
 
     void Update()
     {
-        // If this is an enemy and "K" is pressed, destroy this enemy
-        if (isEnemy && Input.GetKeyDown(KeyCode.K))
+        if (CompareTag("Player"))
         {
-            Die();
+            currentHealth = StatsManager.Instance.currentHealth;
+            float previousMaxHealth = maxHealth;
+            maxHealth = StatsManager.Instance.maxHealth;
+
+            // Scale current health proportionally when maxHealth changes
+            if (maxHealth != previousMaxHealth)
+            {
+                float healthPercentage = currentHealth / previousMaxHealth;
+                currentHealth = maxHealth * healthPercentage;
+                UpdateUI();
+            }
         }
     }
 
     //public void SyncWithStatsManager(){
-        //maxHealth = StatsManager.Instance.maxHealth;
-        //currentHealth = StatsManager.Instance.currentHealth;
-        //UpdateUI();
+    //maxHealth = StatsManager.Instance.maxHealth;
+    //currentHealth = StatsManager.Instance.currentHealth;
+    //UpdateUI();
     //}
 
     // Call this function to reduce health
@@ -48,8 +57,6 @@ public class HealthSystem : MonoBehaviour
     {
         float previousHealth = currentHealth;
         currentHealth -= amount;
-        
-
         
 
         if (CompareTag("Player"))

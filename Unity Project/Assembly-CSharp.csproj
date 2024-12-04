@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\Loot Management\InventoryManager.cs" />
     <Compile Include="Assets\GIan Stuff\DamageableCharacter.cs" />
     <Compile Include="Assets\Jesus Assets\AI and Room Transition ScriptsScripts\AIChase.cs" />
+    <Compile Include="Assets\PersistentObject.cs" />
     <Compile Include="Assets\Jesus Assets\AI and Room Transition ScriptsScripts\AIHealthSystem.cs" />
     <Compile Include="Assets\Scripts\Loot Management\LootSlot.cs" />
     <Compile Include="Assets\Text\HealthText.cs" />
