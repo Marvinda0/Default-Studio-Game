@@ -44,6 +44,13 @@ public class HealthSystem : MonoBehaviour
                 UpdateUI();
             }
         }
+        if (isEnemy)
+        {
+            if (Input.GetKeyDown(KeyCode.K))
+            {
+                Die();
+            }
+        }
     }
 
     //public void SyncWithStatsManager(){
