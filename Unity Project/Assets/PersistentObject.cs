@@ -17,4 +17,13 @@ public class PersistentObject : MonoBehaviour
         instance = this;
         DontDestroyOnLoad(gameObject);
     }
+
+    public static void ResetPersistentObject()
+    {
+        if (instance != null)
+        {
+            Destroy(instance.gameObject); // Destroy the persistent object
+            instance = null;
+        }
+    }
 }

@@ -1,7 +1,6 @@
 using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -111,5 +110,21 @@ public class WaveSpawnnerScript : MonoBehaviour
     {
         isRoomComplete = true; // Set the room as complete
         Debug.Log("Room is complete. Doors are open!");
+    }
+
+    public void ResetWaves()
+    {
+        // Reset the wave state variables
+        currentWaveNumber = 0;
+        activeEnemies = 0;
+        canSpawnEnemies = true;
+
+        // Reset the state for the first wave
+        InitializeWave();
+
+        // Reset the "room complete" status
+        isRoomComplete = false;
+
+        Debug.Log("WaveSpawner has been reset.");
     }
 }

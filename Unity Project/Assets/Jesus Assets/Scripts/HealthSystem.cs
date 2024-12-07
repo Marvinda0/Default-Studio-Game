@@ -7,32 +7,30 @@ public class HealthSystem : MonoBehaviour
     public float maxHealth;
     private float currentHealth;
     public bool isEnemy = false;
-    public delegate void MonsterDeath(int exp); //jch6 
-    public static event MonsterDeath OnMonsterDeath;//jch6
+
+    public delegate void MonsterDeath(int exp);
+    public static event MonsterDeath OnMonsterDeath;
 
     public int expReward;
-
     public Slider healthSlider;
 
     void Start()
     {
-        //maxHealth = StatsManager.Instance.maxHealth;
-        //currentHealth = StatsManager.Instance.currentHealth;
-        if (CompareTag("Player")){
+        if (CompareTag("Player"))
+        {
             maxHealth = StatsManager.Instance.maxHealth;
             currentHealth = StatsManager.Instance.currentHealth;
         }
-
-        currentHealth = maxHealth;
-        //UpdateUI();
-
+        else
+        {
+            currentHealth = maxHealth;
+        }
     }
 
     void Update()
     {
         if (CompareTag("Player"))
         {
-            currentHealth = StatsManager.Instance.currentHealth;
             float previousMaxHealth = maxHealth;
             maxHealth = StatsManager.Instance.maxHealth;
 
@@ -44,27 +42,17 @@ public class HealthSystem : MonoBehaviour
                 UpdateUI();
             }
         }
-        if (isEnemy)
+        if (isEnemy && Input.GetKeyDown(KeyCode.K))
         {
-            if (Input.GetKeyDown(KeyCode.K))
-            {
-                Die();
-            }
+            Die();
         }
     }
 
-    //public void SyncWithStatsManager(){
-    //maxHealth = StatsManager.Instance.maxHealth;
-    //currentHealth = StatsManager.Instance.currentHealth;
-    //UpdateUI();
-    //}
-
-    // Call this function to reduce health
+    // Reduce health
     public void TakeDamage(float amount)
     {
         float previousHealth = currentHealth;
         currentHealth -= amount;
-        
 
         if (CompareTag("Player"))
         {
@@ -72,10 +60,6 @@ public class HealthSystem : MonoBehaviour
             StatsManager.Instance.currentHealth = currentHealth;
             Debug.Log($"Player took {damageTaken} damage, remaining HP: {currentHealth}");
             UpdateUI();
-
-            //if(ExpManager.Instance.currentExp >= ExpManager.Instance.expToLevelUp){
-                //ExpManager.Instance.LevelUp();
-            //}
         }
 
         if (currentHealth <= 0)
@@ -88,32 +72,43 @@ public class HealthSystem : MonoBehaviour
     {
         if (isEnemy)
         {
-            // Notify the WaveSpawnnerScript that an enemy has died
             WaveSpawnnerScript waveSpawner = FindObjectOfType<WaveSpawnnerScript>();
             if (waveSpawner != null)
             {
                 waveSpawner.OnEnemyDefeated();
             }
             GetComponent<LootBag>().InstantiateLoot(transform.position);
-            OnMonsterDeath(expReward);
-            Destroy(gameObject); // Destroy the enemy object
+            OnMonsterDeath?.Invoke(expReward);
+            Destroy(gameObject);
         }
         else if (CompareTag("Player"))
         {
-            // Restart the game if the player dies
             RestartGame();
         }
     }
 
     private void RestartGame()
     {
-        // Reload the current scene to restart the game
+        // Reset StatsManager
+        StatsManager.Instance.ResetStats();
+
+        // Reset Persistent Objects
+        PersistentObject.ResetPersistentObject();
+
+        // Reset WaveSpawner if necessary
+        WaveSpawnnerScript waveSpawner = FindObjectOfType<WaveSpawnnerScript>();
+        if (waveSpawner != null)
+        {
+            waveSpawner.ResetWaves();
+        }
+
+        // Reload the scene
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    public void UpdateUI(){//jch6 updates the UI for experience gain and when leveling up
+    public void UpdateUI()
+    {
         healthSlider.maxValue = maxHealth;
         healthSlider.value = currentHealth;
-        
     }
 }

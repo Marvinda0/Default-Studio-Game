@@ -254,6 +254,7 @@ MonoBehaviour:
   maxHealth: 10
   isEnemy: 1
   expReward: 4
+  healthSlider: {fileID: 0}
 --- !u!114 &-2325563074004958571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,7 +267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d1e9b5f68ffcc84aa2690e92f59657f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageToPlayer: 10
+  damageToPlayer: 25
   damageInterval: 1
 --- !u!114 &8388043026047606253
 MonoBehaviour:

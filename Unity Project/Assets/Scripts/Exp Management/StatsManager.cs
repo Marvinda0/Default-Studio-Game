@@ -20,6 +20,11 @@ public class StatsManager : MonoBehaviour
     public float maxHealth;
     public float currentHealth;
 
+    // Default values for resetting stats
+    private float defaultDamage = 10f;
+    private float defaultKnockbackForce = 15f;
+    private float defaultSpeed = 600f;
+    private float defaultMaxHealth = 100f;
 
     private void Awake(){
         if(Instance == null){
@@ -28,5 +33,21 @@ public class StatsManager : MonoBehaviour
         } else {
             Destroy(gameObject);
         }
+    }
+    private void Start()
+    {
+        ResetStats(); // Set stats to their default values at the start
+    }
+
+    // Function to reset stats to their default values
+    public void ResetStats()
+    {
+        damage = defaultDamage;
+        knockbackForce = defaultKnockbackForce;
+        speed = defaultSpeed;
+        maxHealth = defaultMaxHealth;
+        currentHealth = maxHealth;
+
+        Debug.Log("Stats reset to default values.");
     }
 }
