@@ -83,16 +83,19 @@ public class HealthSystem : MonoBehaviour
 
     private void RestartGame()
     {
-        StatsManager.Instance.ResetStats();
+        // Reset stats and persistent objects
         PersistentObject.ResetPersistentObject();
+        StatsManager.Instance.ResetStats();
 
+        // Reset wave spawner if necessary
         WaveSpawnnerScript waveSpawner = FindObjectOfType<WaveSpawnnerScript>();
         if (waveSpawner != null)
         {
             waveSpawner.ResetWaves();
         }
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        // Load the first room
+        SceneManager.LoadScene("Room 1.0");
     }
 
     public void UpdateUI()

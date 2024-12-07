@@ -100,7 +100,7 @@ public class WaveSpawnnerScript : MonoBehaviour
         activeEnemies--;
 
         // Ensure we check if the room or wave is done each time an enemy dies
-        if (activeEnemies == 0 && currentWaveNumber + 1 == Waves.Length)
+        if ((activeEnemies == 0 && remainingEnemiesInWave == 0) && currentWaveNumber + 1 == Waves.Length)
         {
             OpenDoors();
         }

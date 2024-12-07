@@ -92,6 +92,7 @@
     <Compile Include="Assets\GIan Stuff\Slime\Slime.cs" />
     <Compile Include="Assets\Jesus Assets\AI and Room Transition ScriptsScripts\RoomTransitionScript.cs" />
     <Compile Include="Assets\Scripts\Loot Management\EquippedSlot.cs" />
+    <Compile Include="Assets\MelleMovement.cs" />
     <Compile Include="Assets\GIan Stuff\Enemy.cs" />
     <Compile Include="Assets\Scripts\Loot Management\LootBag.cs" />
     <Compile Include="Assets\Jesus Assets\Scripts\HealthSystem.cs" />
