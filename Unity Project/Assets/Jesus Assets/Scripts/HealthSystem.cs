@@ -100,7 +100,10 @@ public class HealthSystem : MonoBehaviour
 
     public void UpdateUI()
     {
-        healthSlider.maxValue = maxHealth;
-        healthSlider.value = currentHealth;
+        if (!isEnemy)
+        {
+            healthSlider.maxValue = maxHealth;
+            healthSlider.value = currentHealth;
+        }
     }
 }
