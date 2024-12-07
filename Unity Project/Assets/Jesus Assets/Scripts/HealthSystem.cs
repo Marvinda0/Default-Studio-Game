@@ -21,34 +21,28 @@ public class HealthSystem : MonoBehaviour
             maxHealth = StatsManager.Instance.maxHealth;
             currentHealth = StatsManager.Instance.currentHealth;
         }
-        else
-        {
-            currentHealth = maxHealth;
-        }
+        UpdateUI();
     }
 
     void Update()
     {
         if (CompareTag("Player"))
         {
-            float previousMaxHealth = maxHealth;
-            maxHealth = StatsManager.Instance.maxHealth;
+            float previousMaxHealth = maxHealth; // Store previous max health
+            maxHealth = StatsManager.Instance.maxHealth; // Update to new max health
+            currentHealth = StatsManager.Instance.currentHealth;
 
-            // Scale current health proportionally when maxHealth changes
-            if (maxHealth != previousMaxHealth)
-            {
-                float healthPercentage = currentHealth / previousMaxHealth;
-                currentHealth = maxHealth * healthPercentage;
-                UpdateUI();
-            }
+
+            UpdateUI();
         }
+
+        // Test functionality to kill an enemy by pressing "K"
         if (isEnemy && Input.GetKeyDown(KeyCode.K))
         {
             Die();
         }
     }
 
-    // Reduce health
     public void TakeDamage(float amount)
     {
         float previousHealth = currentHealth;
@@ -89,20 +83,15 @@ public class HealthSystem : MonoBehaviour
 
     private void RestartGame()
     {
-        // Reset StatsManager
         StatsManager.Instance.ResetStats();
-
-        // Reset Persistent Objects
         PersistentObject.ResetPersistentObject();
 
-        // Reset WaveSpawner if necessary
         WaveSpawnnerScript waveSpawner = FindObjectOfType<WaveSpawnnerScript>();
         if (waveSpawner != null)
         {
             waveSpawner.ResetWaves();
         }
 
-        // Reload the scene
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
