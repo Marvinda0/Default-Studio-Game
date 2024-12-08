@@ -37,9 +37,9 @@ public class StatsUI : MonoBehaviour
             //UpdateAllStats();
             StatsPanel.SetActive(false);
             menuActivated = false;
-            if(LevelUpPanel.activeSelf){
+            /*if(LevelUpPanel.activeSelf){
                 LevelUpPanel.SetActive(false);
-            }
+            }*/
         }
 
         else if(!menuActivated && Input.GetKeyDown(KeyCode.U))
@@ -87,7 +87,7 @@ public class StatsUI : MonoBehaviour
             UpdateDamage();
             ExpManager.Instance.UpdateUI();
 
-            if(LevelUpPanel.activeSelf){
+            if(ExpManager.Instance.statPoint <= 0 && LevelUpPanel.activeSelf){
                 LevelUpPanel.SetActive(false);
             }
         }
@@ -102,7 +102,7 @@ public class StatsUI : MonoBehaviour
             UpdateSpeed();
             ExpManager.Instance.UpdateUI();
 
-            if(LevelUpPanel.activeSelf){
+            if(ExpManager.Instance.statPoint <= 0 && LevelUpPanel.activeSelf){
                 LevelUpPanel.SetActive(false);
             }
         }
@@ -122,7 +122,7 @@ public class StatsUI : MonoBehaviour
             Debug.Log("Max Health: " + StatsManager.Instance.maxHealth);
             Debug.Log("Current Health: " + StatsManager.Instance.currentHealth);
 
-            if(LevelUpPanel.activeSelf){
+            if(ExpManager.Instance.statPoint <= 0 && LevelUpPanel.activeSelf){
                 LevelUpPanel.SetActive(false);
             }
         }
