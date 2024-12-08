@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class LootPickup : MonoBehaviour //Attach the LootPickup Script to the loot prefab jch6
 {
+    [SerializeField]private GameObject pickUpLootPrompt;
+    private GameObject pickUpLootPromptInstance;
     private bool isPlayerInRange = false;
     public Sprite lootSprite;
     public string lootName;
@@ -15,7 +17,12 @@ public class LootPickup : MonoBehaviour //Attach the LootPickup Script to the lo
 
     void Start(){
 
-        
+        if(pickUpLootPrompt != null){
+            Canvas uiCanvas = GameObject.Find("UIPopUpCanvas").GetComponent<Canvas>();
+            
+            pickUpLootPromptInstance = Instantiate(pickUpLootPrompt, uiCanvas.transform);
+            pickUpLootPromptInstance.SetActive(false); //jch6 added to ensure prompt is disabled
+        }
         inventoryManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>();//jch6
     }
 
@@ -30,6 +37,9 @@ public class LootPickup : MonoBehaviour //Attach the LootPickup Script to the lo
         inventoryManager.AddItem(loot.lootName, loot.lootSprite, loot.lootDescription, loot.lootType);
         
         Destroy(gameObject); //jch6 Destroys loot after pick up
+        if(pickUpLootPromptInstance != null){
+            pickUpLootPromptInstance.SetActive(false);
+        }
 
     }
 
@@ -38,7 +48,9 @@ public class LootPickup : MonoBehaviour //Attach the LootPickup Script to the lo
             isPlayerInRange = true;
 
             //Add UI prompt to press "F"
-
+            if(pickUpLootPromptInstance != null){
+                pickUpLootPromptInstance.SetActive(true);
+            }
             //
 
         } //jch6  When player enters interaction range
@@ -48,7 +60,9 @@ public class LootPickup : MonoBehaviour //Attach the LootPickup Script to the lo
         if(other.CompareTag("Player")){
             isPlayerInRange = false;
             //Hide UI prompt
-
+            if(pickUpLootPromptInstance != null){
+                pickUpLootPromptInstance.SetActive(false);
+            }
             //
 
         } //jch6  When player leaves interaction range
@@ -60,5 +74,9 @@ public class LootPickup : MonoBehaviour //Attach the LootPickup Script to the lo
         if(isPlayerInRange && Input.GetKeyDown(KeyCode.F)){
             PickUpLoot();
         }
+        if (pickUpLootPromptInstance != null && isPlayerInRange){
+            pickUpLootPromptInstance.transform.position = Camera.main.WorldToScreenPoint(transform.position + new Vector3(0, 0.2f, 0)); // Offset prompt above chest
+        }
+
     }
 }

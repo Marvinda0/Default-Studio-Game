@@ -16,7 +16,7 @@ MonoBehaviour:
   lootName: Aphrodites Pendant
   lootType: 1
   lootDescription: The necklace of Aphrodite. Grants +200 Health
-  dropChance: 100
+  dropChance: 20
   attackDamage: 0
   movementSpeed: 0
   healthIncrease: 200
