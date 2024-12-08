@@ -15,13 +15,11 @@ GameObject:
   - component: {fileID: 4229802418481570286}
   - component: {fileID: 8058370345373112990}
   - component: {fileID: 589695117089210687}
-  - component: {fileID: -4104862405784954980}
   - component: {fileID: 3233076866189492818}
   - component: {fileID: -6900193940645402718}
-  - component: {fileID: 143241969749684180}
   - component: {fileID: -7419300007996074637}
   m_Layer: 0
-  m_Name: Slime
+  m_Name: Boss
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -83,12 +81,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1184974350, guid: 554d660ddae6d524e80dc29aa349d0a1, type: 3}
+  m_Sprite: {fileID: -1023444383, guid: dc76578eff7b3fa409ede3866c6cfc62, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.32, y: 0.32}
+  m_Size: {x: 4.8, y: 4.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -153,8 +151,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.007001683, y: -0.017798133}
-  m_Size: {x: 0.2780743, y: 0.2780743}
+  m_Offset: {x: 0.02669543, y: -0.59906733}
+  m_Size: {x: 3.8461795, y: 3.8461795}
   m_Direction: 0
 --- !u!114 &4229802418481570286
 MonoBehaviour:
@@ -240,27 +238,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   target: {fileID: 0}
---- !u!95 &-4104862405784954980
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6083513873441513986}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3dff7e1ea7ff81d4ea99fb01cdd90f61, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &3233076866189492818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -274,7 +251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 10
-  isBoss: 0
+  isBoss: 1
   isEnemy: 1
   expReward: 3
   healthSlider: {fileID: 0}
@@ -292,23 +269,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageToPlayer: 25
   damageInterval: 1
---- !u!114 &143241969749684180
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6083513873441513986}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4602407f7ba938449d1fc35c7d4bd83, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  droppedItemPrefab: {fileID: 2830374740305323753, guid: 7d4017f1aa6541a4e87628ab7fcd0883, type: 3}
-  lootList:
-  - {fileID: 11400000, guid: 3e01a0964a2f8e147ab21cd77eb37820, type: 2}
-  - {fileID: 11400000, guid: cc669be249a1e1e438fed91ee22e8c10, type: 2}
-  - {fileID: 11400000, guid: a23e79b66c0b19f45bdbd220225945b5, type: 2}
 --- !u!114 &-7419300007996074637
 MonoBehaviour:
   m_ObjectHideFlags: 0

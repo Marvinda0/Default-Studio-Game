@@ -15,10 +15,10 @@ GameObject:
   - component: {fileID: 4229802418481570286}
   - component: {fileID: 8058370345373112990}
   - component: {fileID: 589695117089210687}
-  - component: {fileID: -4104862405784954980}
   - component: {fileID: 3233076866189492818}
   - component: {fileID: -6900193940645402718}
   - component: {fileID: 143241969749684180}
+  - component: {fileID: -608379897297131563}
   m_Layer: 0
   m_Name: TankEnemy2
   m_TagString: Enemy
@@ -35,8 +35,8 @@ Transform:
   m_GameObject: {fileID: 6083513873441513986}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.359, y: 0.113, z: 0.09057403}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalPosition: {x: -0.001, y: 0.031, z: 0.09057403}
+  m_LocalScale: {x: 1.2753717, y: 1.2753717, z: 1.2753717}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -152,8 +152,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0016312301, y: -0.017798133}
-  m_Size: {x: 0.17902046, y: 0.18688992}
+  m_Offset: {x: -0.0013569576, y: -0.013614939}
+  m_Size: {x: 0.21607217, y: 0.21607217}
   m_Direction: 0
 --- !u!114 &4229802418481570286
 MonoBehaviour:
@@ -239,27 +239,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   target: {fileID: 0}
---- !u!95 &-4104862405784954980
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6083513873441513986}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3dff7e1ea7ff81d4ea99fb01cdd90f61, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &3233076866189492818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -273,6 +252,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 50
+  isBoss: 0
   isEnemy: 1
   expReward: 3
   healthSlider: {fileID: 0}
@@ -288,7 +268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d1e9b5f68ffcc84aa2690e92f59657f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageToPlayer: 25
+  damageToPlayer: 10
   damageInterval: 1
 --- !u!114 &143241969749684180
 MonoBehaviour:
@@ -307,3 +287,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3e01a0964a2f8e147ab21cd77eb37820, type: 2}
   - {fileID: 11400000, guid: cc669be249a1e1e438fed91ee22e8c10, type: 2}
   - {fileID: 11400000, guid: a23e79b66c0b19f45bdbd220225945b5, type: 2}
+--- !u!114 &-608379897297131563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6083513873441513986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19edfd8ac17bf3f4f80239b69782824f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
