@@ -17,9 +17,10 @@ GameObject:
   - component: {fileID: 589695117089210687}
   - component: {fileID: 3233076866189492818}
   - component: {fileID: -6900193940645402718}
-  - component: {fileID: 8670829954444824012}
+  - component: {fileID: 143241969749684180}
+  - component: {fileID: -7419300007996074637}
   m_Layer: 0
-  m_Name: Boss
+  m_Name: MelleMob
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34,8 +35,8 @@ Transform:
   m_GameObject: {fileID: 6083513873441513986}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.359, y: 0.113, z: 0.09057403}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalPosition: {x: -0.004, y: 0.066, z: 0.09057403}
+  m_LocalScale: {x: 0.98226005, y: 0.98226005, z: 0.98226005}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -81,12 +82,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1023444383, guid: dc76578eff7b3fa409ede3866c6cfc62, type: 3}
+  m_Sprite: {fileID: -1184974350, guid: 554d660ddae6d524e80dc29aa349d0a1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 4.8, y: 4.8}
+  m_Size: {x: 0.32, y: 0.32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -151,8 +152,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.02669543, y: -0.59906733}
-  m_Size: {x: 3.8461795, y: 3.8461795}
+  m_Offset: {x: 0.0014851477, y: -0.02744049}
+  m_Size: {x: 0.17811933, y: 0.17811945}
   m_Direction: 0
 --- !u!114 &4229802418481570286
 MonoBehaviour:
@@ -250,9 +251,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4efd85964de9ea14f9a3f88af29a7d7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
-  currentHealth: 0
-  isBoss: 1
+  maxHealth: 10
+  isBoss: 0
   isEnemy: 1
   expReward: 3
   healthSlider: {fileID: 0}
@@ -268,9 +268,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d1e9b5f68ffcc84aa2690e92f59657f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageToPlayer: 50
+  damageToPlayer: 25
   damageInterval: 1
---- !u!114 &8670829954444824012
+--- !u!114 &143241969749684180
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -279,20 +279,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 6083513873441513986}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 009b157b05445cb4ab6a453623e723c9, type: 3}
+  m_Script: {fileID: 11500000, guid: a4602407f7ba938449d1fc35c7d4bd83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  phase2Threshold: 70
-  phase3Threshold: 35
-  projectilePrefab: {fileID: 3232248416625360096, guid: cd3aa4ef6721dbd4181024ba1a689a44, type: 3}
-  fireRate: 2
-  projectileDamage: 10
-  projectileSpreadAngle: 45
-  chargeSpeed: 8
-  chargeCooldown: 5
-  fireCirclePrefab: {fileID: 2655162931783464554, guid: b4749ff34bc35604b8b16df5fd37694e, type: 3}
-  fireCircleSpawnPoints: []
-  fireCircleInterval: 15
-  minionPrefab: {fileID: 6083513873441513986, guid: f29029b55e0e05b46933b85faf174826, type: 3}
-  minionsPerSummon: 3
-  minionSpawnPoints: []
+  droppedItemPrefab: {fileID: 2830374740305323753, guid: 7d4017f1aa6541a4e87628ab7fcd0883, type: 3}
+  lootList:
+  - {fileID: 11400000, guid: 3e01a0964a2f8e147ab21cd77eb37820, type: 2}
+  - {fileID: 11400000, guid: cc669be249a1e1e438fed91ee22e8c10, type: 2}
+  - {fileID: 11400000, guid: a23e79b66c0b19f45bdbd220225945b5, type: 2}
+--- !u!114 &-7419300007996074637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6083513873441513986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19edfd8ac17bf3f4f80239b69782824f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

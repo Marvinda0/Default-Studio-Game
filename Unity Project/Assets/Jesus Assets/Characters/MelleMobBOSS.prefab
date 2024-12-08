@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: 143241969749684180}
   - component: {fileID: -7419300007996074637}
   m_Layer: 0
-  m_Name: Slime
+  m_Name: MelleMobBOSS
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -252,9 +252,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 10
+  currentHealth: 0
   isBoss: 0
   isEnemy: 1
-  expReward: 3
+  expReward: 0
   healthSlider: {fileID: 0}
 --- !u!114 &-6900193940645402718
 MonoBehaviour:

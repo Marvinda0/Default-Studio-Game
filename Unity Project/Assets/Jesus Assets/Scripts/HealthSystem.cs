@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class HealthSystem : MonoBehaviour
 {
     public float maxHealth;
-    private float currentHealth;
+    public float currentHealth;
     public bool isBoss = false;
     public bool isEnemy = false;
 

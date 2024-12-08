@@ -49,9 +49,12 @@ public class WaveSpawnnerScript : MonoBehaviour
 
     void InitializeWave()
     {
-        currentWave = Waves[currentWaveNumber];
-        remainingEnemiesInWave = currentWave.NumberOfEnemies; // Set remaining enemies based on wave data
-        canSpawnEnemies = true;
+        if (Waves.Length != 0)
+        {
+            currentWave = Waves[currentWaveNumber];
+            remainingEnemiesInWave = currentWave.NumberOfEnemies; // Set remaining enemies based on wave data
+            canSpawnEnemies = true;
+        }
     }
 
     void spawnNextWave()

@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Loot Management\LootPickup.cs" />
     <Compile Include="Assets\Scripts\Exp Management\StatsUI.cs" />
+    <Compile Include="Assets\CerberusScript.cs" />
     <Compile Include="Assets\Music\Switch Music.cs" />
     <Compile Include="Assets\Scripts\Loot Management\EquipmentSOLibrary.cs" />
     <Compile Include="Assets\Jesus Assets\AI and Room Transition ScriptsScripts\AIMeleeDamage.cs" />
