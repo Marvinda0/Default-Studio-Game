@@ -6,6 +6,7 @@ public class HealthSystem : MonoBehaviour
 {
     public float maxHealth;
     private float currentHealth;
+    public bool isBoss = false;
     public bool isEnemy = false;
 
     public delegate void MonsterDeath(int exp);
@@ -64,7 +65,7 @@ public class HealthSystem : MonoBehaviour
 
     private void Die()
     {
-        if (isEnemy)
+        if (isEnemy && !isBoss)
         {
             WaveSpawnnerScript waveSpawner = FindObjectOfType<WaveSpawnnerScript>();
             if (waveSpawner != null)
@@ -74,6 +75,12 @@ public class HealthSystem : MonoBehaviour
             GetComponent<LootBag>().InstantiateLoot(transform.position);
             OnMonsterDeath?.Invoke(expReward);
             Destroy(gameObject);
+        }
+
+        if (isBoss)
+        {
+            Destroy(gameObject);
+            //End game
         }
         else if (CompareTag("Player"))
         {
