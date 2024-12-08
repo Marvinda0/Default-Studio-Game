@@ -22,6 +22,10 @@ public class HealthSystem : MonoBehaviour
             maxHealth = StatsManager.Instance.maxHealth;
             currentHealth = StatsManager.Instance.currentHealth;
         }
+        else
+        {
+            currentHealth = maxHealth; // Ensure enemies start at max health
+        }
         UpdateUI();
     }
 
