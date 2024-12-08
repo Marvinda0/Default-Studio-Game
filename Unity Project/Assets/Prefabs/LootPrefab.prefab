@@ -126,6 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdc57954313dd8a48896caf036a726f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickUpLootPrompt: {fileID: 5812511069845281848, guid: 581265192584a7f45bb2836878005c5a, type: 3}
   lootSprite: {fileID: 0}
   lootName: 
   lootDescription: 
