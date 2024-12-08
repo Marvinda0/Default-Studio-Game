@@ -8,6 +8,8 @@ public class ExpManager : MonoBehaviour
 {
     public static ExpManager Instance;
 
+    public GameObject levelUpTextPrefab;
+
     public int level;
     public int statPoint;
     public int currentExp;
@@ -43,20 +45,16 @@ public class ExpManager : MonoBehaviour
     }
     
     public void LevelUp(){ //jch6 For when a player levels up. Can add a graphic or soundeffect for levelup
+        Instantiate(levelUpTextPrefab, transform.position, Quaternion.identity);
         statPoint += 2; //jch6 gain 2 statpoints after every level up
         level++;
         currentExp -= expToLevelUp;
         expToLevelUp = Mathf.RoundToInt(expToLevelUp * expGrowthMultiplier);
-        //StatsManager.Instance.currentHealth = StatsManager.Instance.maxHealth;//jch6 after level up the player regains full health
         
-        //var healthSystem = FindObjectOfType<HealthSystem>();
-            //if (healthSystem != null)
-            //{
-                //healthSystem.SyncWithStatsManager();
-            //}
-        //FindObjectOfType<HealthSystem>().SyncWithStatsManager;
         StatsManager.Instance.currentHealth = StatsManager.Instance.maxHealth;
         UpdateUI();
+        StatsUI.Instance.ShowLevelUpPanel();
+        Debug.Log("LEVEL UP!");
     }
 
     private void OnEnable (){
