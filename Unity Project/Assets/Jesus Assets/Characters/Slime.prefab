@@ -153,8 +153,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0016312301, y: -0.017798133}
-  m_Size: {x: 0.17902046, y: 0.18688992}
+  m_Offset: {x: 0.007001683, y: -0.017798133}
+  m_Size: {x: 0.2780743, y: 0.2780743}
   m_Direction: 0
 --- !u!114 &4229802418481570286
 MonoBehaviour:
@@ -274,6 +274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 10
+  isBoss: 0
   isEnemy: 1
   expReward: 3
   healthSlider: {fileID: 0}

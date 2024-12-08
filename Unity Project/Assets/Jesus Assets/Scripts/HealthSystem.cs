@@ -48,7 +48,7 @@ public class HealthSystem : MonoBehaviour
     {
         float previousHealth = currentHealth;
         currentHealth -= amount;
-
+        Debug.Log($"Damage received: {amount}, Current Health: {currentHealth}, Max Health: {maxHealth}");
         if (CompareTag("Player"))
         {
             float damageTaken = previousHealth - currentHealth;

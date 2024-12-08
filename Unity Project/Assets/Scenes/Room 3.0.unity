@@ -2698,9 +2698,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Waves:
   - waveName: Boss
-    NumberOfEnemies: 1
+    NumberOfEnemies: 5
     typesOfEnemies:
     - {fileID: 6083513873441513986, guid: f29029b55e0e05b46933b85faf174826, type: 3}
+    - {fileID: 6083513873441513986, guid: 22792621d291de445a14810bfbd4b139, type: 3}
     spawnInterval: 0
   - waveName: Boss
     NumberOfEnemies: 1
@@ -2709,10 +2710,6 @@ MonoBehaviour:
     spawnInterval: 0
   spawnPoints:
   - {fileID: 1584068954}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   playerTransform: {fileID: 0}
   animator: {fileID: 0}
   waveName: {fileID: 0}
