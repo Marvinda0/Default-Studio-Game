@@ -5,6 +5,7 @@ using TMPro;
 
 public class StatsUI : MonoBehaviour
 {
+    public static StatsUI Instance;
 
     public GameObject[] statsSlots;
 
@@ -16,9 +17,17 @@ public class StatsUI : MonoBehaviour
     }
     
     public GameObject StatsPanel;
+    public GameObject LevelUpPanel;
     private bool menuActivated;
     
 
+    private void Awake() {
+        if (Instance == null) {
+            Instance = this;
+        //} else {
+            //Destroy(gameObject);
+        }
+    }
     // Update is called once per frame
     void Update()
     {
@@ -28,6 +37,9 @@ public class StatsUI : MonoBehaviour
             //UpdateAllStats();
             StatsPanel.SetActive(false);
             menuActivated = false;
+            if(LevelUpPanel.activeSelf){
+                LevelUpPanel.SetActive(false);
+            }
         }
 
         else if(!menuActivated && Input.GetKeyDown(KeyCode.U))
@@ -39,6 +51,10 @@ public class StatsUI : MonoBehaviour
             menuActivated = true;
         }
 
+    }
+
+    public void ShowLevelUpPanel(){
+        LevelUpPanel.SetActive(true);
     }
 
     public void UpdateDamage(){
@@ -63,30 +79,41 @@ public class StatsUI : MonoBehaviour
     }
 
     public void IncreaseDamage(){
+        Debug.Log("Button clicked!");
         if (ExpManager.Instance.statPoint > 0){
             allocatedDamagePoints++;
             StatsManager.Instance.damage += 10;//Increases the actual damage
             ExpManager.Instance.statPoint -= 1;
             UpdateDamage();
             ExpManager.Instance.UpdateUI();
+
+            if(LevelUpPanel.activeSelf){
+                LevelUpPanel.SetActive(false);
+            }
         }
     }
 
     public void IncreaseSpeed(){
+        Debug.Log("Button clicked!");
         if (ExpManager.Instance.statPoint > 0){
             allocatedSpeedPoints++;
             StatsManager.Instance.speed += 700;
             ExpManager.Instance.statPoint-=1;
             UpdateSpeed();
             ExpManager.Instance.UpdateUI();
+
+            if(LevelUpPanel.activeSelf){
+                LevelUpPanel.SetActive(false);
+            }
         }
     }
 
     public void IncreaseHealth(){
+        Debug.Log("Button clicked!");
         if (ExpManager.Instance.statPoint > 0){
             allocatedHealthPoints++;
             StatsManager.Instance.maxHealth += 100;
-            StatsManager.Instance.currentHealth = StatsManager.Instance.maxHealth;//jch6 when increasing stat health player regains new full health
+            //StatsManager.Instance.currentHealth = StatsManager.Instance.maxHealth;//jch6 when increasing stat health player regains new full health
             ExpManager.Instance.statPoint-=1;
             UpdateHealth();
             ExpManager.Instance.UpdateUI();
@@ -94,6 +121,10 @@ public class StatsUI : MonoBehaviour
             
             Debug.Log("Max Health: " + StatsManager.Instance.maxHealth);
             Debug.Log("Current Health: " + StatsManager.Instance.currentHealth);
+
+            if(LevelUpPanel.activeSelf){
+                LevelUpPanel.SetActive(false);
+            }
         }
     }
 }
