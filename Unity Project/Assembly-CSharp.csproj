@@ -69,6 +69,7 @@
     <Compile Include="Assets\Jesus Assets\AI and Room Transition ScriptsScripts\RangedEnemyScripts\ProjectileScript.cs" />
     <Compile Include="Assets\Scripts\Loot Management\InventoryManager.cs" />
     <Compile Include="Assets\GIan Stuff\DamageableCharacter.cs" />
+    <Compile Include="Assets\Jesus Assets\Start Screen assets\StartMenuScripts\MainMenu.cs" />
     <Compile Include="Assets\Jesus Assets\AI and Room Transition ScriptsScripts\AIChase.cs" />
     <Compile Include="Assets\PersistentObject.cs" />
     <Compile Include="Assets\Jesus Assets\AI and Room Transition ScriptsScripts\AIHealthSystem.cs" />
