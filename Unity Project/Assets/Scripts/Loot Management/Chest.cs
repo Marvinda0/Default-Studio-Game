@@ -63,7 +63,7 @@ public class Chest : MonoBehaviour
 
         if (uiPrompt != null && isPlayerInRange)
         {
-            uiPrompt.transform.position = Camera.main.WorldToScreenPoint(transform.position + new Vector3(0, 1, 0)); // Offset prompt above chest
+            uiPrompt.transform.position = Camera.main.WorldToScreenPoint(transform.position + new Vector3(0, 0.2f, 0)); // Offset prompt above chest
         }
     }
 
