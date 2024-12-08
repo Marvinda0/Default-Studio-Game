@@ -40,16 +40,10 @@ public class WaveSpawnnerScript : MonoBehaviour
     private void Update()
     {
         SpawnWave();
-
         // Check if all enemies are defeated to spawn the next wave
         if (activeEnemies == 0 && !canSpawnEnemies && currentWaveNumber + 1 < Waves.Length)
         {
             spawnNextWave();
-        }
-        else if (activeEnemies == 0 && currentWaveNumber + 1 == Waves.Length)
-        {
-            // Room is done, final wave has been completed
-            OpenDoors();
         }
     }
 
