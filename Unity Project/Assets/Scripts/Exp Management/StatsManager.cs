@@ -21,8 +21,8 @@ public class StatsManager : MonoBehaviour
     public float currentHealth;
 
     // Default values for resetting stats
-    private float defaultDamage = 10f;
-    private float defaultKnockbackForce = 15f;
+    private float defaultDamage = 3.5f;
+    private float defaultKnockbackForce = 1000f;
     private float defaultSpeed = 600f;
     private float defaultMaxHealth = 100f;
 
