@@ -40,6 +40,11 @@ public class CerberusController : MonoBehaviour
     public int maxActiveMinions = 5;
     private List<GameObject> activeMinions = new List<GameObject>();
 
+    [Header("Visual Feedback")]
+    public SpriteRenderer spriteRenderer; // Reference to Cerberus's sprite renderer
+    public Color chargeColor = Color.red; // Color when preparing to charge
+    private Color originalColor; // Store the original color
+
     private Transform playerTransform;
     private HealthSystem healthSystem; // Reference to the HealthSystem component
 
@@ -62,6 +67,10 @@ public class CerberusController : MonoBehaviour
         else
         {
             Debug.LogWarning("Player not found. Make sure the player has the 'Player' tag.");
+        }
+        if (spriteRenderer != null)
+        {
+            originalColor = spriteRenderer.color;
         }
         if (roomBounds != null)
         {
@@ -155,7 +164,7 @@ public class CerberusController : MonoBehaviour
     {
         if (!isCharging && Time.time >= nextChargeTime)
         {
-            StartCoroutine(ChargeAtPlayer(playerTransform));
+            StartCoroutine(PrepareAndCharge());
         }
     }
 
@@ -190,6 +199,27 @@ public class CerberusController : MonoBehaviour
 
         // Set the cooldown for the next charge
         nextChargeTime = Time.time + chargeCooldown;
+    }
+
+    private IEnumerator PrepareAndCharge()
+    {
+        if (spriteRenderer != null)
+        {
+            // Change color to red
+            spriteRenderer.color = chargeColor;
+        }
+
+        // Wait for 1 second before charging
+        yield return new WaitForSeconds(1f);
+
+        if (spriteRenderer != null)
+        {
+            // Revert to the original color
+            spriteRenderer.color = originalColor;
+        }
+
+        // Perform the charge
+        yield return ChargeAtPlayer(playerTransform);
     }
 
 

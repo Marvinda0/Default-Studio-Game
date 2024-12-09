@@ -36,7 +36,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.074, y: 0.504, z: 0.09057403}
-  m_LocalScale: {x: 0.038941264, y: 0.04373027, z: 0.08739063}
+  m_LocalScale: {x: 0.05041336, y: 0.05661321, z: 0.1131359}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -257,6 +257,8 @@ MonoBehaviour:
   isEnemy: 1
   expReward: 0
   healthSlider: {fileID: 0}
+  damageTextPrefab: {fileID: 0}
+  textSpawnPoint: {fileID: 0}
 --- !u!114 &-6900193940645402718
 MonoBehaviour:
   m_ObjectHideFlags: 0

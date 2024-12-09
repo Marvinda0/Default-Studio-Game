@@ -18526,7 +18526,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Waves:
   - waveName: Wave 1
-    NumberOfEnemies: 1
+    NumberOfEnemies: 5
     typesOfEnemies:
     - {fileID: 6083513873441513986, guid: f29029b55e0e05b46933b85faf174826, type: 3}
     spawnInterval: 2
