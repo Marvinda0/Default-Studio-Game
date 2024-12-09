@@ -107,6 +107,11 @@ public class HealthSystem : MonoBehaviour
             OnMonsterDeath(expReward);
             Destroy(gameObject); // Destroy the enemy object
         }
+        else if(isBoss)
+        {
+            //game over event, 
+            SceneManager.LoadScene("StartMenu");
+        }
     }
 
     private IEnumerator RestartAfterDeath()

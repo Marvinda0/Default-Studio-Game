@@ -152,8 +152,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.47897068, y: -0.063389346}
-  m_Size: {x: 3.162513, y: 4.161709}
+  m_Offset: {x: -0.5046206, y: -0.06338938}
+  m_Size: {x: 3.932046, y: 4.161709}
   m_Direction: 0
 --- !u!114 &4229802418481570286
 MonoBehaviour:
@@ -286,10 +286,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   droppedItemPrefab: {fileID: 2830374740305323753, guid: 7d4017f1aa6541a4e87628ab7fcd0883, type: 3}
-  lootList:
-  - {fileID: 11400000, guid: 3e01a0964a2f8e147ab21cd77eb37820, type: 2}
-  - {fileID: 11400000, guid: cc669be249a1e1e438fed91ee22e8c10, type: 2}
-  - {fileID: 11400000, guid: a23e79b66c0b19f45bdbd220225945b5, type: 2}
+  lootList: []
 --- !u!114 &-7419300007996074637
 MonoBehaviour:
   m_ObjectHideFlags: 0
