@@ -35,8 +35,8 @@ Transform:
   m_GameObject: {fileID: 4982733723981510052}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.26, y: 0.64, z: 0.09057403}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.0288, y: 0.2212, z: 0.09057403}
+  m_LocalScale: {x: 0.03894126, y: 0.04373027, z: 0.08739063}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -4458645463969779248, guid: ce4f1d328fb8e9a43bcfd335a99f7c84, type: 3}
+  m_Sprite: {fileID: 1069207175, guid: a93da3b7478aa7f4eb342ae56b8d0763, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -152,8 +152,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0025355965, y: 0.046497405}
-  m_Size: {x: 0.14669439, y: 0.14669439}
+  m_Offset: {x: -0.03734937, y: -0.2893741}
+  m_Size: {x: 1.8066474, y: 2.9113955}
   m_Direction: 0
 --- !u!114 &7112045905062980753
 MonoBehaviour:
@@ -252,6 +252,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 10
+  currentHealth: 0
+  isBoss: 0
   isEnemy: 1
   expReward: 4
   healthSlider: {fileID: 0}
