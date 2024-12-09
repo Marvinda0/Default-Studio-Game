@@ -95,7 +95,7 @@ public class HealthSystem : MonoBehaviour
             // Start the coroutine to restart the game after death animation
             StartCoroutine(RestartAfterDeath());
         }
-        else if (isEnemy)
+        else if (isEnemy && !isBoss)
         {
             // Notify the WaveSpawnerScript that an enemy has died
             WaveSpawnnerScript waveSpawner = FindObjectOfType<WaveSpawnnerScript>();
@@ -107,10 +107,12 @@ public class HealthSystem : MonoBehaviour
             OnMonsterDeath(expReward);
             Destroy(gameObject); // Destroy the enemy object
         }
-        else if(isBoss)
+        else if(isBoss && isEnemy)
         {
             //game over event, 
+            Destroy(gameObject); // Destroy the enemy object
             SceneManager.LoadScene("StartMenu");
+            
         }
     }
 

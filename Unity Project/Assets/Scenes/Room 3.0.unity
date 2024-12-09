@@ -11637,7 +11637,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -6900193940645402718, guid: 3fb11f1027efc674aa93cb1eda0e4fa4, type: 3}
       propertyPath: damageToPlayer
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2379507602550033425, guid: 3fb11f1027efc674aa93cb1eda0e4fa4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11678,6 +11678,14 @@ PrefabInstance:
     - target: {fileID: 2379507602550033425, guid: 3fb11f1027efc674aa93cb1eda0e4fa4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3233076866189492818, guid: 3fb11f1027efc674aa93cb1eda0e4fa4, type: 3}
+      propertyPath: isEnemy
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3233076866189492818, guid: 3fb11f1027efc674aa93cb1eda0e4fa4, type: 3}
+      propertyPath: currentHealth
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6083513873441513986, guid: 3fb11f1027efc674aa93cb1eda0e4fa4, type: 3}
       propertyPath: m_Name
