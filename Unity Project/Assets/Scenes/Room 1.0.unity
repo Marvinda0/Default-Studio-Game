@@ -13676,6 +13676,10 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: 0.84073544
       objectReference: {fileID: 0}
+    - target: {fileID: 3401855509523262552, guid: bb3ba6d498df1b94488f1d415a8936d4, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 3724226178376331283, guid: bb3ba6d498df1b94488f1d415a8936d4, type: 3}
       propertyPath: maxHealth
       value: 100
