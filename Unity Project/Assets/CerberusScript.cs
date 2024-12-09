@@ -21,6 +21,9 @@ public class CerberusController : MonoBehaviour
     public float chargeCooldown = 5f;     // Cooldown between charges
     private float nextChargeTime;
     private bool isCharging;
+    public Transform roomBounds; // Reference to the room bounds (BoxCollider2D)
+    private Bounds bounds; // Stores the bounds of the room
+    public float chargeDuration = 1f;
 
     [Header("Fire Circles")]
     public GameObject fireCirclePrefab;    // Fire circle prefab
@@ -60,6 +63,18 @@ public class CerberusController : MonoBehaviour
         {
             Debug.LogWarning("Player not found. Make sure the player has the 'Player' tag.");
         }
+        if (roomBounds != null)
+        {
+            BoxCollider2D roomCollider = roomBounds.GetComponent<BoxCollider2D>();
+            if (roomCollider != null)
+            {
+                bounds = roomCollider.bounds;
+            }
+            else
+            {
+                Debug.LogError("RoomBounds object is missing a BoxCollider2D!");
+            }
+        }
     }
 
     void Update()
@@ -76,6 +91,7 @@ public class CerberusController : MonoBehaviour
 
         if (healthPercentage <= phase3Threshold && currentPhase != 3)
         {
+            chargeCooldown = 2;
             currentPhase = 3;
             Debug.Log("Phase 3 Activated");
         }
@@ -90,8 +106,8 @@ public class CerberusController : MonoBehaviour
     {
         if (currentPhase == 1)
         {
+            HandleFireCircles();
             HandleProjectiles();
-            SummonMinions();
         }
         else if (currentPhase == 2)
         {
@@ -139,39 +155,55 @@ public class CerberusController : MonoBehaviour
     {
         if (!isCharging && Time.time >= nextChargeTime)
         {
-            StartCoroutine(ChargeAtPlayer());
+            StartCoroutine(ChargeAtPlayer(playerTransform));
         }
     }
 
-    IEnumerator ChargeAtPlayer()
+    public IEnumerator ChargeAtPlayer(Transform playerTransform)
     {
-        isCharging = true;
+        if (isCharging || playerTransform == null) yield break; // Prevent multiple charges
 
-        Vector2 chargeDirection = (playerTransform.position - transform.position).normalized;
-        float chargeDuration = 1f;
+        isCharging = true; // Indicate that the boss is currently charging
 
-        float elapsedTime = 0;
+        Vector2 chargeDirection = (playerTransform.position - transform.position).normalized; // Direction towards the player
+        float elapsedTime = 0f;
+
         while (elapsedTime < chargeDuration)
         {
-            transform.Translate(chargeDirection * chargeSpeed * Time.deltaTime);
+            Vector2 newPosition = (Vector2)transform.position + chargeDirection * chargeSpeed * Time.deltaTime;
+
+            // Clamp the position within the room bounds
+            newPosition.x = Mathf.Clamp(newPosition.x, bounds.min.x, bounds.max.x);
+            newPosition.y = Mathf.Clamp(newPosition.y, bounds.min.y, bounds.max.y);
+
+            transform.position = newPosition;
+
             elapsedTime += Time.deltaTime;
             yield return null;
         }
 
+        // Stop charging movement after charge duration
         isCharging = false;
+
+        // Add a slight pause before the boss can move or attack again
+        yield return new WaitForSeconds(0.5f);
+
+        // Set the cooldown for the next charge
         nextChargeTime = Time.time + chargeCooldown;
     }
+
+
     void HandleFireCircles()
     {
         if (Time.time >= nextFireCircleTime && fireCirclePrefab != null)
         {
             // Number of fire circles to spawn
-            int fireCircleCount = 3; 
+            int fireCircleCount = 1; 
 
             for (int i = 0; i < fireCircleCount; i++)
             {
                 // Generate a random position around Cerberus within a defined radius
-                Vector2 randomPosition = (Vector2)transform.position + Random.insideUnitCircle * 10f;   
+                Vector2 randomPosition = (Vector2)playerTransform.position + Random.insideUnitCircle * 1f;   
 
                 // Instantiate the fire circle prefab at the random position
                 Instantiate(fireCirclePrefab, randomPosition, Quaternion.identity);

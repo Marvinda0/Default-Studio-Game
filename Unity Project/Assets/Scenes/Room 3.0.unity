@@ -13974,7 +13974,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -15911,11 +15911,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2379507602550033425, guid: 3fb11f1027efc674aa93cb1eda0e4fa4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.35
+      value: -0.23
       objectReference: {fileID: 0}
     - target: {fileID: 2379507602550033425, guid: 3fb11f1027efc674aa93cb1eda0e4fa4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.36
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 2379507602550033425, guid: 3fb11f1027efc674aa93cb1eda0e4fa4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -15954,6 +15954,26 @@ PrefabInstance:
       value: Boss
       objectReference: {fileID: 0}
     - target: {fileID: 8670829954444824012, guid: 3fb11f1027efc674aa93cb1eda0e4fa4, type: 3}
+      propertyPath: roomBounds
+      value: 
+      objectReference: {fileID: 1834352371}
+    - target: {fileID: 8670829954444824012, guid: 3fb11f1027efc674aa93cb1eda0e4fa4, type: 3}
+      propertyPath: chargeSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8670829954444824012, guid: 3fb11f1027efc674aa93cb1eda0e4fa4, type: 3}
+      propertyPath: minionPrefab
+      value: 
+      objectReference: {fileID: 6083513873441513986, guid: c2fd2f9c9f93dda4ab458df5556fd233, type: 3}
+    - target: {fileID: 8670829954444824012, guid: 3fb11f1027efc674aa93cb1eda0e4fa4, type: 3}
+      propertyPath: chargeCooldown
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8670829954444824012, guid: 3fb11f1027efc674aa93cb1eda0e4fa4, type: 3}
+      propertyPath: chargeDuration
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8670829954444824012, guid: 3fb11f1027efc674aa93cb1eda0e4fa4, type: 3}
       propertyPath: maxActiveMinions
       value: 4
       objectReference: {fileID: 0}
@@ -15964,6 +15984,10 @@ PrefabInstance:
     - target: {fileID: 8670829954444824012, guid: 3fb11f1027efc674aa93cb1eda0e4fa4, type: 3}
       propertyPath: projectileDamage
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8670829954444824012, guid: 3fb11f1027efc674aa93cb1eda0e4fa4, type: 3}
+      propertyPath: fireCircleInterval
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8670829954444824012, guid: 3fb11f1027efc674aa93cb1eda0e4fa4, type: 3}
       propertyPath: minionSpawnPoints.Array.size
@@ -18065,7 +18089,7 @@ Transform:
   m_GameObject: {fileID: 1770939430}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.42, y: 2.15, z: -0.0012254715}
+  m_LocalPosition: {x: -3.593, y: -0.302, z: -0.0012254715}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -18404,6 +18428,83 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1791391126}
   m_CullTransparentMesh: 1
+--- !u!1 &1834352369
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1834352371}
+  - component: {fileID: 1834352370}
+  m_Layer: 0
+  m_Name: RoomBounds
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &1834352370
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1834352369}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.24448586, y: 0.58065414}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4.9117756, y: 4.5450478}
+  m_EdgeRadius: 0
+--- !u!4 &1834352371
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1834352369}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.66013616, y: -1.5263801, z: -0.0053452323}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1836997388
 GameObject:
   m_ObjectHideFlags: 0
@@ -19877,3 +19978,4 @@ SceneRoots:
   - {fileID: 1509663542}
   - {fileID: 798652071}
   - {fileID: 1380581684}
+  - {fileID: 1834352371}
