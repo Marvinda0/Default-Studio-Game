@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -14,6 +15,9 @@ public class HealthSystem : MonoBehaviour
 
     public int expReward;
     public Slider healthSlider;
+    public GameObject damageTextPrefab; 
+    public Transform textSpawnPoint; 
+
 
     void Start()
     {
@@ -60,6 +64,11 @@ public class HealthSystem : MonoBehaviour
             Debug.Log($"Player took {damageTaken} damage, remaining HP: {currentHealth}");
             UpdateUI();
         }
+        if (damageTextPrefab != null)
+        {
+            GameObject damageText = Instantiate(damageTextPrefab, textSpawnPoint.position, Quaternion.identity);
+            damageText.GetComponent<DamageText>().SetText(amount.ToString());
+        }
 
         if (currentHealth <= 0)
         {
@@ -69,27 +78,41 @@ public class HealthSystem : MonoBehaviour
 
     private void Die()
     {
-        if (isEnemy && !isBoss)
+        if (CompareTag("Player"))
         {
+            Animator animator = GetComponent<Animator>();
+            if (animator != null)
+            {
+                animator.SetTrigger("Death"); // Trigger the death animation
+            }
+
+            PlayerController playerController = GetComponent<PlayerController>();
+            if (playerController != null)
+            {
+                playerController.Die(); // Disable movement
+            }
+
+            // Start the coroutine to restart the game after death animation
+            StartCoroutine(RestartAfterDeath());
+        }
+        else if (isEnemy)
+        {
+            // Notify the WaveSpawnerScript that an enemy has died
             WaveSpawnnerScript waveSpawner = FindObjectOfType<WaveSpawnnerScript>();
             if (waveSpawner != null)
             {
                 waveSpawner.OnEnemyDefeated();
             }
             GetComponent<LootBag>().InstantiateLoot(transform.position);
-            OnMonsterDeath?.Invoke(expReward);
-            Destroy(gameObject);
+            OnMonsterDeath(expReward);
+            Destroy(gameObject); // Destroy the enemy object
         }
+    }
 
-        if (isBoss)
-        {
-            Destroy(gameObject);
-            //End game
-        }
-        else if (CompareTag("Player"))
-        {
-            RestartGame();
-        }
+    private IEnumerator RestartAfterDeath()
+    {
+        yield return new WaitForSeconds(2f); // Wait for the animation to play out
+        RestartGame();
     }
 
     private void RestartGame()

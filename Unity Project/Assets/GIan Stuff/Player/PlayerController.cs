@@ -39,6 +39,7 @@ public class PlayerController : MonoBehaviour
 
     private bool isDashing = false;
     private bool canDash = true;
+    private bool isDead = false;
 
     Rigidbody2D rb;
     Animator animator;
@@ -67,6 +68,8 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (isDead) return;
+
         if (!isDashing && canMove && moveInput != Vector2.zero)
         {
             //rb.AddForce(moveInput * moveSpeed * Time.fixedDeltaTime, ForceMode2D.Force);
@@ -89,6 +92,14 @@ public class PlayerController : MonoBehaviour
         {
             IsMoving = false;
         }
+    }
+
+    public void Die()
+    {
+        isDead = true; // Set isDead to true when the player dies
+        canMove = false; // Optionally lock other movement-related features
+        rb.velocity = Vector2.zero; // Stop all movement
+        animator.SetBool("isMoving", false);
     }
 
     void OnMove(InputValue value)
