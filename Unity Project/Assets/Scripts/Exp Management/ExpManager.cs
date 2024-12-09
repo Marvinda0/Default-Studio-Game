@@ -10,6 +10,8 @@ public class ExpManager : MonoBehaviour
 
     public GameObject levelUpTextPrefab;
 
+    private GameObject levelUpPromptInstance;
+
     public int level;
     public int statPoint;
     public int currentExp;
@@ -45,7 +47,19 @@ public class ExpManager : MonoBehaviour
     }
     
     public void LevelUp(){ //jch6 For when a player levels up. Can add a graphic or soundeffect for levelup
-        Instantiate(levelUpTextPrefab, transform.position, Quaternion.identity);
+        //Instantiate(levelUpTextPrefab, transform.position, Quaternion.identity);
+        if(levelUpTextPrefab != null){
+            Canvas uiCanvas = GameObject.Find("UIPopUpCanvas").GetComponent<Canvas>();
+            levelUpPromptInstance = Instantiate(levelUpTextPrefab, uiCanvas.transform);
+            
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            if (player != null){
+                Vector3 screenPos = Camera.main.WorldToScreenPoint(player.transform.position + new Vector3(0, 0.2f, 0));
+                levelUpPromptInstance.transform.position = screenPos;
+                levelUpPromptInstance.SetActive(true);
+            }
+            //levelUpPromptInstance.SetActive(false); //jch6 added to ensure prompt is disabled
+        }
         statPoint += 2; //jch6 gain 2 statpoints after every level up
         level++;
         currentExp -= expToLevelUp;
