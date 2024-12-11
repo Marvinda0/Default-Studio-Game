@@ -66,7 +66,7 @@ public class CerberusController : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("Player not found. Make sure the player has the 'Player' tag.");
+            Debug.LogWarning("Player not found");
         }
         if (spriteRenderer != null)
         {
@@ -98,13 +98,13 @@ public class CerberusController : MonoBehaviour
     {
         float healthPercentage = (healthSystem.currentHealth / healthSystem.maxHealth) * 100;
 
-        if (healthPercentage <= phase3Threshold && currentPhase != 3)
+        if (healthPercentage <= phase3Threshold && currentPhase != 3 && currentPhase == 2)
         {
             chargeCooldown = 2;
             currentPhase = 3;
             Debug.Log("Phase 3 Activated");
         }
-        else if (healthPercentage <= phase2Threshold && currentPhase != 2)
+        else if (healthPercentage <= phase2Threshold && currentPhase != 2 && currentPhase == 1)
         {
             currentPhase = 2;
             Debug.Log("Phase 2 Activated");
@@ -115,20 +115,20 @@ public class CerberusController : MonoBehaviour
     {
         if (currentPhase == 1)
         {
-            HandleFireCircles();
             HandleProjectiles();
+            SummonMinions();
         }
         else if (currentPhase == 2)
         {
             HandleCharge();
-            HandleFireCircles();
-            SummonMinions();
+            HandleFireCircles();        
         }
         else if (currentPhase == 3)
         {
             HandleProjectiles();
             HandleCharge();
             HandleFireCircles();
+            SummonMinions();
         }
     }
 
