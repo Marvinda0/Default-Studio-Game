@@ -112,7 +112,8 @@ public class HealthSystem : MonoBehaviour
             //game over event, 
             Destroy(gameObject); // Destroy the enemy object
             SceneManager.LoadScene("StartMenu");
-            
+            PersistentObject.ResetPersistentObject();
+
         }
     }
 
