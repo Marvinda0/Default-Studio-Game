@@ -17055,6 +17055,54 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1269266584
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1269266586}
+  - component: {fileID: 1269266585}
+  m_Layer: 0
+  m_Name: MobManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1269266585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1269266584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b148bfe22a819664eb18d2e074659a40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthIncrement: 20
+  damageIncrement: 10
+  globalHealthMultiplier: 1
+  globalDamageMultiplier: 1
+--- !u!4 &1269266586
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1269266584}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.5670847, y: -0.7618878, z: -0.0050396603}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1278936405
 GameObject:
   m_ObjectHideFlags: 0
@@ -18530,17 +18578,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Waves:
   - waveName: Wave 1
-    NumberOfEnemies: 1
+    NumberOfEnemies: 3
     typesOfEnemies:
     - {fileID: 6083513873441513986, guid: f29029b55e0e05b46933b85faf174826, type: 3}
     spawnInterval: 1
   - waveName: Wave 2
-    NumberOfEnemies: 1
+    NumberOfEnemies: 5
     typesOfEnemies:
     - {fileID: 4982733723981510052, guid: b85a629ed4ab07343857575db34b112e, type: 3}
     spawnInterval: 1
   - waveName: Wave 3
-    NumberOfEnemies: 1
+    NumberOfEnemies: 5
     typesOfEnemies:
     - {fileID: 4982733723981510052, guid: b85a629ed4ab07343857575db34b112e, type: 3}
     - {fileID: 6083513873441513986, guid: f29029b55e0e05b46933b85faf174826, type: 3}
@@ -21303,3 +21351,4 @@ SceneRoots:
   - {fileID: 606551099}
   - {fileID: 817325477}
   - {fileID: 1153070604}
+  - {fileID: 1269266586}

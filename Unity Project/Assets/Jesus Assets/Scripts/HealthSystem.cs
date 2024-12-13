@@ -21,6 +21,10 @@ public class HealthSystem : MonoBehaviour
 
     void Start()
     {
+        if (isEnemy && !isBoss) { 
+            maxHealth *= MobStatsManager.Instance.globalHealthMultiplier;
+            currentHealth = maxHealth;
+        }
         if (CompareTag("Player"))
         {
             maxHealth = StatsManager.Instance.maxHealth;
@@ -128,6 +132,7 @@ public class HealthSystem : MonoBehaviour
         // Reset stats and persistent objects
         PersistentObject.ResetPersistentObject();
         StatsManager.Instance.ResetStats();
+        MobStatsManager.Instance.ResetStats();  
 
         // Reset wave spawner if necessary
         WaveSpawnnerScript waveSpawner = FindObjectOfType<WaveSpawnnerScript>();

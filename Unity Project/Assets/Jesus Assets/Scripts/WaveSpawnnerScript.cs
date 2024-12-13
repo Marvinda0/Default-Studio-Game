@@ -19,10 +19,6 @@ public class WaveSpawnnerScript : MonoBehaviour
     public Transform[] spawnPoints;
     public Transform playerTransform;
 
-    public float healthMultiplier = 1.1f; 
-    public float damageMultiplier = 1.1f; 
-    private int waveCount = 0;
-
     public Animator animator;
     public Text waveName;
 
@@ -47,6 +43,7 @@ public class WaveSpawnnerScript : MonoBehaviour
         // Check if all enemies are defeated to spawn the next wave
         if (activeEnemies == 0 && !canSpawnEnemies && currentWaveNumber + 1 < Waves.Length)
         {
+            MobStatsManager.Instance.ScaleStats();
             spawnNextWave();
         }
     }

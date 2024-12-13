@@ -14,7 +14,8 @@ public class SlimeDamage : MonoBehaviour
             HealthSystem playerHealth = collision.gameObject.GetComponent<HealthSystem>();
             if (playerHealth != null)
             {
-                playerHealth.TakeDamage(damageToPlayer);
+                float scaledDamage = damageToPlayer * MobStatsManager.Instance.globalDamageMultiplier;
+                playerHealth.TakeDamage(scaledDamage);
                 nextDamageTime = Time.time + damageInterval; // Set the time for the next allowed damage
             }
         }

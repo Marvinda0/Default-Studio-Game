@@ -9,7 +9,7 @@ public class RangedEnemyController : MonoBehaviour
     public float attackRange = 5f;          // Distance within which the enemy will stop and shoot
     public float followRange = 10f;         // Distance for following the player
     public float fireRate = 1f;             // Delay between shots
-    public int projectileDamage = 10;       // Damage dealt by the projectile
+    public float projectileDamage = 10;       // Damage dealt by the projectile
 
     private AIPath aiPath;                  // AIPath component for movement
     private Transform playerTransform;      // Reference to the player's transform
@@ -78,8 +78,9 @@ public class RangedEnemyController : MonoBehaviour
         Projectile projectileScript = projectile.GetComponent<Projectile>();
         if (projectileScript != null)
         {
+            float scaledDamage = projectileDamage * MobStatsManager.Instance.globalDamageMultiplier;
             projectileScript.SetDirection(directionToPlayer);
-            projectileScript.SetDamage(projectileDamage);  // Set the desired damage amount for the projectile
+            projectileScript.SetDamage(scaledDamage);  // Set the desired damage amount for the projectile
         }
     }
 }

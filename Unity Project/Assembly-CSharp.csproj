@@ -78,12 +78,13 @@
     <Compile Include="Assets\Scripts\Loot Management\LootSlot.cs" />
     <Compile Include="Assets\Text\HealthText.cs" />
     <Compile Include="Assets\Jesus Assets\Testing Files\playerController.cs" />
+    <Compile Include="Assets\Jesus Assets\Scripts\MobStatManager.cs" />
     <Compile Include="Assets\Triggers\TriggerDoor.cs" />
     <Compile Include="Assets\GIan Stuff\Interfaces\IDamageable.cs" />
     <Compile Include="Assets\GIan Stuff\Player\SwordHitbox.cs" />
     <Compile Include="Assets\Jesus Assets\Scripts\PersistentManager.cs" />
-    <Compile Include="Assets\GIan Stuff\Projectiles\ProjectileLauncher.cs" />
     <Compile Include="Assets\Jesus Assets\Scripts\MelleMovement.cs" />
+    <Compile Include="Assets\GIan Stuff\Projectiles\ProjectileLauncher.cs" />
     <Compile Include="Assets\Jesus Assets\Scripts\WaveSpawnnerScript.cs" />
     <Compile Include="Assets\Jesus Assets\Scripts\CerberusScript.cs" />
     <Compile Include="Assets\Scripts\Exp Management\StatsManager.cs" />

@@ -10,7 +10,6 @@ public class MelleMovement : MonoBehaviour
 
     private AIPath aiPath;                  // AIPath component for movement
     private Transform playerTransform;      // Reference to the player's transform
-    private float nextFireTime;             // Time for the next shot
     private AIDestinationSetter destinationSetter; // Reference to the destination setter
 
     void Start()
