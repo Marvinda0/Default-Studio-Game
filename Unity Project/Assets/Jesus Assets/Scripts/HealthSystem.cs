@@ -78,6 +78,7 @@ public class HealthSystem : MonoBehaviour
         {
             Die();
         }
+        StartCoroutine(VisualIndicator(Color.red));
     }
 
     private void Die()
@@ -125,6 +126,14 @@ public class HealthSystem : MonoBehaviour
     {
         yield return new WaitForSeconds(2f); // Wait for the animation to play out
         RestartGame();
+    }
+    
+    private IEnumerator VisualIndicator(Color color)
+    {
+        GetComponent<SpriteRenderer>().color = color;
+        yield return new WaitForSeconds(0.15f);
+        GetComponent<SpriteRenderer>().color = Color.white;
+
     }
 
     private void RestartGame()
