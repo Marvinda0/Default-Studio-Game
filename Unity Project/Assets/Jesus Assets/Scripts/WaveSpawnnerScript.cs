@@ -19,6 +19,10 @@ public class WaveSpawnnerScript : MonoBehaviour
     public Transform[] spawnPoints;
     public Transform playerTransform;
 
+    public float healthMultiplier = 1.1f; 
+    public float damageMultiplier = 1.1f; 
+    private int waveCount = 0;
+
     public Animator animator;
     public Text waveName;
 

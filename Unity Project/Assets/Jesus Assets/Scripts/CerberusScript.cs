@@ -186,7 +186,7 @@ public class CerberusController : MonoBehaviour
             newPosition.y = Mathf.Clamp(newPosition.y, bounds.min.y, bounds.max.y);
 
             transform.position = newPosition;
-
+            
             elapsedTime += Time.deltaTime;
             yield return null;
         }

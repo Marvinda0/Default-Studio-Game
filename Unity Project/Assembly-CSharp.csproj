@@ -62,19 +62,18 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Loot Management\LootPickup.cs" />
     <Compile Include="Assets\Scripts\Exp Management\StatsUI.cs" />
-    <Compile Include="Assets\CerberusScript.cs" />
     <Compile Include="Assets\Music\Switch Music.cs" />
+    <Compile Include="Assets\Jesus Assets\Scripts\PersistentObject.cs" />
     <Compile Include="Assets\Scripts\Loot Management\EquipmentSOLibrary.cs" />
     <Compile Include="Assets\Jesus Assets\AI and Room Transition ScriptsScripts\AIMeleeDamage.cs" />
-    <Compile Include="Assets\FireCircle.cs" />
     <Compile Include="Assets\Jesus Assets\AI and Room Transition ScriptsScripts\RangedEnemyScripts\RangedMovement.cs" />
     <Compile Include="Assets\Jesus Assets\AI and Room Transition ScriptsScripts\RangedEnemyScripts\ProjectileScript.cs" />
     <Compile Include="Assets\Scripts\Loot Management\InventoryManager.cs" />
     <Compile Include="Assets\GIan Stuff\DamageText.cs" />
     <Compile Include="Assets\GIan Stuff\DamageableCharacter.cs" />
+    <Compile Include="Assets\Jesus Assets\Scripts\FireCircle.cs" />
     <Compile Include="Assets\Jesus Assets\Start Screen assets\StartMenuScripts\MainMenu.cs" />
     <Compile Include="Assets\Jesus Assets\AI and Room Transition ScriptsScripts\AIChase.cs" />
-    <Compile Include="Assets\PersistentObject.cs" />
     <Compile Include="Assets\Jesus Assets\AI and Room Transition ScriptsScripts\AIHealthSystem.cs" />
     <Compile Include="Assets\Scripts\Loot Management\LootSlot.cs" />
     <Compile Include="Assets\Text\HealthText.cs" />
@@ -84,7 +83,9 @@
     <Compile Include="Assets\GIan Stuff\Player\SwordHitbox.cs" />
     <Compile Include="Assets\Jesus Assets\Scripts\PersistentManager.cs" />
     <Compile Include="Assets\GIan Stuff\Projectiles\ProjectileLauncher.cs" />
+    <Compile Include="Assets\Jesus Assets\Scripts\MelleMovement.cs" />
     <Compile Include="Assets\Jesus Assets\Scripts\WaveSpawnnerScript.cs" />
+    <Compile Include="Assets\Jesus Assets\Scripts\CerberusScript.cs" />
     <Compile Include="Assets\Scripts\Exp Management\StatsManager.cs" />
     <Compile Include="Assets\Jesus Assets\Testing Files\swordAttack.cs" />
     <Compile Include="Assets\Scripts\Exp Management\ExpManager.cs" />
@@ -96,7 +97,6 @@
     <Compile Include="Assets\GIan Stuff\Slime\Slime.cs" />
     <Compile Include="Assets\Jesus Assets\AI and Room Transition ScriptsScripts\RoomTransitionScript.cs" />
     <Compile Include="Assets\Scripts\Loot Management\EquippedSlot.cs" />
-    <Compile Include="Assets\MelleMovement.cs" />
     <Compile Include="Assets\GIan Stuff\Enemy.cs" />
     <Compile Include="Assets\Scripts\Loot Management\LootBag.cs" />
     <Compile Include="Assets\Jesus Assets\Scripts\HealthSystem.cs" />
