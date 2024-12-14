@@ -7,7 +7,7 @@ public class NewBehaviourScript : MonoBehaviour
 {
     public void GoToSelectionScreen()
     {
-        SceneManager.LoadScene("Selection Menu");
+        SceneManager.LoadScene("SelectionMenu");
     }
 
     public void QuitGame()

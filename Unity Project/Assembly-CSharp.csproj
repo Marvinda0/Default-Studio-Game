@@ -66,6 +66,7 @@
     <Compile Include="Assets\Jesus Assets\Scripts\PersistentObject.cs" />
     <Compile Include="Assets\Scripts\Loot Management\EquipmentSOLibrary.cs" />
     <Compile Include="Assets\Jesus Assets\AI and Room Transition ScriptsScripts\AIMeleeDamage.cs" />
+    <Compile Include="Assets\Jesus Assets\Start Screen assets\StartMenuScripts\SelectionMenu.cs" />
     <Compile Include="Assets\Jesus Assets\AI and Room Transition ScriptsScripts\RangedEnemyScripts\RangedMovement.cs" />
     <Compile Include="Assets\Jesus Assets\AI and Room Transition ScriptsScripts\RangedEnemyScripts\ProjectileScript.cs" />
     <Compile Include="Assets\Scripts\Loot Management\InventoryManager.cs" />
@@ -78,6 +79,7 @@
     <Compile Include="Assets\Scripts\Loot Management\LootSlot.cs" />
     <Compile Include="Assets\Text\HealthText.cs" />
     <Compile Include="Assets\Jesus Assets\Testing Files\playerController.cs" />
+    <Compile Include="Assets\Jesus Assets\Scripts\PlayerManager.cs" />
     <Compile Include="Assets\Jesus Assets\Scripts\MobStatManager.cs" />
     <Compile Include="Assets\Triggers\TriggerDoor.cs" />
     <Compile Include="Assets\GIan Stuff\Interfaces\IDamageable.cs" />
@@ -100,6 +102,7 @@
     <Compile Include="Assets\Scripts\Loot Management\EquippedSlot.cs" />
     <Compile Include="Assets\GIan Stuff\Enemy.cs" />
     <Compile Include="Assets\Scripts\Loot Management\LootBag.cs" />
+    <Compile Include="Assets\Jesus Assets\Scripts\Room1Init.cs" />
     <Compile Include="Assets\Jesus Assets\Scripts\HealthSystem.cs" />
     <Compile Include="Assets\Triggers\LevelTransition.cs" />
     <Compile Include="Assets\Scripts\Loot Management\Loot.cs" />
