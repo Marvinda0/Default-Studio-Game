@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class NewBehaviourScript : MonoBehaviour
 {
-    public void PlayGame()
+    public void GoToSelectionScreen()
     {
-        SceneManager.LoadScene("Room 1.0");
+        SceneManager.LoadScene("Selection Menu");
     }
 
     public void QuitGame()
