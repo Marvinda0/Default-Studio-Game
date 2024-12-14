@@ -13664,6 +13664,14 @@ PrefabInstance:
       propertyPath: dashCooldown
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2562013874083035176, guid: bb3ba6d498df1b94488f1d415a8936d4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2562013874083035176, guid: bb3ba6d498df1b94488f1d415a8936d4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2569382571533886435, guid: bb3ba6d498df1b94488f1d415a8936d4, type: 3}
       propertyPath: m_Radius
       value: 0.9461045
