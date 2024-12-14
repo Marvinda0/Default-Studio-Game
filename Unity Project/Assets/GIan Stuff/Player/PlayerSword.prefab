@@ -3299,7 +3299,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7600748780486318791
 Transform:
   m_ObjectHideFlags: 0
@@ -4009,9 +4009,9 @@ Transform:
   - {fileID: 8471631003538401954}
   - {fileID: 593575544857858938}
   - {fileID: 3761000406795494080}
+  - {fileID: 5517020900043373687}
   - {fileID: 7600748780486318791}
   - {fileID: 2735577899730140284}
-  - {fileID: 5517020900043373687}
   - {fileID: 5026729234022323774}
   - {fileID: 2562013874083035176}
   - {fileID: 7426431153734473084}
