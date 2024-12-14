@@ -46,7 +46,7 @@ public class StatsUI : MonoBehaviour
         {
             
             Time.timeScale = 0; //jch6 stops game when Inventory is opened
-            UpdateAllStats();
+            //UpdateAllStats();
             StatsPanel.SetActive(true);//jch6 Opens inventory menu
             menuActivated = true;
         }
@@ -82,7 +82,7 @@ public class StatsUI : MonoBehaviour
         Debug.Log("Button clicked!");
         if (ExpManager.Instance.statPoint > 0){
             allocatedDamagePoints++;
-            StatsManager.Instance.damage += 10;//Increases the actual damage
+            StatsManager.Instance.damage += 2;//Increases the actual damage
             ExpManager.Instance.statPoint -= 1;
             UpdateDamage();
             ExpManager.Instance.UpdateUI();
@@ -97,7 +97,7 @@ public class StatsUI : MonoBehaviour
         Debug.Log("Button clicked!");
         if (ExpManager.Instance.statPoint > 0){
             allocatedSpeedPoints++;
-            StatsManager.Instance.speed += 700;
+            StatsManager.Instance.speed += 30;//jch6 Increase the actual speed
             ExpManager.Instance.statPoint-=1;
             UpdateSpeed();
             ExpManager.Instance.UpdateUI();
@@ -112,7 +112,7 @@ public class StatsUI : MonoBehaviour
         Debug.Log("Button clicked!");
         if (ExpManager.Instance.statPoint > 0){
             allocatedHealthPoints++;
-            StatsManager.Instance.maxHealth += 100;
+            StatsManager.Instance.maxHealth += 100;//jch6 Increase actual health
             //StatsManager.Instance.currentHealth = StatsManager.Instance.maxHealth;//jch6 when increasing stat health player regains new full health
             ExpManager.Instance.statPoint-=1;
             UpdateHealth();
