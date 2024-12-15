@@ -98,6 +98,7 @@
     <Compile Include="Assets\Scripts\Exp Management\ExpManager.cs" />
     <Compile Include="Assets\Scripts\Loot Management\Chest.cs" />
     <Compile Include="Assets\Jesus Assets\Scripts\MobContact.cs" />
+    <Compile Include="Assets\Scripts\Menu Management\MenuManager.cs" />
     <Compile Include="Assets\GIan Stuff\Player\PlayerController.cs" />
     <Compile Include="Assets\GIan Stuff\Projectiles\Projectile.cs" />
     <Compile Include="Assets\Triggers\DetectionZone.cs" />

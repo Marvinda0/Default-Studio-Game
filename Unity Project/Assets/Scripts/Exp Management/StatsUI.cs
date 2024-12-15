@@ -14,6 +14,9 @@ public class StatsUI : MonoBehaviour
     private int allocatedHealthPoints = 0;
     private void Start(){
         UpdateAllStats();
+        if(StatsPanel == null){
+            Debug.LogError("Statspanel not assigned");
+        }
     }
     
     public GameObject StatsPanel;
@@ -24,32 +27,15 @@ public class StatsUI : MonoBehaviour
     private void Awake() {
         if (Instance == null) {
             Instance = this;
-        //} else {
-            //Destroy(gameObject);
         }
     }
     // Update is called once per frame
     void Update()
     {
-        if(menuActivated && Input.GetKeyDown(KeyCode.U)){
-            
-            Time.timeScale = 1; //jch6 unpauses game when Inventory is selected
-            //UpdateAllStats();
-            StatsPanel.SetActive(false);
-            menuActivated = false;
-            /*if(LevelUpPanel.activeSelf){
-                LevelUpPanel.SetActive(false);
-            }*/
-        }
-
-        else if(!menuActivated && Input.GetKeyDown(KeyCode.U))
-        {
-            
-            Time.timeScale = 0; //jch6 stops game when Inventory is opened
-            //UpdateAllStats();
-            StatsPanel.SetActive(true);//jch6 Opens inventory menu
-            menuActivated = true;
-        }
+       if (Input.GetKeyDown(KeyCode.U)){
+            Debug.Log("U key pressed. Attempting to open stats");
+            MenuManager.Instance.OpenMenu(StatsPanel);
+        } 
 
     }
 

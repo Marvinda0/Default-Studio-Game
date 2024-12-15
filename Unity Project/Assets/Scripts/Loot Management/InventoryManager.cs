@@ -30,23 +30,12 @@ public class InventoryManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(menuActivated && Input.GetKeyDown(KeyCode.I)){
-            
-            Time.timeScale = 1; //jch6 unpauses game when Inventory is selected
-            
-            InventoryMenu.SetActive(false);
-            menuActivated = false;
+        if(Input.GetKeyDown(KeyCode.I)){
+            Debug.Log("I key pressed. Attempting to open inventory");
+            MenuManager.Instance.OpenMenu(InventoryMenu);
         }
-
-        else if(!menuActivated && Input.GetKeyDown(KeyCode.I)){
-            
-            Time.timeScale = 0; //jch6 stops game when Inventory is opened
-
-            InventoryMenu.SetActive(true);//jch6 Opens inventory menu
-            menuActivated = true;
-        }
-
     }
+
 
     public void AddItem(string lootName, Sprite lootSprite, string lootDescription, LootType lootType){
     
