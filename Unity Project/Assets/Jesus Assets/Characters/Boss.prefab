@@ -256,6 +256,8 @@ MonoBehaviour:
   isEnemy: 1
   expReward: 3
   healthSlider: {fileID: 0}
+  damageTextPrefab: {fileID: 0}
+  textSpawnPoint: {fileID: 0}
 --- !u!114 &-6900193940645402718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -284,15 +286,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   phase2Threshold: 70
   phase3Threshold: 35
-  projectilePrefab: {fileID: 3232248416625360096, guid: cd3aa4ef6721dbd4181024ba1a689a44, type: 3}
+  projectilePrefab: {fileID: 3232248416625360096, guid: b4bd6909f0830094ab3ae464620b6d69, type: 3}
   fireRate: 2
   projectileDamage: 10
   projectileSpreadAngle: 45
   chargeSpeed: 8
   chargeCooldown: 5
+  roomBounds: {fileID: 0}
+  chargeDuration: 1
   fireCirclePrefab: {fileID: 2655162931783464554, guid: b4749ff34bc35604b8b16df5fd37694e, type: 3}
   fireCircleSpawnPoints: []
   fireCircleInterval: 15
   minionPrefab: {fileID: 6083513873441513986, guid: f29029b55e0e05b46933b85faf174826, type: 3}
   minionsPerSummon: 3
   minionSpawnPoints: []
+  summonCooldown: 10
+  maxActiveMinions: 5
+  spriteRenderer: {fileID: 0}
+  chargeColor: {r: 1, g: 0, b: 0, a: 1}
