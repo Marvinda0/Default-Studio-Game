@@ -4050,7 +4050,7 @@ MonoBehaviour:
   swordCollider: {fileID: 997102586263366543}
   dashSpeed: 750
   dashDuration: 0.2
-  dashCooldown: 3
+  dashCooldown: 2
   dashAnimName: dash
 --- !u!114 &6100099305587871679
 MonoBehaviour:

@@ -4087,9 +4087,9 @@ MonoBehaviour:
   canAttack: 1
   attackAnimName: swordAttack
   swordCollider: {fileID: 5619933852320195437}
-  dashSpeed: 2500
+  dashSpeed: 750
   dashDuration: 0.2
-  dashCooldown: 1
+  dashCooldown: 2
   dashAnimName: dash
 --- !u!114 &7072028290044035201
 MonoBehaviour:
