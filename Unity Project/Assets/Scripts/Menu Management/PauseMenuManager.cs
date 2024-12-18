@@ -21,11 +21,11 @@ public class PauseMenuManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
-        /*else
+        else
         {
             Destroy(gameObject);
             return;
-        }*/
+        }
     }
 
     

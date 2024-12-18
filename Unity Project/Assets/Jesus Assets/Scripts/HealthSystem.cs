@@ -18,6 +18,8 @@ public class HealthSystem : MonoBehaviour
     public GameObject damageTextPrefab; 
     public Transform textSpawnPoint; 
 
+    public GameObject GameOver;
+
 
     void Start()
     {
@@ -125,7 +127,9 @@ public class HealthSystem : MonoBehaviour
     private IEnumerator RestartAfterDeath()
     {
         yield return new WaitForSeconds(2f); // Wait for the animation to play out
-        RestartGame();
+        GameOver.SetActive(true);//jch6 activate game over screen
+        Time.timeScale = 0;
+        //RestartGame();
     }
     
     private IEnumerator VisualIndicator(Color color)
@@ -136,22 +140,34 @@ public class HealthSystem : MonoBehaviour
 
     }
 
-    private void RestartGame()
+    public void QuitGame(){//jch6 
+        Debug.Log("Quit Game!");
+        Application.Quit();
+    }
+
+    public void RestartGame()
     {
-        // Reset stats and persistent objects
+        Debug.Log("Returning to the main menu!");
+        if (MenuManager.Instance != null)
+        {
+            MenuManager.Instance.ResetMenuState();
+        }
+
+        //MenuManager.Instance.ResetMenuState();
         PersistentObject.ResetPersistentObject();
         StatsManager.Instance.ResetStats();
-        MobStatsManager.Instance.ResetStats();  
+        MobStatsManager.Instance.ResetStats();
+        Destroy(gameObject);
 
-        // Reset wave spawner if necessary
+
         WaveSpawnnerScript waveSpawner = FindObjectOfType<WaveSpawnnerScript>();
         if (waveSpawner != null)
         {
             waveSpawner.ResetWaves();
         }
 
-        // Load the first room
-        SceneManager.LoadScene("Room 1.0");
+        Time.timeScale = 1;
+        SceneManager.LoadScene("SelectionMenu");
     }
 
     public void UpdateUI()
