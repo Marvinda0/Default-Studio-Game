@@ -147,6 +147,20 @@ public class HealthSystem : MonoBehaviour
 
     public void RestartGame()
     {
+        /* // Reset stats and persistent objects
+        PersistentObject.ResetPersistentObject();
+        StatsManager.Instance.ResetStats();
+        MobStatsManager.Instance.ResetStats();  
+
+        // Reset wave spawner if necessary
+        WaveSpawnnerScript waveSpawner = FindObjectOfType<WaveSpawnnerScript>();
+        if (waveSpawner != null)
+        {
+            waveSpawner.ResetWaves();
+        }
+
+        // Load the first room
+        SceneManager.LoadScene("Room 1.0");*/
         Debug.Log("Returning to the main menu!");
         if (MenuManager.Instance != null)
         {
@@ -167,7 +181,7 @@ public class HealthSystem : MonoBehaviour
         }
 
         Time.timeScale = 1;
-        SceneManager.LoadScene("SelectionMenu");
+        SceneManager.LoadScene("StartMenu");
     }
 
     public void UpdateUI()
