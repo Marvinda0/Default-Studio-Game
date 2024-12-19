@@ -10,6 +10,7 @@ public class MenuManager : MonoBehaviour
     private void Awake(){
         if(Instance == null){
             Instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else{
             Destroy(gameObject);
@@ -39,5 +40,13 @@ public class MenuManager : MonoBehaviour
             currentMenu = null;
             Time.timeScale = 1;
         }
+    }
+
+    public void ResetMenuState(){
+        if(currentMenu != null){
+            currentMenu.SetActive(false);
+            currentMenu = null;
+        }
+        Time.timeScale = 1;
     }
 }
