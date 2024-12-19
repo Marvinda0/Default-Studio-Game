@@ -6,15 +6,15 @@ using UnityEngine.UI;
 
 public class PauseMenuManager : MonoBehaviour
 {
-    public static PauseMenuManager Instance;
+    //public static PauseMenuManager Instance;
     public GameObject PauseMenuPanel;
     public GameObject ControlsPanel;
     public GameObject QuestionPanel;
     public GameObject QuestionQuitPanel;
 
-    private bool isPaused = false;
+    //private bool isPaused = false;
     
-    private void Awake()
+   /* private void Awake()
     {
         if (Instance == null)
         {
@@ -26,7 +26,7 @@ public class PauseMenuManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-    }
+    }*/
 
     
     // Start is called before the first frame update
@@ -34,10 +34,10 @@ public class PauseMenuManager : MonoBehaviour
     {
         InitializeMenu();
         Time.timeScale = 1; // Ensure game starts unpaused
-        isPaused = false;
+        //isPaused = false;
     }
 
-    private void OnEnable()
+   /* private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded; // Reinitialize on scene load
     }
@@ -50,7 +50,7 @@ public class PauseMenuManager : MonoBehaviour
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         InitializeMenu(); // Reinitialize menu references after scene changes
-    }
+    }*/
 
     private void InitializeMenu()
     {
