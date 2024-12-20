@@ -16,7 +16,7 @@ MonoBehaviour:
   lootName: Small Health Potion
   lootType: 0
   lootDescription: Small potion that grants you health.
-  dropChance: 100
+  dropChance: 21
   attackDamage: 0
   movementSpeed: 0
   healthIncrease: 20

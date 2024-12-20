@@ -16,7 +16,7 @@ MonoBehaviour:
   lootName: Zeus Thunderbolt
   lootType: 1
   lootDescription: 'The thunderbolt of the mightiest god Zeus. '
-  dropChance: 1
+  dropChance: 5
   attackDamage: 0
   movementSpeed: 0
   healthIncrease: 0

@@ -16,7 +16,7 @@ MonoBehaviour:
   lootName: Medium Health Potion
   lootType: 0
   lootDescription: Medium potion that grants you moderate health.
-  dropChance: 100
+  dropChance: 18
   attackDamage: 0
   movementSpeed: 0
   healthIncrease: 60

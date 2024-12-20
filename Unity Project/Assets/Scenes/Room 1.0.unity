@@ -16895,7 +16895,7 @@ GameObject:
   - component: {fileID: 817325474}
   - component: {fileID: 817325473}
   m_Layer: 0
-  m_Name: ChestRm1
+  m_Name: Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16960,11 +16960,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   droppedItemPrefab: {fileID: 2830374740305323753, guid: 7d4017f1aa6541a4e87628ab7fcd0883, type: 3}
   lootList:
-  - {fileID: 11400000, guid: a23e79b66c0b19f45bdbd220225945b5, type: 2}
   - {fileID: 11400000, guid: cc669be249a1e1e438fed91ee22e8c10, type: 2}
   - {fileID: 11400000, guid: 3e01a0964a2f8e147ab21cd77eb37820, type: 2}
   - {fileID: 11400000, guid: b1f74255f71a97944870b8eb5a8dfadf, type: 2}
   - {fileID: 11400000, guid: 356b7213ac828044c9173cfb71fc86aa, type: 2}
+  - {fileID: 11400000, guid: 9873ce04f0d885c4fae5a3a41e62b9b2, type: 2}
+  - {fileID: 11400000, guid: 768e580e7fc613349a9fca3da21ac742, type: 2}
 --- !u!114 &817325475
 MonoBehaviour:
   m_ObjectHideFlags: 0
