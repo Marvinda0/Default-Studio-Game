@@ -2,6 +2,10 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+public AudioClip mobDamageSound; // Assign in the Inspector
+public AudioClip playerDamageSound; // Assign in the Inspector
+public AudioClip bossDamageSound; // Assign in the Inspector
+private AudioSource audioSource; // Audio source to play sounds
 
 public class HealthSystem : MonoBehaviour
 {
@@ -23,6 +27,7 @@ public class HealthSystem : MonoBehaviour
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         if (isEnemy && !isBoss) { 
             maxHealth *= MobStatsManager.Instance.globalHealthMultiplier;
             currentHealth = maxHealth;
@@ -63,6 +68,24 @@ public class HealthSystem : MonoBehaviour
         float previousHealth = currentHealth;
         currentHealth -= amount;
         Debug.Log($"Damage received: {amount}, Current Health: {currentHealth}, Max Health: {maxHealth}");
+
+        // Play sound effect based on entity type
+        if (audioSource != null)
+        {
+            if (CompareTag("Player"))
+            {
+                audioSource.PlayOneShot(playerDamageSound);
+            }
+            else if (isBoss)
+            {
+                audioSource.PlayOneShot(bossDamageSound);
+            }
+            else if (isEnemy)
+            {
+                audioSource.PlayOneShot(mobDamageSound);
+            }
+        }
+
         if (CompareTag("Player"))
         {
             float damageTaken = previousHealth - currentHealth;
@@ -70,6 +93,7 @@ public class HealthSystem : MonoBehaviour
             Debug.Log($"Player took {damageTaken} damage, remaining HP: {currentHealth}");
             UpdateUI();
         }
+
         if (damageTextPrefab != null)
         {
             GameObject damageText = Instantiate(damageTextPrefab, textSpawnPoint.position, Quaternion.identity);
@@ -80,7 +104,6 @@ public class HealthSystem : MonoBehaviour
         {
             Die();
         }
-        StartCoroutine(VisualIndicator(Color.red));
     }
 
     private void Die()
