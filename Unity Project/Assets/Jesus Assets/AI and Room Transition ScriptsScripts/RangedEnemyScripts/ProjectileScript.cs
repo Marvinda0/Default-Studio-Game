@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+public class ProjectileScript : MonoBehaviour
 {
     public float speed = 10f;             // Speed of the projectile
     public float lifespan = 3f;           // Time in seconds before the projectile is destroyed

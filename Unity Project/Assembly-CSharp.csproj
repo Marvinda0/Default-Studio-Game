@@ -70,6 +70,7 @@
     <Compile Include="Assets\Jesus Assets\AI and Room Transition ScriptsScripts\RangedEnemyScripts\RangedMovement.cs" />
     <Compile Include="Assets\Jesus Assets\AI and Room Transition ScriptsScripts\RangedEnemyScripts\ProjectileScript.cs" />
     <Compile Include="Assets\Scripts\Loot Management\InventoryManager.cs" />
+    <Compile Include="Assets\Jesus Assets\AI and Room Transition ScriptsScripts\RangedEnemyScripts\ZeusBoltController.cs" />
     <Compile Include="Assets\GIan Stuff\DamageText.cs" />
     <Compile Include="Assets\GIan Stuff\DamageableCharacter.cs" />
     <Compile Include="Assets\Jesus Assets\Scripts\FireCircle.cs" />
@@ -105,6 +106,7 @@
     <Compile Include="Assets\GIan Stuff\Enemy.cs" />
     <Compile Include="Assets\Scripts\Loot Management\LootBag.cs" />
     <Compile Include="Assets\Jesus Assets\Scripts\Room1Init.cs" />
+    <Compile Include="Assets\Jesus Assets\AI and Room Transition ScriptsScripts\RangedEnemyScripts\ProjectileZeus.cs" />
     <Compile Include="Assets\Jesus Assets\Scripts\HealthSystem.cs" />
     <Compile Include="Assets\Triggers\LevelTransition.cs" />
     <Compile Include="Assets\Scripts\Loot Management\Loot.cs" />

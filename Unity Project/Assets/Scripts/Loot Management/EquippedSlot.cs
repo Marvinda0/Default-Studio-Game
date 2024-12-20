@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.EventSystems;
+using System;
 
 public class EquippedSlot : MonoBehaviour, IPointerClickHandler
 {
@@ -24,7 +25,9 @@ public class EquippedSlot : MonoBehaviour, IPointerClickHandler
 
    private InventoryManager inventoryManager;
 
-   private void Start(){
+    public static event Action<bool> OnZeusThunderboltEquipped;
+
+    private void Start(){
         inventoryManager = GameObject.Find("InventoryCanvas").GetComponent<InventoryManager>();
    }
 //
@@ -67,7 +70,13 @@ public class EquippedSlot : MonoBehaviour, IPointerClickHandler
         if(slotInUse){
             UnEquipGear();
         }
-        
+
+        if (name == "Zeus Thunderbolt")
+    {
+        Debug.Log("Equipping Zeus Thunderbolt.");
+        OnZeusThunderboltEquipped?.Invoke(true);
+    }
+
         //jch6 Updating image
         lootSprite = sprite;
         slotImage.sprite = lootSprite;
@@ -92,6 +101,12 @@ public class EquippedSlot : MonoBehaviour, IPointerClickHandler
 
    public void UnEquipGear(){
         if (!slotInUse) return;
+
+        if (lootName == "Zeus Thunderbolt")
+        {
+            Debug.Log("Unequipping Zeus Thunderbolt.");
+            OnZeusThunderboltEquipped?.Invoke(false);
+        }
 
         // Remove Buff
         Loot loot = FindLootByName(lootName); // Retrieve Loot object by name

@@ -75,7 +75,7 @@ public class RangedEnemyController : MonoBehaviour
         Vector2 directionToPlayer = (playerTransform.position - transform.position).normalized;
 
         // Set projectile direction and damage
-        Projectile projectileScript = projectile.GetComponent<Projectile>();
+        ProjectileScript projectileScript = projectile.GetComponent<ProjectileScript>();
         if (projectileScript != null)
         {
             float scaledDamage = projectileDamage * MobStatsManager.Instance.globalDamageMultiplier;

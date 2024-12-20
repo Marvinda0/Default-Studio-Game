@@ -150,7 +150,7 @@ public class CerberusController : MonoBehaviour
         {
             Vector2 direction = Quaternion.Euler(0, 0, angle) * (playerTransform.position - transform.position).normalized;
             GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-            Projectile projectileScript = projectile.GetComponent<Projectile>();
+            ProjectileScript projectileScript = projectile.GetComponent<ProjectileScript>();
 
             if (projectileScript != null)
             {

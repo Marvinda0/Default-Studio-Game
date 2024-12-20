@@ -7363,6 +7363,7 @@ GameObject:
   - component: {fileID: 8726970864194308716}
   - component: {fileID: 3724226178376331283}
   - component: {fileID: 3221703697217359435}
+  - component: {fileID: 352581739212400391}
   m_Layer: 0
   m_Name: PlayerSword
   m_TagString: Player
@@ -7460,11 +7461,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1ba22eedaa25ea4ba84547ed344c60c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  swordCollider: {fileID: 5619933852320195437}
   moveDrag: 15
   stopDrag: 25
   canAttack: 1
   attackAnimName: swordAttack
-  swordCollider: {fileID: 5619933852320195437}
   dashSpeed: 750
   dashDuration: 0.2
   dashCooldown: 2
@@ -7634,6 +7635,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47d7a49dcb12e234a9bd8fa246db9d1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &352581739212400391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8015158416150140982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3058921c56317964483914c937be4d2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 3232248416625360096, guid: df54524b66cc93e4ea7f7a3c6aeb8b81, type: 3}
+  targetingRadius: 10
+  fireCooldown: 2
 --- !u!1 &8074376975822223981
 GameObject:
   m_ObjectHideFlags: 0
