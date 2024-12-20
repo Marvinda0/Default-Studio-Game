@@ -2,10 +2,6 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-public AudioClip mobDamageSound; // Assign in the Inspector
-public AudioClip playerDamageSound; // Assign in the Inspector
-public AudioClip bossDamageSound; // Assign in the Inspector
-private AudioSource audioSource; // Audio source to play sounds
 
 public class HealthSystem : MonoBehaviour
 {
@@ -13,6 +9,8 @@ public class HealthSystem : MonoBehaviour
     public float currentHealth;
     public bool isBoss = false;
     public bool isEnemy = false;
+    public AudioClip damageSound; // Assign the specific damage sound for this object
+    private AudioSource audioSource;
 
     public delegate void MonsterDeath(int exp);
     public static event MonsterDeath OnMonsterDeath;
@@ -28,6 +26,10 @@ public class HealthSystem : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            Debug.LogWarning($"No AudioSource attached to {gameObject.name}, sounds won't play!");
+        }
         if (isEnemy && !isBoss) { 
             maxHealth *= MobStatsManager.Instance.globalHealthMultiplier;
             currentHealth = maxHealth;
@@ -69,21 +71,9 @@ public class HealthSystem : MonoBehaviour
         currentHealth -= amount;
         Debug.Log($"Damage received: {amount}, Current Health: {currentHealth}, Max Health: {maxHealth}");
 
-        // Play sound effect based on entity type
-        if (audioSource != null)
+        if (audioSource != null && damageSound != null)
         {
-            if (CompareTag("Player"))
-            {
-                audioSource.PlayOneShot(playerDamageSound);
-            }
-            else if (isBoss)
-            {
-                audioSource.PlayOneShot(bossDamageSound);
-            }
-            else if (isEnemy)
-            {
-                audioSource.PlayOneShot(mobDamageSound);
-            }
+            audioSource.PlayOneShot(damageSound);
         }
 
         if (CompareTag("Player"))
