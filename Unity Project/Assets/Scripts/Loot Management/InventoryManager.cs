@@ -37,19 +37,20 @@ public class InventoryManager : MonoBehaviour
     }
 
 
-    public void AddItem(string lootName, Sprite lootSprite, string lootDescription, LootType lootType){
+    public bool AddItem(string lootName, Sprite lootSprite, string lootDescription, LootType lootType){
     
         if(lootType == LootType.consumable || lootType == LootType.equippable){
             for(int i = 0; i < lootSlots.Length; i++){
                 if(lootSlots[i].isFull == false){
                     lootSlots[i].AddItem(lootName, lootSprite, lootDescription, lootType);
                     Debug.Log(lootName + "loot has been added to inventory");
-                    return;
+                    return true;
                 }
             }
         }
         
         Debug.LogWarning("Inventory is full. Can't add ");
+        return false;
     }
 
     public void DeselectAllSlots(){
