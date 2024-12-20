@@ -77,7 +77,7 @@ public class PauseMenuManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.P)){
+        if(Input.GetKeyDown(KeyCode.Escape)){
             Debug.Log("P key pressed. Attempting to open pause menu");
             MenuManager.Instance.OpenMenu(PauseMenuPanel);
             if(ControlsPanel.activeSelf || QuestionPanel.activeSelf || QuestionQuitPanel.activeSelf){
