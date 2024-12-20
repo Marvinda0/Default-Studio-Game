@@ -16,7 +16,7 @@ MonoBehaviour:
   lootName: Ares Helmet
   lootType: 1
   lootDescription: The helmet of the god of war Ares. Grants +50 Damage.
-  dropChance: 2
+  dropChance: 15
   attackDamage: 50
   movementSpeed: 0
   healthIncrease: 0

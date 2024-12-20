@@ -152,7 +152,7 @@ public class LootSlot : MonoBehaviour, IPointerClickHandler
 
     public void UseLoot(){
         Loot currentLoot = FindLootByName(lootName);
-        if(currentLoot != null && lootType == LootType.consumable){
+        if(currentLoot != null && lootType == LootType.consumable && StatsManager.Instance.currentHealth != StatsManager.Instance.maxHealth){
             currentLoot.UseItem();
             ClearSlot();
         } else {

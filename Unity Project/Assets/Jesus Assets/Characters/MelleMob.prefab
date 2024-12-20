@@ -288,9 +288,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   droppedItemPrefab: {fileID: 2830374740305323753, guid: 7d4017f1aa6541a4e87628ab7fcd0883, type: 3}
   lootList:
-  - {fileID: 11400000, guid: 3e01a0964a2f8e147ab21cd77eb37820, type: 2}
+  - {fileID: 11400000, guid: 9873ce04f0d885c4fae5a3a41e62b9b2, type: 2}
   - {fileID: 11400000, guid: cc669be249a1e1e438fed91ee22e8c10, type: 2}
-  - {fileID: 11400000, guid: a23e79b66c0b19f45bdbd220225945b5, type: 2}
 --- !u!114 &-7419300007996074637
 MonoBehaviour:
   m_ObjectHideFlags: 0

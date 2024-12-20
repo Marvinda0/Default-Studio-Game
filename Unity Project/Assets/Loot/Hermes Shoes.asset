@@ -15,9 +15,9 @@ MonoBehaviour:
   lootSprite: {fileID: 21300000, guid: d7f3c23874f79e149b7bb1c6cb8502be, type: 3}
   lootName: Hermes Sandals
   lootType: 1
-  lootDescription: The shoes of hermes. Grants +500 Speed
-  dropChance: 2
+  lootDescription: The shoes of hermes. Grants +600 Speed
+  dropChance: 15
   attackDamage: 0
-  movementSpeed: 500
+  movementSpeed: 600
   healthIncrease: 0
   healthRegen: 0
