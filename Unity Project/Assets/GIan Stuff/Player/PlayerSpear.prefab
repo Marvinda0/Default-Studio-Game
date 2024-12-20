@@ -6846,8 +6846,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 0.59, y: -0.5899}
+  m_SizeDelta: {x: 359.2823, y: 357.9457}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6699817412628972184
 CanvasRenderer:
@@ -6877,10 +6877,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+  m_text: "WASD - movement\r\nSpace - dash\r\nLeftclick - attack\r\nU- Stats screen\r\nI-
+    Inventory\r\nEsc - pause\r"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c661a8c1340ad5349b9bde4430978d86, type: 2}
+  m_sharedMaterial: {fileID: -5174590144316858885, guid: c661a8c1340ad5349b9bde4430978d86, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6910,13 +6911,13 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 17
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: 50
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -8245,7 +8246,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000017166, y: -384}
+  m_AnchoredPosition: {x: 0.000017166, y: -460}
   m_SizeDelta: {x: 464.8271, y: 86.6754}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1165404350642109160
