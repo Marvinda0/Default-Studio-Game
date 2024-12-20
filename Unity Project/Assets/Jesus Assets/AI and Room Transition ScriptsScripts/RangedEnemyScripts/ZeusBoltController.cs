@@ -4,67 +4,63 @@ using UnityEngine;
 
 public class ZeusBoltController : MonoBehaviour
 {
-    public GameObject projectilePrefab; // Zeus Bolt prefab
+    public GameObject projectilePrefab; // Reference to the Zeus projectile prefab
     public float targetingRadius = 10f; // Radius for finding enemies
     public float fireCooldown = 3f;    // Time between shots
-    private float nextFireTime = 0f;   // Tracks when the next shot is allowed
 
-    private Transform currentTarget;  // The currently targeted enemy
+    private bool isEquipped = false;    // Tracks if Zeus Bolt is equipped
+    private float nextFireTime = 0f;   // Time for the next allowed shot
+    private Transform currentTarget;   // Current enemy target
 
-    public void EquipZeusBolt()
+    void OnEnable()
     {
-        Debug.Log("Zeus Bolt equipped!");
+        EquippedSlot.OnZeusThunderboltEquipped += HandleEquipState;
     }
 
-    public void UnequipZeusBolt()
+    void OnDisable()
     {
-        Debug.Log("Zeus Bolt unequipped!");
-        currentTarget = null; // Clear current target
+        EquippedSlot.OnZeusThunderboltEquipped -= HandleEquipState;
+    }
+
+    private void HandleEquipState(bool equipped)
+    {
+        isEquipped = equipped;
+        if (!isEquipped)
+        {
+            currentTarget = null; // Clear target when unequipped
+        }
     }
 
     void Update()
     {
+        if (!isEquipped) return;
+
         if (Time.time >= nextFireTime)
         {
             FireAtClosestEnemy();
         }
     }
 
-    void FireAtClosestEnemy()
+    private void FireAtClosestEnemy()
     {
-        // Find the closest enemy
-        if (currentTarget == null)
-        {
-            currentTarget = FindClosestEnemy();
-        }
+        currentTarget = FindClosestEnemy();
+        if (currentTarget == null) return;
 
-        if (currentTarget == null) return; // No target, don't shoot
+        // Spawn projectile at player's position
+        Vector3 spawnPosition = transform.position;
+        GameObject projectile = Instantiate(projectilePrefab, spawnPosition, Quaternion.identity);
 
-        // Instantiate the projectile at the player's position
-        GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-
-        // Calculate direction to the target
-        Vector2 directionToTarget = (currentTarget.position - transform.position).normalized;
-
-        // Set projectile direction and damage
-        ProjectileScript projectileScript = projectile.GetComponent<ProjectileScript>();
+        // Initialize the projectile with the target
+        ProjectileZeus projectileScript = projectile.GetComponent<ProjectileZeus>();
         if (projectileScript != null)
         {
-            projectileScript.SetDirection(directionToTarget);
-            projectileScript.SetDamage(StatsManager.Instance.damage);
+            projectileScript.Initialize(currentTarget, StatsManager.Instance.damage);
         }
 
-        // Update the cooldown
-        nextFireTime = Time.time + fireCooldown;
-
-        // Reset the target if it dies
-        if (currentTarget.GetComponent<HealthSystem>()?.currentHealth <= 0)
-        {
-            currentTarget = null;
-        }
+        nextFireTime = Time.time + fireCooldown; // Update cooldown
     }
 
-    Transform FindClosestEnemy()
+    private Transform FindClosestEnemy()
     {
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, targetingRadius);
         float closestDistance = float.MaxValue;

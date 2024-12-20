@@ -6446,6 +6446,7 @@ GameObject:
   - component: {fileID: 5732947326092403942}
   - component: {fileID: 7759720199220564393}
   - component: {fileID: 4423268746570382435}
+  - component: {fileID: -925058731539331382}
   m_Layer: 0
   m_Name: PlayerSpear
   m_TagString: Player
@@ -6717,6 +6718,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47d7a49dcb12e234a9bd8fa246db9d1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-925058731539331382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5835015672036940464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3058921c56317964483914c937be4d2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 3232248416625360096, guid: df54524b66cc93e4ea7f7a3c6aeb8b81, type: 3}
+  targetingRadius: 5
+  fireCooldown: 2
 --- !u!1 &5931874245095979376
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,29 +5,37 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    private ZeusBoltController ZeusBoltController;
-
-    private void OnEnable()
+    bool IsMoving
     {
-        EquippedSlot.OnZeusThunderboltEquipped += HandleZeusBoltState;
+        set
+        {
+            isMoving = value;
+            animator.SetBool("isMoving", isMoving);
+
+            if (isMoving)
+            {
+                rb.drag = moveDrag;
+            }
+            else
+            {
+                rb.drag = stopDrag;
+            }
+        }
     }
 
-    private void OnDisable()
-    {
-        EquippedSlot.OnZeusThunderboltEquipped -= HandleZeusBoltState;
-    }
-
-    public Collider2D swordCollider;
-
+    //public float moveSpeed = 1250f;
     public float moveDrag = 15f;
     public float stopDrag = 25f;
     public bool canAttack = true;
     public string attackAnimName = "swordAttack";
 
-    public float dashSpeed = 2500f;
-    public float dashDuration = 0.2f;
-    public float dashCooldown = 1f;
-    public string dashAnimName = "dash";
+    public Collider2D swordCollider; // Sword collider to be assigned in Inspector
+
+    // Dash variables
+    public float dashSpeed = 2500f; // Speed during dash
+    public float dashDuration = 0.2f; // Time the dash lasts
+    public float dashCooldown = 1f; // Time between dashes
+    public string dashAnimName = "dash"; // Optional dash animation trigger
 
     private bool isDashing = false;
     private bool canDash = true;
@@ -38,14 +46,15 @@ public class PlayerController : MonoBehaviour
     SpriteRenderer spriteRenderer;
 
     Vector2 moveInput = Vector2.zero;
+    bool isMoving = false;
     bool canMove = true;
 
     void Start()
     {
-        ZeusBoltController = GetComponent<ZeusBoltController>();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        animator.SetBool("canAttack", canAttack);
 
         if (swordCollider == null)
         {
@@ -53,21 +62,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            swordCollider.enabled = false;
-        }
-    }
-
-    private void HandleZeusBoltState(bool isEquipped)
-    {
-        if (ZeusBoltController == null) return;
-
-        if (isEquipped)
-        {
-            ZeusBoltController.EquipZeusBolt();
-        }
-        else
-        {
-            ZeusBoltController.UnequipZeusBolt();
+            swordCollider.enabled = false; // Disable collider initially
         }
     }
 
@@ -77,24 +72,34 @@ public class PlayerController : MonoBehaviour
 
         if (!isDashing && canMove && moveInput != Vector2.zero)
         {
+            //rb.AddForce(moveInput * moveSpeed * Time.fixedDeltaTime, ForceMode2D.Force);
             rb.AddForce(moveInput * StatsManager.Instance.speed * Time.fixedDeltaTime, ForceMode2D.Force);
 
             if (moveInput.x > 0)
             {
                 spriteRenderer.flipX = false;
+                gameObject.BroadcastMessage("IsFacingRight", true);
             }
             else if (moveInput.x < 0)
             {
                 spriteRenderer.flipX = true;
+                gameObject.BroadcastMessage("IsFacingRight", false);
             }
+
+            IsMoving = true;
+        }
+        else if (!isDashing)
+        {
+            IsMoving = false;
         }
     }
 
     public void Die()
     {
-        isDead = true;
-        canMove = false;
-        rb.velocity = Vector2.zero;
+        isDead = true; // Set isDead to true when the player dies
+        canMove = false; // Optionally lock other movement-related features
+        rb.velocity = Vector2.zero; // Stop all movement
+        animator.SetBool("isMoving", false);
     }
 
     void OnMove(InputValue value)
@@ -112,7 +117,7 @@ public class PlayerController : MonoBehaviour
 
     void OnDash()
     {
-        if (canDash && moveInput != Vector2.zero)
+        if (canDash && moveInput != Vector2.zero) // Only dash if moving
         {
             StartCoroutine(Dash());
         }
@@ -124,6 +129,7 @@ public class PlayerController : MonoBehaviour
         isDashing = true;
         canMove = false;
 
+        // Optional: Trigger dash animation
         if (!string.IsNullOrEmpty(dashAnimName))
         {
             animator.SetTrigger(dashAnimName);
@@ -134,7 +140,7 @@ public class PlayerController : MonoBehaviour
 
         yield return new WaitForSeconds(dashDuration);
 
-        rb.velocity = Vector2.zero;
+        rb.velocity = Vector2.zero; // Stop dash
         isDashing = false;
         canMove = true;
 
@@ -142,6 +148,7 @@ public class PlayerController : MonoBehaviour
         canDash = true;
     }
 
+    // Called from animation event to enable sword collider at the start of the attack
     public void EnableSwordCollider()
     {
         if (swordCollider != null)
@@ -150,6 +157,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    // Called from animation event to disable sword collider at the end of the attack
     public void DisableSwordCollider()
     {
         if (swordCollider != null)

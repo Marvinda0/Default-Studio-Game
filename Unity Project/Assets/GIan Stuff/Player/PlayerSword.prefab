@@ -7462,11 +7462,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1ba22eedaa25ea4ba84547ed344c60c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swordCollider: {fileID: 5619933852320195437}
   moveDrag: 15
   stopDrag: 25
   canAttack: 1
   attackAnimName: swordAttack
+  swordCollider: {fileID: 5619933852320195437}
   dashSpeed: 750
   dashDuration: 0.2
   dashCooldown: 2
@@ -7649,7 +7649,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 3232248416625360096, guid: df54524b66cc93e4ea7f7a3c6aeb8b81, type: 3}
-  targetingRadius: 10
+  targetingRadius: 5
   fireCooldown: 2
 --- !u!1 &8074376975822223981
 GameObject:
