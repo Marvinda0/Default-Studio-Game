@@ -255,10 +255,11 @@ MonoBehaviour:
   currentHealth: 0
   isBoss: 0
   isEnemy: 1
-  expReward: 3
+  expReward: 6
   healthSlider: {fileID: 0}
   damageTextPrefab: {fileID: 0}
   textSpawnPoint: {fileID: 0}
+  GameOver: {fileID: 0}
 --- !u!114 &-6900193940645402718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -271,7 +272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d1e9b5f68ffcc84aa2690e92f59657f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageToPlayer: 25
+  damageToPlayer: 15
   damageInterval: 1
 --- !u!114 &143241969749684180
 MonoBehaviour:

@@ -250,7 +250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4efd85964de9ea14f9a3f88af29a7d7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 1000
   currentHealth: 0
   isBoss: 1
   isEnemy: 1
@@ -258,6 +258,7 @@ MonoBehaviour:
   healthSlider: {fileID: 0}
   damageTextPrefab: {fileID: 0}
   textSpawnPoint: {fileID: 0}
+  GameOver: {fileID: 0}
 --- !u!114 &-6900193940645402718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -270,7 +271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d1e9b5f68ffcc84aa2690e92f59657f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageToPlayer: 50
+  damageToPlayer: 40
   damageInterval: 1
 --- !u!114 &8670829954444824012
 MonoBehaviour:

@@ -16,7 +16,7 @@ public class ExpManager : MonoBehaviour
     public int statPoint;
     public int currentExp;
     public int expToLevelUp = 10; //jch6 the amount of experience needed to level up
-    public float expGrowthMultiplier = 1.2f;//jch6 increase amount of experience needed to level up after experience meets the full amount.
+    public float expGrowthMultiplier = 1.3f;//jch6 increase amount of experience needed to level up after experience meets the full amount.
     public Slider expSlider; //jch6 UI slider for exp gain. 
     public TMP_Text currentLevelText;
     public TMP_Text statPointText;
