@@ -75,15 +75,38 @@ public class PlayerController : MonoBehaviour
             //rb.AddForce(moveInput * moveSpeed * Time.fixedDeltaTime, ForceMode2D.Force);
             rb.AddForce(moveInput * StatsManager.Instance.speed * Time.fixedDeltaTime, ForceMode2D.Force);
 
-            if (moveInput.x > 0)
+            if (moveInput.x > 0) // Moving right
             {
                 spriteRenderer.flipX = false;
+                animator.SetBool("isFacingUp", false);
+                animator.SetBool("isFacingDown", false);
                 gameObject.BroadcastMessage("IsFacingRight", true);
             }
-            else if (moveInput.x < 0)
+            else if (moveInput.x < 0) // Moving left
             {
                 spriteRenderer.flipX = true;
+                animator.SetBool("isFacingUp", false);
+                animator.SetBool("isFacingDown", false);
                 gameObject.BroadcastMessage("IsFacingRight", false);
+            }
+            else if (moveInput.y > 0) // Moving up
+            {
+                spriteRenderer.flipX = false; // No horizontal flip for vertical movement
+                animator.SetBool("isFacingUp", true);
+                animator.SetBool("isFacingDown", false);
+                gameObject.BroadcastMessage("IsFacingUp", true);
+            }
+            else if (moveInput.y < 0) // Moving down
+            {
+                spriteRenderer.flipX = false; // No horizontal flip for vertical movement
+                animator.SetBool("isFacingUp", false);
+                animator.SetBool("isFacingDown", true);
+                gameObject.BroadcastMessage("IsFacingUp", false);
+            }
+            else
+            {
+                animator.SetBool("isFacingUp", false);
+                animator.SetBool("isFacingDown", false);
             }
 
             IsMoving = true;
