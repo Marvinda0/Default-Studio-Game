@@ -259,6 +259,7 @@ MonoBehaviour:
   healthSlider: {fileID: 0}
   damageTextPrefab: {fileID: 0}
   textSpawnPoint: {fileID: 0}
+  GameOver: {fileID: 0}
 --- !u!114 &-6900193940645402718
 MonoBehaviour:
   m_ObjectHideFlags: 0

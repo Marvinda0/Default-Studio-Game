@@ -83,7 +83,7 @@ public class StatsUI : MonoBehaviour
         Debug.Log("Button clicked!");
         if (ExpManager.Instance.statPoint > 0){
             allocatedSpeedPoints++;
-            StatsManager.Instance.speed += 50;//jch6 Increase the actual speed
+            StatsManager.Instance.speed += 80;//jch6 Increase the actual speed
             ExpManager.Instance.statPoint-=1;
             UpdateSpeed();
             ExpManager.Instance.UpdateUI();
