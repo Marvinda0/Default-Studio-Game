@@ -152,8 +152,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.13301867, y: -0.21287833}
-  m_Size: {x: 2.3479302, y: 3.1536765}
+  m_Offset: {x: -0.031633347, y: -0.21287833}
+  m_Size: {x: 2.0186262, y: 3.1536765}
   m_Direction: 0
 --- !u!114 &7112045905062980753
 MonoBehaviour:
@@ -259,6 +259,7 @@ MonoBehaviour:
   healthSlider: {fileID: 0}
   damageTextPrefab: {fileID: 0}
   textSpawnPoint: {fileID: 0}
+  GameOver: {fileID: 0}
 --- !u!114 &-2325563074004958571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -288,7 +289,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 3232248416625360096, guid: cd3aa4ef6721dbd4181024ba1a689a44, type: 3}
   attackRange: 1
   followRange: 100
-  fireRate: 2
+  fireRate: 2.5
   projectileDamage: 10
 --- !u!114 &3848357645080464525
 MonoBehaviour:

@@ -8342,7 +8342,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   knockbackForce: 1000
-  speed: 600
+  speed: 500
   maxHealth: 100
   currentHealth: 100
 --- !u!1 &7566454686944859715
