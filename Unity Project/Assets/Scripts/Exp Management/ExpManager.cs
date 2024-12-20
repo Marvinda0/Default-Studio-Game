@@ -14,9 +14,9 @@ public class ExpManager : MonoBehaviour
 
     public int level;
     public int statPoint;
-    public int currentExp;
-    public int expToLevelUp = 10; //jch6 the amount of experience needed to level up
-    public float expGrowthMultiplier = 1.3f;//jch6 increase amount of experience needed to level up after experience meets the full amount.
+    public float currentExp;
+    public float expToLevelUp = 6.52f; //jch6 the amount of experience needed to level up
+    public float expGrowthMultiplier = 1.79f;//jch6 increase amount of experience needed to level up after experience meets the full amount.
     public Slider expSlider; //jch6 UI slider for exp gain. 
     public TMP_Text currentLevelText;
     public TMP_Text statPointText;
@@ -45,31 +45,32 @@ public class ExpManager : MonoBehaviour
         }
         UpdateUI();
     }
-    
-    public void LevelUp(){ //jch6 For when a player levels up. Can add a graphic or soundeffect for levelup
-        //Instantiate(levelUpTextPrefab, transform.position, Quaternion.identity);
-        if(levelUpTextPrefab != null){
+
+    public void LevelUp()
+    {
+        if (levelUpTextPrefab != null)
+        {
             Canvas uiCanvas = GameObject.Find("UIPopUpCanvas").GetComponent<Canvas>();
             levelUpPromptInstance = Instantiate(levelUpTextPrefab, uiCanvas.transform);
-            
+
             GameObject player = GameObject.FindGameObjectWithTag("Player");
-            if (player != null){
+            if (player != null)
+            {
                 Vector3 screenPos = Camera.main.WorldToScreenPoint(player.transform.position + new Vector3(0, 0.2f, 0));
                 levelUpPromptInstance.transform.position = screenPos;
                 levelUpPromptInstance.SetActive(true);
             }
-            //levelUpPromptInstance.SetActive(false); //jch6 added to ensure prompt is disabled
         }
-        statPoint += 2; //jch6 gain 2 statpoints after every level up
+        statPoint += 4;
         level++;
-        currentExp -= expToLevelUp;
-        expToLevelUp = Mathf.RoundToInt(expToLevelUp * expGrowthMultiplier);
-        
+        currentExp = Mathf.Min(currentExp - expToLevelUp, expToLevelUp - 1); // Cap carryover
+        expToLevelUp = Mathf.Round(expToLevelUp * expGrowthMultiplier); // Preserve precision
         StatsManager.Instance.currentHealth = StatsManager.Instance.maxHealth;
         UpdateUI();
         StatsUI.Instance.ShowLevelUpPanel();
-        Debug.Log("LEVEL UP!");
+        Debug.Log($"LEVEL UP! New Level: {level}, Next Level EXP: {expToLevelUp}");
     }
+
 
     private void OnEnable (){
         HealthSystem.OnMonsterDeath += GainExperience;

@@ -254,7 +254,7 @@ MonoBehaviour:
   currentHealth: 0
   isBoss: 1
   isEnemy: 1
-  expReward: 3
+  expReward: 500
   healthSlider: {fileID: 0}
   damageTextPrefab: {fileID: 0}
   textSpawnPoint: {fileID: 0}

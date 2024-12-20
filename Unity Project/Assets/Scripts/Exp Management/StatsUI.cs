@@ -68,7 +68,7 @@ public class StatsUI : MonoBehaviour
         Debug.Log("Button clicked!");
         if (ExpManager.Instance.statPoint > 0){
             allocatedDamagePoints++;
-            StatsManager.Instance.damage += 10;//Increases the actual damage
+            StatsManager.Instance.damage += 4;//Increases the actual damage
             ExpManager.Instance.statPoint -= 1;
             UpdateDamage();
             ExpManager.Instance.UpdateUI();
