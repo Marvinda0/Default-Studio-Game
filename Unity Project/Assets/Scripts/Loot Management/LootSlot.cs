@@ -34,6 +34,7 @@ public class LootSlot : MonoBehaviour, IPointerClickHandler
     public bool thisItemSelected;
 
     private InventoryManager inventoryManager;
+    private Loot currentLoot;
 
 
     //Loot Descrip
@@ -107,7 +108,7 @@ public class LootSlot : MonoBehaviour, IPointerClickHandler
             if(lootType == LootType.equippable){
                 EquipGear();
             } else if(lootType == LootType.consumable){
-                //UseItem(); jch6 cre
+                UseLoot();
             }
         }else{
             inventoryManager.DeselectAllSlots();
@@ -147,6 +148,25 @@ public class LootSlot : MonoBehaviour, IPointerClickHandler
                 ClearSlot();
             }
         }
+    }
+
+    public void UseLoot(){
+        Loot currentLoot = FindLootByName(lootName);
+        if(currentLoot != null && lootType == LootType.consumable){
+            currentLoot.UseItem();
+            ClearSlot();
+        } else {
+            Debug.LogWarning("Consumable not found!");
+        }
+    }
+    private Loot FindLootByName(string name)
+    {
+        EquipmentSOLibrary library = FindObjectOfType<EquipmentSOLibrary>();
+        foreach (var loot in library.lootLibrary)
+        {
+            if (loot.lootName == name) return loot;
+        }
+        return null;
     }
 
     public void OnRightClick(){

@@ -10,7 +10,7 @@ public class Loot : ScriptableObject
     public string lootName;
     public LootType lootType;
     [TextArea]public string lootDescription;
-    public int dropChance;
+    public float dropChance;
 
     public int attackDamage;
     public int movementSpeed;
@@ -43,5 +43,13 @@ public class Loot : ScriptableObject
 
         Debug.Log($"Unequipped {lootName}: Damage -{attackDamage}, Speed -{movementSpeed}, Health -{healthIncrease}");
 
+    }
+
+    public void UseItem(){
+        StatsManager.Instance.currentHealth += healthIncrease;
+        if(StatsManager.Instance.currentHealth > StatsManager.Instance.maxHealth){
+            StatsManager.Instance.currentHealth = StatsManager.Instance.maxHealth;
+        }
+        Debug.Log($"Used item {lootName}. {healthIncrease} health regained");
     }
 }
