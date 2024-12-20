@@ -26,10 +26,6 @@ public class HealthSystem : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        if (audioSource == null)
-        {
-            Debug.LogWarning($"No AudioSource attached to {gameObject.name}, sounds won't play!");
-        }
         if (isEnemy && !isBoss) { 
             maxHealth *= MobStatsManager.Instance.globalHealthMultiplier;
             currentHealth = maxHealth;
@@ -67,14 +63,13 @@ public class HealthSystem : MonoBehaviour
 
     public void TakeDamage(float amount)
     {
-        float previousHealth = currentHealth;
-        currentHealth -= amount;
-        Debug.Log($"Damage received: {amount}, Current Health: {currentHealth}, Max Health: {maxHealth}");
-
         if (audioSource != null && damageSound != null)
         {
             audioSource.PlayOneShot(damageSound);
         }
+        float previousHealth = currentHealth;
+        currentHealth -= amount;
+        Debug.Log($"Damage received: {amount}, Current Health: {currentHealth}, Max Health: {maxHealth}");
 
         if (CompareTag("Player"))
         {
@@ -94,7 +89,10 @@ public class HealthSystem : MonoBehaviour
         {
             Die();
         }
+
+        StartCoroutine(VisualIndicator(Color.red));
     }
+
 
     private void Die()
     {
