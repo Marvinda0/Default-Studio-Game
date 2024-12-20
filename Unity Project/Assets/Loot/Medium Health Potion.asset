@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 568f28b466e26004788ec50bdb0cf9fd, type: 3}
-  m_Name: Ares Helmet
+  m_Name: Medium Health Potion
   m_EditorClassIdentifier: 
-  lootSprite: {fileID: 21300000, guid: 796ac5975108a014583919dd3de935c8, type: 3}
-  lootName: Ares Helmet
-  lootType: 1
-  lootDescription: The helmet of the god of war Ares. Grants +50 Damage.
-  dropChance: 2
-  attackDamage: 50
+  lootSprite: {fileID: 21300000, guid: a56db06dc06fa2d4cb792bc922864cb3, type: 3}
+  lootName: Medium Health Potion
+  lootType: 0
+  lootDescription: Medium potion that grants you moderate health.
+  dropChance: 100
+  attackDamage: 0
   movementSpeed: 0
-  healthIncrease: 0
+  healthIncrease: 60
   healthRegen: 0
