@@ -19785,8 +19785,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b148bfe22a819664eb18d2e074659a40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthIncrement: 20
-  damageIncrement: 10
+  healthIncrement: 1.33
+  damageIncrement: 1.15
   globalHealthMultiplier: 1
   globalDamageMultiplier: 1
 --- !u!4 &1269266586
