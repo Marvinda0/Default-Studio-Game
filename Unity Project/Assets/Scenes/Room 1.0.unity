@@ -404,7 +404,7 @@ Transform:
   m_GameObject: {fileID: 218742062}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.42, y: -0.58, z: 0}
+  m_LocalPosition: {x: -0.5, y: -1.63, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -19785,8 +19785,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b148bfe22a819664eb18d2e074659a40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthIncrement: 1.33
-  damageIncrement: 1.15
+  healthIncrement: 1.1
+  damageIncrement: 0.1333
   globalHealthMultiplier: 1
   globalDamageMultiplier: 1
 --- !u!4 &1269266586
@@ -20083,7 +20083,7 @@ MonoBehaviour:
     NumberOfEnemies: 5
     typesOfEnemies:
     - {fileID: 6083513873441513986, guid: f29029b55e0e05b46933b85faf174826, type: 3}
-    spawnInterval: 2.5
+    spawnInterval: 2
   - waveName: Wave 2
     NumberOfEnemies: 5
     typesOfEnemies:
@@ -20094,19 +20094,19 @@ MonoBehaviour:
     typesOfEnemies:
     - {fileID: 4982733723981510052, guid: b85a629ed4ab07343857575db34b112e, type: 3}
     - {fileID: 6083513873441513986, guid: f29029b55e0e05b46933b85faf174826, type: 3}
-    spawnInterval: 2
+    spawnInterval: 1.5
   - waveName: Wave 4
     NumberOfEnemies: 5
     typesOfEnemies:
     - {fileID: 4982733723981510052, guid: b85a629ed4ab07343857575db34b112e, type: 3}
     - {fileID: 6083513873441513986, guid: f29029b55e0e05b46933b85faf174826, type: 3}
-    spawnInterval: 2
+    spawnInterval: 1
   - waveName: Wave 4
     NumberOfEnemies: 15
     typesOfEnemies:
     - {fileID: 4982733723981510052, guid: b85a629ed4ab07343857575db34b112e, type: 3}
     - {fileID: 6083513873441513986, guid: f29029b55e0e05b46933b85faf174826, type: 3}
-    spawnInterval: 2
+    spawnInterval: 1
   spawnPoints:
   - {fileID: 2108104821}
   - {fileID: 218742063}
@@ -21030,7 +21030,7 @@ Transform:
   m_GameObject: {fileID: 2101110699}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.54, y: -2.58, z: 0}
+  m_LocalPosition: {x: 1.58, y: -2.08, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
