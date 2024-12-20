@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 568f28b466e26004788ec50bdb0cf9fd, type: 3}
-  m_Name: Ares Helmet
+  m_Name: Hermes Shoes
   m_EditorClassIdentifier: 
-  lootSprite: {fileID: 21300000, guid: 796ac5975108a014583919dd3de935c8, type: 3}
-  lootName: Ares Helmet
+  lootSprite: {fileID: 21300000, guid: d7f3c23874f79e149b7bb1c6cb8502be, type: 3}
+  lootName: Hermes Sandals
   lootType: 1
-  lootDescription: The helmet of the god of war Ares. Grants +50 Damage.
+  lootDescription: The shoes of hermes. Grants +500 Speed
   dropChance: 2
-  attackDamage: 50
-  movementSpeed: 0
+  attackDamage: 0
+  movementSpeed: 500
   healthIncrease: 0
   healthRegen: 0
