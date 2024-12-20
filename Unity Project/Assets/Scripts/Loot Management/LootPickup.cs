@@ -34,12 +34,20 @@ public class LootPickup : MonoBehaviour //Attach the LootPickup Script to the lo
     
     void PickUpLoot(){
 
-        inventoryManager.AddItem(loot.lootName, loot.lootSprite, loot.lootDescription, loot.lootType);
+        bool wasItemAdded = inventoryManager.AddItem(loot.lootName, loot.lootSprite, loot.lootDescription, loot.lootType);
+        if(wasItemAdded){
+            Destroy(gameObject); //jch6 Destroys loot after pick up
+            if(pickUpLootPromptInstance != null){
+                pickUpLootPromptInstance.SetActive(false);
+            }
+        } else {
+            Debug.Log("Could not pick up item, inventory is currently full!");
+        }
         
-        Destroy(gameObject); //jch6 Destroys loot after pick up
+        /*Destroy(gameObject); //jch6 Destroys loot after pick up
         if(pickUpLootPromptInstance != null){
             pickUpLootPromptInstance.SetActive(false);
-        }
+        }*/
 
     }
 

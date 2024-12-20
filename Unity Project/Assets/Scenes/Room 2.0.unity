@@ -17933,7 +17933,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f66f6486988dc74686e0b1639f4325e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiPrompt: {fileID: 0}
+  uiPrompt: {fileID: 1415524209}
 --- !u!212 &1417927436
 SpriteRenderer:
   m_ObjectHideFlags: 0
