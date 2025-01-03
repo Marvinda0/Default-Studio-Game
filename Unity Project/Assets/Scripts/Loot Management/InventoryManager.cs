@@ -49,7 +49,7 @@ public class InventoryManager : MonoBehaviour
             }
         }
         
-        Debug.LogWarning("Inventory is full. Can't add ");
+        Debug.LogWarning("Inventory is full. Can't add item into inventory");
         return false;
     }
 
