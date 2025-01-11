@@ -15,7 +15,7 @@ public class LootSlot : MonoBehaviour, IPointerClickHandler
     private LootType lootType;
 
     private string lootDescription;
-    //public GameObject droppedItemPrefab;
+    [SerializeField]private GameObject droppedItemPrefab;
 
     //Equipped slot
     [SerializeField]private EquippedSlot itemSlot1, itemSlot2;
@@ -87,7 +87,7 @@ public class LootSlot : MonoBehaviour, IPointerClickHandler
         LootDescriptionNameText.text = string.Empty;
         LootDescriptionText.text = string.Empty;
         if(lootImage.sprite == null){
-            lootDescriptionImage.sprite = null;
+            lootDescriptionImage.sprite = emptySprite;
         }
         //lootDescriptionImage.sprite = null;
 
@@ -112,7 +112,6 @@ public class LootSlot : MonoBehaviour, IPointerClickHandler
             }
         }else{
             inventoryManager.DeselectAllSlots();
-            //selectedShader.SetActive(true);
             if (selectedShader != null) {
                 selectedShader.SetActive(true);
             }
@@ -122,6 +121,7 @@ public class LootSlot : MonoBehaviour, IPointerClickHandler
             LootDescriptionText.text = lootDescription;
             lootDescriptionImage.sprite = lootSprite;
         }
+
         if(lootDescriptionImage.sprite == null){
             lootDescriptionImage.sprite = emptySprite;
         }
@@ -147,6 +147,8 @@ public class LootSlot : MonoBehaviour, IPointerClickHandler
             if(equipped){
                 ClearSlot();
             }
+        } else {
+            Debug.LogWarning("No item not found!");
         }
     }
 
@@ -156,7 +158,7 @@ public class LootSlot : MonoBehaviour, IPointerClickHandler
             currentLoot.UseItem();
             ClearSlot();
         } else {
-            Debug.LogWarning("Consumable not found!");
+            Debug.LogWarning("No item not found!");
         }
     }
     private Loot FindLootByName(string name)
@@ -170,6 +172,59 @@ public class LootSlot : MonoBehaviour, IPointerClickHandler
     }
 
     public void OnRightClick(){
+        //jch6 option to delete or drop loot item from inventory
+        if(thisItemSelected && isFull){
+            DropItem();
+        }
+    }
+
+    public void DropItem(){
+        if (droppedItemPrefab == null)
+        {
+            Debug.LogError("droppedItemPrefab is not assigned in the Inspector!");
+            return;
+        }
+
+        // Spawn the dropped item in the world near the player
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            Vector3 dropPosition = player.transform.position + new Vector3 (Random.Range(0.5f, 0.5f), Random.Range(-0.5f, 0.5f), 0);
+            GameObject droppedItem = Instantiate(droppedItemPrefab, dropPosition, Quaternion.identity);
+
+            // Set the sprite on the dropped item
+            SpriteRenderer spriteRenderer = droppedItem.GetComponent<SpriteRenderer>();
+            if (spriteRenderer != null){
+                spriteRenderer.sprite = lootSprite;
+            }
+
+            // Assign LootPickup data so it can be re-picked up
+            LootPickup lootPickup = droppedItem.GetComponent<LootPickup>();
+            if (lootPickup != null)
+            {
+                Loot currentLoot = FindLootByName(lootName);
+                if (currentLoot != null){
+                    lootPickup.SetLoot(currentLoot);
+                }
+            }
+
+            // Optional: Add some force to make it 'pop' out
+            Rigidbody2D rb = droppedItem.GetComponent<Rigidbody2D>();
+            if (rb != null)
+            {
+                float dropForce = 5f;
+                Vector2 dropDirection = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
+                rb.AddForce(dropDirection.normalized * dropForce, ForceMode2D.Impulse);
+            }
+
+            // Clear the slot
+            ClearSlot();
+            Debug.Log($"Dropped {lootName} in the world.");
+        }
+        else
+        {
+            Debug.LogWarning("Player not found - cannot drop the item!");
+        }
 
     }
     
