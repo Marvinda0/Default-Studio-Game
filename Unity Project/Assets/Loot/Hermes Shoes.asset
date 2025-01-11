@@ -16,7 +16,7 @@ MonoBehaviour:
   lootName: Hermes Sandals
   lootType: 1
   lootDescription: The shoes of hermes. Grants +600 Speed
-  dropChance: 15
+  dropChance: 30
   attackDamage: 0
   movementSpeed: 600
   healthIncrease: 0

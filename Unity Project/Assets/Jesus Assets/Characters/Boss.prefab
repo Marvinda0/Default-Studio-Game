@@ -152,8 +152,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.02669543, y: -0.59906733}
-  m_Size: {x: 3.8461795, y: 3.8461795}
+  m_Offset: {x: 0.0038272142, y: -0.4961595}
+  m_Size: {x: 4.760927, y: 4.760927}
   m_Direction: 0
 --- !u!114 &4229802418481570286
 MonoBehaviour:
@@ -291,7 +291,7 @@ MonoBehaviour:
   phase3Threshold: 35
   projectilePrefab: {fileID: 3232248416625360096, guid: b4bd6909f0830094ab3ae464620b6d69, type: 3}
   fireRate: 2
-  projectileDamage: 10
+  projectileDamage: 25
   projectileSpreadAngle: 45
   chargeSpeed: 8
   chargeCooldown: 5
